@@ -1,0 +1,936 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Contact Us | EnerTec Supply Chain, Engineering &amp; Energy Solutions</title>
+<meta name="description" content="Get in touch with EnerTec FZC. Reach our team for supply chain, engineering consultancy, and renewable energy inquiries in Sharjah, UAE." />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Sora:wght@400;500;600;700;800&family=Manrope:wght@400;500;600;700&display=swap" rel="stylesheet" />
+<link rel="stylesheet" href="css/index.css" />
+<style>
+/* ============================================================
+   CONTACT PAGE — styles
+   ============================================================ */
+
+/* ─── Page Hero (same as about) ─── */
+.page-hero {
+  position: relative;
+  height: clamp(340px, 48vw, 520px);
+  display: flex;
+  align-items: center;
+  overflow: hidden;
+}
+.page-hero-bg { position: absolute; inset: 0; }
+.page-hero-bg img {
+  width: 100%; height: 100%;
+  object-fit: cover; object-position: center 40%;
+  display: block; will-change: transform;
+}
+.page-hero-overlay {
+  position: absolute; inset: 0;
+  background: linear-gradient(118deg, rgba(7,24,64,.88) 0%, rgba(13,47,113,.72) 52%, rgba(7,24,64,.52) 100%);
+}
+.page-hero-inner { position: relative; z-index: 1; padding-top: 80px; }
+.page-hero-eyebrow {
+  display: inline-flex; align-items: center; gap: 10px;
+  font-family: var(--font-head); font-size: 12px; font-weight: 700;
+  letter-spacing: .15em; text-transform: uppercase; color: var(--accent); margin-bottom: 20px;
+}
+.page-hero-eyebrow::before {
+  content: ''; display: block; width: 32px; height: 2px;
+  background: var(--accent); border-radius: 2px;
+}
+.page-hero h1 {
+  font-size: clamp(28px, 4vw, 52px); color: #fff; line-height: 1.11;
+  max-width: 16ch; font-weight: 800;
+}
+.page-hero h1 .hl { color: var(--accent); }
+.breadcrumb {
+  display: flex; align-items: center; gap: 9px; font-size: 13px;
+  color: rgba(255,255,255,.55); margin-top: 22px;
+  font-family: var(--font-head); font-weight: 500;
+}
+.breadcrumb a { color: rgba(255,255,255,.55); transition: color .25s; }
+.breadcrumb a:hover { color: var(--accent); }
+.breadcrumb .bc-sep { color: rgba(255,255,255,.28); }
+.breadcrumb .bc-cur { color: var(--accent); }
+
+/* ─── Info Cards Row ─── */
+.contact-cards {
+  background: var(--surface);
+  padding-block: clamp(40px, 5vw, 56px);
+  border-bottom: 1px solid var(--line);
+}
+.contact-cards-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 20px;
+}
+.ccard {
+  display: flex;
+  align-items: flex-start;
+  gap: 16px;
+  padding: 24px 20px;
+  background: var(--bg-2);
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  transition: box-shadow .3s, border-color .3s, transform .3s;
+  will-change: transform;
+}
+.ccard:hover {
+  box-shadow: var(--shadow-md);
+  border-color: rgba(13,47,113,.18);
+  transform: translateY(-4px);
+}
+.ccard-icon {
+  flex: none;
+  width: 48px; height: 48px;
+  border-radius: 13px;
+  background: rgba(13,47,113,.08);
+  color: var(--primary);
+  display: grid; place-items: center;
+  transition: background .3s, color .3s;
+}
+.ccard:hover .ccard-icon { background: var(--primary); color: #fff; }
+.ccard-icon svg { width: 20px; height: 20px; }
+.ccard-body { min-width: 0; }
+.ccard-label {
+  font-size: 11.5px; font-weight: 700; letter-spacing: .1em; text-transform: uppercase;
+  color: var(--accent); font-family: var(--font-head); margin-bottom: 6px;
+}
+.ccard-val {
+  font-size: 14px; color: var(--ink); font-weight: 600; line-height: 1.55;
+  font-family: var(--font-head);
+}
+.ccard-val a { color: var(--ink); transition: color .2s; }
+.ccard-val a:hover { color: var(--primary); }
+
+/* ─── Main Contact Split ─── */
+.contact-main { padding-block: clamp(56px, 7vw, 88px); }
+.contact-split {
+  display: grid;
+  grid-template-columns: 1fr 1.25fr;
+  gap: clamp(32px, 4vw, 64px);
+  align-items: start;
+}
+
+/* Left dark panel */
+.contact-info-panel {
+  background: var(--primary-900);
+  border-radius: var(--radius-lg);
+  padding: clamp(32px, 4vw, 52px);
+  position: relative;
+  overflow: hidden;
+  height: 100%;
+}
+.contact-info-panel::before {
+  content: '';
+  position: absolute;
+  top: -40%; right: -30%;
+  width: 70%; padding-bottom: 70%;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(245,166,35,.1) 0%, transparent 70%);
+  pointer-events: none;
+}
+.contact-info-panel::after {
+  content: '';
+  position: absolute;
+  bottom: -30%; left: -20%;
+  width: 55%; padding-bottom: 55%;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(13,47,113,.5) 0%, transparent 70%);
+  pointer-events: none;
+}
+.cip-inner { position: relative; z-index: 1; }
+.cip-eyebrow {
+  display: inline-flex; align-items: center; gap: 8px;
+  font-family: var(--font-head); font-size: 11.5px; font-weight: 700;
+  letter-spacing: .14em; text-transform: uppercase; color: var(--accent); margin-bottom: 18px;
+}
+.cip-eyebrow::before {
+  content: ''; display: block; width: 24px; height: 2px;
+  background: var(--accent); border-radius: 2px;
+}
+.cip-title {
+  font-size: clamp(20px, 2.2vw, 28px); color: #fff; font-weight: 700;
+  line-height: 1.25; margin-bottom: 16px; font-family: var(--font-head);
+}
+.cip-desc {
+  font-size: 14.5px; color: rgba(255,255,255,.62); line-height: 1.78; margin-bottom: 36px;
+}
+.cip-list { display: flex; flex-direction: column; gap: 20px; margin-bottom: 36px; }
+.cip-item {
+  display: flex; align-items: flex-start; gap: 14px;
+}
+.cip-item-icon {
+  flex: none; width: 40px; height: 40px; border-radius: 10px;
+  background: rgba(255,255,255,.07); border: 1px solid rgba(255,255,255,.1);
+  color: var(--accent); display: grid; place-items: center;
+  transition: background .3s;
+}
+.cip-item:hover .cip-item-icon { background: rgba(245,166,35,.15); }
+.cip-item-icon svg { width: 17px; height: 17px; }
+.cip-item-body { min-width: 0; }
+.cip-item-label { font-size: 11px; font-weight: 700; letter-spacing: .1em; text-transform: uppercase; color: rgba(255,255,255,.45); margin-bottom: 3px; }
+.cip-item-val { font-size: 14px; color: rgba(255,255,255,.85); line-height: 1.55; font-weight: 500; }
+.cip-item-val a { color: rgba(255,255,255,.85); transition: color .2s; }
+.cip-item-val a:hover { color: var(--accent); }
+.cip-social { display: flex; gap: 10px; }
+.cip-social a {
+  width: 38px; height: 38px; border-radius: 10px;
+  background: rgba(255,255,255,.07); border: 1px solid rgba(255,255,255,.1);
+  color: rgba(255,255,255,.65); display: grid; place-items: center;
+  transition: background .25s, color .25s, border-color .25s;
+}
+.cip-social a:hover { background: var(--accent); border-color: var(--accent); color: #fff; }
+.cip-social svg { width: 16px; height: 16px; }
+
+/* Right form panel */
+.contact-form-wrap {
+  background: var(--surface);
+  border: 1px solid var(--line);
+  border-radius: var(--radius-lg);
+  padding: clamp(32px, 4vw, 52px);
+  box-shadow: var(--shadow-md);
+}
+.contact-form-wrap h3 {
+  font-size: clamp(18px, 1.8vw, 22px); color: var(--ink);
+  margin-bottom: 6px; font-family: var(--font-head);
+}
+.contact-form-wrap .form-sub {
+  font-size: 14px; color: var(--body); margin-bottom: 28px; line-height: 1.6;
+}
+.form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+.form-group { display: flex; flex-direction: column; gap: 7px; margin-bottom: 16px; }
+.form-group label {
+  font-size: 12.5px; font-weight: 600; color: var(--ink);
+  font-family: var(--font-head); letter-spacing: .04em;
+}
+.form-group label .req { color: var(--accent); margin-left: 2px; }
+.form-group input,
+.form-group select,
+.form-group textarea {
+  width: 100%; padding: 11px 14px;
+  border: 1.5px solid var(--line);
+  border-radius: calc(var(--radius) - 4px);
+  font-family: var(--font-body); font-size: 14px; color: var(--ink);
+  background: var(--bg-2); outline: none;
+  transition: border-color .25s, box-shadow .25s, background .25s;
+  appearance: none;
+}
+.form-group select {
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 24 24' fill='none' stroke='%230D2F71' stroke-width='2.5'%3E%3Cpath d='m6 9 6 6 6-6'/%3E%3C/svg%3E");
+  background-repeat: no-repeat; background-position: right 14px center;
+  padding-right: 38px; cursor: pointer;
+}
+.form-group input:focus,
+.form-group select:focus,
+.form-group textarea:focus {
+  border-color: var(--primary);
+  box-shadow: 0 0 0 3px rgba(13,47,113,.1);
+  background: #fff;
+}
+.form-group input::placeholder,
+.form-group textarea::placeholder { color: rgba(0,0,0,.32); }
+.form-group textarea { resize: vertical; min-height: 120px; }
+.form-submit {
+  display: flex; align-items: center; gap: 14px; margin-top: 8px; flex-wrap: wrap;
+}
+.form-submit .btn { min-width: 180px; justify-content: center; }
+.form-note { font-size: 12.5px; color: var(--body); }
+
+/* Form states */
+.form-toast {
+  display: none;
+  align-items: center; gap: 10px;
+  padding: 12px 16px;
+  border-radius: var(--radius);
+  font-size: 13.5px; font-weight: 600;
+  font-family: var(--font-head);
+  margin-top: 16px;
+}
+.form-toast.success {
+  display: flex;
+  background: rgba(34,197,94,.1); border: 1px solid rgba(34,197,94,.3); color: #16a34a;
+}
+.form-toast.error {
+  display: flex;
+  background: rgba(239,68,68,.08); border: 1px solid rgba(239,68,68,.25); color: #dc2626;
+}
+.form-toast svg { flex: none; width: 18px; height: 18px; }
+.btn--loading { pointer-events: none; opacity: .7; }
+
+/* ─── Map Section ─── */
+.map-section { background: var(--bg-2); padding-block: clamp(48px, 6vw, 72px); }
+.map-head { text-align: center; margin-bottom: clamp(28px, 3.5vw, 44px); }
+.map-frame-wrap {
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  box-shadow: var(--shadow-lg);
+  border: 1px solid var(--line);
+  height: clamp(300px, 45vw, 480px);
+}
+.map-frame-wrap iframe { width: 100%; height: 100%; display: block; border: none; }
+
+/* ─── Animations ─── */
+@keyframes float-y {
+  0%, 100% { transform: translateY(0); }
+  50%       { transform: translateY(-14px); }
+}
+@keyframes pulse-ring {
+  0%   { box-shadow: 0 0 0 0 rgba(245,166,35,.45); }
+  70%  { box-shadow: 0 0 0 10px rgba(245,166,35,0); }
+  100% { box-shadow: 0 0 0 0  rgba(245,166,35,0); }
+}
+@keyframes shimmer {
+  0%   { background-position: -200% center; }
+  100% { background-position:  200% center; }
+}
+@keyframes draw-line {
+  from { transform: scaleX(0); }
+  to   { transform: scaleX(1); }
+}
+
+.contact-info-panel::before { animation: float-y 7s ease-in-out infinite; }
+.contact-info-panel::after  { animation: float-y 9s ease-in-out infinite 2.5s; }
+
+.ccard:hover .ccard-icon { animation: pulse-ring 1.4s ease-out infinite; }
+
+.btn--primary:not(.btn--loading) {
+  background-size: 200% auto;
+}
+.btn--primary:not(.btn--loading):hover {
+  background-image: linear-gradient(90deg, var(--primary) 0%, #1a4db5 40%, var(--primary) 100%);
+  animation: shimmer 1.2s linear infinite;
+}
+
+/* underline accent on form heading */
+.contact-form-wrap h3 { position: relative; display: inline-block; }
+.contact-form-wrap h3::after {
+  content: '';
+  position: absolute;
+  left: 0; bottom: -5px;
+  height: 2px; width: 100%;
+  background: var(--accent);
+  border-radius: 2px;
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform .45s ease;
+}
+.contact-form-wrap:hover h3::after,
+.contact-form-wrap h3.line-in::after {
+  transform: scaleX(1);
+}
+
+/* hero floating badge */
+.hero-badge {
+  position: absolute;
+  bottom: clamp(24px,4vw,44px); right: clamp(24px,5vw,60px);
+  background: rgba(255,255,255,.12);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255,255,255,.2);
+  border-radius: 14px;
+  padding: 14px 20px;
+  display: flex; align-items: center; gap: 12px;
+  animation: float-y 5s ease-in-out infinite;
+  z-index: 2;
+}
+.hero-badge-dot {
+  width: 10px; height: 10px; border-radius: 50%;
+  background: #22c55e;
+  box-shadow: 0 0 0 3px rgba(34,197,94,.3);
+  animation: pulse-ring 1.8s ease-out infinite;
+}
+.hero-badge-text { font-family: var(--font-head); font-size: 13px; font-weight: 600; color: #fff; }
+.hero-badge-text span { display: block; font-size: 11px; font-weight: 500; color: rgba(255,255,255,.65); }
+@media (max-width: 600px) { .hero-badge { display: none; } }
+
+/* ─── Responsive ─── */
+@media (max-width: 1024px) {
+  .contact-cards-grid { grid-template-columns: repeat(2, 1fr); }
+}
+@media (max-width: 840px) {
+  .contact-split { grid-template-columns: 1fr; }
+  .contact-info-panel { height: auto; }
+}
+@media (max-width: 600px) {
+  .contact-cards-grid { grid-template-columns: 1fr; }
+  .form-row { grid-template-columns: 1fr; }
+}
+</style>
+</head>
+<body>
+
+<!-- ===================== TOP BAR ===================== -->
+<div class="topbar">
+  <div class="wrap">
+    <div class="topbar-contact">
+      <span>
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.96.36 1.9.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.91.34 1.85.57 2.81.7A2 2 0 0 1 22 16.92Z"/></svg>
+        <a href="tel:+971509640206">+971 50 964 0206</a>
+      </span>
+      <span class="tb-email">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 7-10 6L2 7"/></svg>
+        <a href="mailto:info@enertecsc.com">info@enertecsc.com</a>
+      </span>
+    </div>
+    <div class="topbar-social">
+      <a href="#" aria-label="Facebook"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M22 12a10 10 0 1 0-11.56 9.88v-6.99H7.9V12h2.54V9.8c0-2.5 1.49-3.89 3.78-3.89 1.09 0 2.24.2 2.24.2v2.46h-1.26c-1.24 0-1.63.77-1.63 1.56V12h2.78l-.44 2.89h-2.34v6.99A10 10 0 0 0 22 12Z"/></svg></a>
+      <a href="#" aria-label="X"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M18.9 2H22l-7.5 8.6L23 22h-6.9l-5.4-7-6.2 7H1.4l8-9.2L1 2h7l4.9 6.5L18.9 2Zm-1.2 18h1.9L7.1 4H5.1l12.6 16Z"/></svg></a>
+      <a href="#" aria-label="LinkedIn"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M6.94 5a2 2 0 1 1-4 0 2 2 0 0 1 4 0ZM7 8.48H3V21h4V8.48Zm6.32 0H9.34V21h3.94v-6.57c0-3.66 4.77-4 4.77 0V21H22v-7.93c0-6.17-7.06-5.94-8.72-2.91l.04-1.68Z"/></svg></a>
+    </div>
+  </div>
+</div>
+
+<!-- ===================== HEADER ===================== -->
+<header class="site-header">
+  <div class="wrap">
+    <nav class="nav">
+      <a class="brand" href="index.html" aria-label="EnerTec home">
+        <img src="assets/images/enerteclogo.png" alt="EnerTec" class="brand-logo">
+      </a>
+      <ul class="nav-menu">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="about-us.html">About</a></li>
+        <li class="has-dd">
+          <a href="#">Training
+            <svg class="caret" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="m6 9 6 6 6-6"/></svg>
+          </a>
+          <ul class="dd">
+            <li class="has-dd">
+              <a href="#">Oil &amp; Gas Courses
+                <svg class="sub-caret" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="m9 18 6-6-6-6"/></svg>
+              </a>
+              <ul class="dd dd--sub">
+                <li><a href="up-stream.html">Upstream Courses</a></li>
+                <li><a href="down-stream.html">Mid &amp; Downstream</a></li>
+              </ul>
+            </li>
+            <li><a href="engineering-course.html">Engineering Courses</a></li>
+            <li><a href="management-course.html">Management Courses</a></li>
+            <li><a href="hse-course.html">HSE Courses</a></li>
+          </ul>
+        </li>
+        <li><a href="consultancy.html">Consultancy</a></li>
+        <li><a href="engineering-projects.html">Projects</a></li>
+        <li><a href="services.html">Services</a></li>
+        <li><a href="contact-us.html" aria-current="page" style="color:var(--accent)">Contact</a></li>
+      </ul>
+      <div class="nav-cta">
+        <a href="contact-us.html" class="btn btn--primary">Get in Touch
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+        </a>
+        <button class="nav-toggle" aria-label="Open menu"><span></span></button>
+      </div>
+    </nav>
+  </div>
+</header>
+
+<!-- ===================== MOBILE PANEL ===================== -->
+<div class="mobile-overlay"></div>
+<aside class="mobile-panel" aria-label="Mobile navigation">
+  <div class="mp-head">
+    <img src="assets/images/enerteclogo.png" alt="EnerTec" class="brand-logo">
+    <button class="mp-close" aria-label="Close menu">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 6 6 18M6 6l12 12"/></svg>
+    </button>
+  </div>
+  <ul class="mobile-nav">
+    <li><a href="index.html">Home</a></li>
+    <li><a href="about-us.html">About Us</a></li>
+    <li>
+      <button class="m-sub-toggle">Training
+        <svg class="caret" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="m6 9 6 6 6-6"/></svg>
+      </button>
+      <ul class="m-sub">
+        <li><a href="up-stream.html">Upstream Courses</a></li>
+        <li><a href="down-stream.html">Mid &amp; Downstream</a></li>
+        <li><a href="engineering-course.html">Engineering Courses</a></li>
+        <li><a href="management-course.html">Management Courses</a></li>
+        <li><a href="hse-course.html">HSE Courses</a></li>
+      </ul>
+    </li>
+    <li><a href="consultancy.html">Consultancy</a></li>
+    <li><a href="engineering-projects.html">Engineering Projects</a></li>
+    <li><a href="services.html">Services</a></li>
+    <li><a href="contact-us.html">Contact Us</a></li>
+  </ul>
+  <a href="contact-us.html" class="btn btn--primary">Get in Touch</a>
+</aside>
+
+<!-- ===================== PAGE HERO ===================== -->
+<section class="page-hero">
+  <div class="page-hero-bg">
+    <img src="assets/images/banner2.png" alt="EnerTec Contact">
+  </div>
+  <div class="page-hero-overlay"></div>
+  <div class="wrap page-hero-inner">
+    <span class="page-hero-eyebrow">Get in Touch</span>
+    <h1>Let's Build Something <span class="hl">Great</span> Together</h1>
+    <nav class="breadcrumb" aria-label="Breadcrumb">
+      <a href="index.html">Home</a>
+      <span class="bc-sep">/</span>
+      <span class="bc-cur">Contact Us</span>
+    </nav>
+  </div>
+  <div class="hero-badge">
+    <div class="hero-badge-dot"></div>
+    <div class="hero-badge-text">We're Available<span>Sun – Thu · 9 AM – 6 PM</span></div>
+  </div>
+</section>
+
+<!-- ===================== CONTACT INFO CARDS ===================== -->
+<section class="contact-cards">
+  <div class="wrap">
+    <div class="contact-cards-grid">
+
+      <div class="ccard reveal">
+        <div class="ccard-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.96.36 1.9.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.91.34 1.85.57 2.81.7A2 2 0 0 1 22 16.92Z"/></svg>
+        </div>
+        <div class="ccard-body">
+          <div class="ccard-label">Phone</div>
+          <div class="ccard-val">
+            <a href="tel:+971509640206">+971 50 964 0206</a><br>
+            <a href="tel:+971509493014">+971 50 949 3014</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="ccard reveal d1">
+        <div class="ccard-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 7-10 6L2 7"/></svg>
+        </div>
+        <div class="ccard-body">
+          <div class="ccard-label">Email</div>
+          <div class="ccard-val"><a href="mailto:info@enertecsc.com">info@enertecsc.com</a></div>
+        </div>
+      </div>
+
+      <div class="ccard reveal d2">
+        <div class="ccard-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0Z"/><circle cx="12" cy="10" r="3"/></svg>
+        </div>
+        <div class="ccard-body">
+          <div class="ccard-label">Address</div>
+          <div class="ccard-val">Sharjah Airport Road (E88),<br>University City, Sharjah 66636, AE</div>
+        </div>
+      </div>
+
+      <div class="ccard reveal d3">
+        <div class="ccard-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+        </div>
+        <div class="ccard-body">
+          <div class="ccard-label">Business Hours</div>
+          <div class="ccard-val">Sun – Thu: 9:00 AM – 6:00 PM<br>Fri – Sat: Closed</div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ===================== CONTACT MAIN SPLIT ===================== -->
+<section class="contact-main section">
+  <div class="wrap">
+    <div class="contact-split">
+
+      <!-- Left: Info panel -->
+      <div class="contact-info-panel reveal">
+        <div class="cip-inner">
+          <span class="cip-eyebrow">Contact EnerTec</span>
+          <h3 class="cip-title">We'd Love to Hear From You</h3>
+          <p class="cip-desc">Whether you're looking for supply chain solutions, engineering support, or renewable energy consultancy, our team is ready to help. Reach out and we'll respond within one business day.</p>
+
+          <div class="cip-list">
+            <div class="cip-item">
+              <div class="cip-item-icon">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.96.36 1.9.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.91.34 1.85.57 2.81.7A2 2 0 0 1 22 16.92Z"/></svg>
+              </div>
+              <div class="cip-item-body">
+                <div class="cip-item-label">Phone</div>
+                <div class="cip-item-val">
+                  <a href="tel:+971509640206">+971 50 964 0206</a><br>
+                  <a href="tel:+971509493014">+971 50 949 3014</a>
+                </div>
+              </div>
+            </div>
+            <div class="cip-item">
+              <div class="cip-item-icon">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 7-10 6L2 7"/></svg>
+              </div>
+              <div class="cip-item-body">
+                <div class="cip-item-label">Email</div>
+                <div class="cip-item-val"><a href="mailto:info@enertecsc.com">info@enertecsc.com</a></div>
+              </div>
+            </div>
+            <div class="cip-item">
+              <div class="cip-item-icon">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0Z"/><circle cx="12" cy="10" r="3"/></svg>
+              </div>
+              <div class="cip-item-body">
+                <div class="cip-item-label">Office</div>
+                <div class="cip-item-val">Sharjah Airport Road (E88),<br>University City, Sharjah 66636, AE</div>
+              </div>
+            </div>
+          </div>
+
+          <div class="cip-social">
+            <a href="#" aria-label="Facebook">
+              <svg viewBox="0 0 24 24" fill="currentColor"><path d="M22 12a10 10 0 1 0-11.56 9.88v-6.99H7.9V12h2.54V9.8c0-2.5 1.49-3.89 3.78-3.89 1.09 0 2.24.2 2.24.2v2.46h-1.26c-1.24 0-1.63.77-1.63 1.56V12h2.78l-.44 2.89h-2.34v6.99A10 10 0 0 0 22 12Z"/></svg>
+            </a>
+            <a href="#" aria-label="X">
+              <svg viewBox="0 0 24 24" fill="currentColor"><path d="M18.9 2H22l-7.5 8.6L23 22h-6.9l-5.4-7-6.2 7H1.4l8-9.2L1 2h7l4.9 6.5L18.9 2Zm-1.2 18h1.9L7.1 4H5.1l12.6 16Z"/></svg>
+            </a>
+            <a href="#" aria-label="LinkedIn">
+              <svg viewBox="0 0 24 24" fill="currentColor"><path d="M6.94 5a2 2 0 1 1-4 0 2 2 0 0 1 4 0ZM7 8.48H3V21h4V8.48Zm6.32 0H9.34V21h3.94v-6.57c0-3.66 4.77-4 4.77 0V21H22v-7.93c0-6.17-7.06-5.94-8.72-2.91l.04-1.68Z"/></svg>
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Right: Form -->
+      <div class="contact-form-wrap reveal d1">
+        <h3>Send Us a Message</h3>
+        <p class="form-sub">Fill out the form and our team will get back to you within 24 hours.</p>
+
+        <form id="contactForm" novalidate>
+          <div class="form-row">
+            <div class="form-group">
+              <label for="cf-name">Full Name <span class="req">*</span></label>
+              <input type="text" id="cf-name" name="name" placeholder="John Smith" required />
+            </div>
+            <div class="form-group">
+              <label for="cf-email">Email Address <span class="req">*</span></label>
+              <input type="email" id="cf-email" name="email" placeholder="john@company.com" required />
+            </div>
+          </div>
+
+          <div class="form-row">
+            <div class="form-group">
+              <label for="cf-phone">Phone Number</label>
+              <input type="tel" id="cf-phone" name="phone" placeholder="+971 50 000 0000" />
+            </div>
+            <div class="form-group">
+              <label for="cf-company">Company</label>
+              <input type="text" id="cf-company" name="company" placeholder="Your Company Ltd." />
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label for="cf-subject">Subject <span class="req">*</span></label>
+            <select id="cf-subject" name="subject" required>
+              <option value="" disabled selected>Select a topic</option>
+              <option value="Supply Chain">Supply Chain Management</option>
+              <option value="Engineering">Engineering Consultancy</option>
+              <option value="Renewable Energy">Renewable Energy Solutions</option>
+              <option value="Training">Training &amp; Courses</option>
+              <option value="Procurement">Procurement &amp; Logistics</option>
+              <option value="Other">Other Inquiry</option>
+            </select>
+          </div>
+
+          <div class="form-group">
+            <label for="cf-message">Message <span class="req">*</span></label>
+            <textarea id="cf-message" name="message" placeholder="Tell us how we can help you…" required></textarea>
+          </div>
+
+          <div class="form-submit">
+            <button type="submit" class="btn btn--primary" id="cfSubmit">
+              Send Message
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+            </button>
+            <span class="form-note">We respond within 1 business day.</span>
+          </div>
+
+          <div class="form-toast" id="cfToast" role="alert"></div>
+        </form>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ===================== MAP ===================== -->
+<section class="map-section">
+  <div class="wrap">
+    <div class="map-head">
+      <span class="eyebrow eyebrow--center reveal">Find Us</span>
+      <h2 class="section-title section-title--center reveal d1">Our Office Location</h2>
+    </div>
+    <div class="map-frame-wrap reveal d2">
+      <iframe
+        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3607.356!2d55.4699!3d25.3329!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3e5f5fbbe0f4b04d%3A0x4e6c636d84eff56c!2sUniversity+City%2C+Sharjah!5e0!3m2!1sen!2sae!4v1718000000000!5m2!1sen!2sae"
+        allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"
+        title="EnerTec Office Location">
+      </iframe>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== FOOTER ===================== -->
+<footer class="footer">
+  <div class="footer-top-bar"></div>
+  <div class="wrap">
+    <div class="footer-grid">
+
+      <div class="footer-brand">
+        <img src="assets/images/enerteclogo.png" alt="EnerTec" class="footer-logo">
+        <p class="footer-tagline">Specialized in Supply Chain, Engineering &amp; Renewable Energy Solutions</p>
+        <div class="footer-social">
+          <a href="#" aria-label="Facebook"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M22 12a10 10 0 1 0-11.56 9.88v-6.99H7.9V12h2.54V9.8c0-2.5 1.49-3.89 3.78-3.89 1.09 0 2.24.2 2.24.2v2.46h-1.26c-1.24 0-1.63.77-1.63 1.56V12h2.78l-.44 2.89h-2.34v6.99A10 10 0 0 0 22 12Z"/></svg></a>
+          <a href="#" aria-label="X"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M18.9 2H22l-7.5 8.6L23 22h-6.9l-5.4-7-6.2 7H1.4l8-9.2L1 2h7l4.9 6.5L18.9 2Zm-1.2 18h1.9L7.1 4H5.1l12.6 16Z"/></svg></a>
+          <a href="#" aria-label="LinkedIn"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M6.94 5a2 2 0 1 1-4 0 2 2 0 0 1 4 0ZM7 8.48H3V21h4V8.48Zm6.32 0H9.34V21h3.94v-6.57c0-3.66 4.77-4 4.77 0V21H22v-7.93c0-6.17-7.06-5.94-8.72-2.91l.04-1.68Z"/></svg></a>
+        </div>
+      </div>
+
+      <div class="footer-col">
+        <h4 class="footer-col-title">Quick Links</h4>
+        <ul class="footer-links">
+          <li><a href="index.html">Home</a></li>
+          <li><a href="about-us.html">About Us</a></li>
+          <li><a href="consultancy.html">Consultancy</a></li>
+          <li><a href="engineering-projects.html">Engineering Projects</a></li>
+          <li><a href="services.html">Services</a></li>
+          <li><a href="contact-us.html">Contact Us</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-col">
+        <h4 class="footer-col-title">Our Services</h4>
+        <ul class="footer-links">
+          <li><a href="services.html">Instrumentation &amp; Control</a></li>
+          <li><a href="services.html">Pipes, Valves &amp; Fittings</a></li>
+          <li><a href="services.html">Industrial Safety</a></li>
+          <li><a href="services.html">Electrical &amp; Heat Tracing</a></li>
+          <li><a href="services.html">Renewable Energy</a></li>
+          <li><a href="services.html">Mechanical Equipment</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-col">
+        <h4 class="footer-col-title">Get in Touch</h4>
+        <div class="footer-contact-list">
+          <div class="footer-citem">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.96.36 1.9.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.91.34 1.85.57 2.81.7A2 2 0 0 1 22 16.92Z"/></svg>
+            <div><a href="tel:+971509640206">+971 50 964 0206</a><a href="tel:+971509493014">+971 50 949 3014</a></div>
+          </div>
+          <div class="footer-citem">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 7-10 6L2 7"/></svg>
+            <div><a href="mailto:info@enertecsc.com">info@enertecsc.com</a></div>
+          </div>
+          <div class="footer-citem">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0Z"/><circle cx="12" cy="10" r="3"/></svg>
+            <div>Sharjah Airport Road (E88),<br>University City, Sharjah 66636, AE</div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+    <div class="footer-bottom">
+      <span>&copy; <span data-year>2025</span> EnerTec. All rights reserved.</span>
+      <span class="footer-bottom-right">Built for a sustainable future.</span>
+    </div>
+  </div>
+</footer>
+
+<!-- Floating scroll button -->
+<button class="scroll-fab" id="scrollFab" aria-label="Scroll down">
+  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+    <line x1="12" y1="5" x2="12" y2="19"/><polyline points="19 12 12 19 5 12"/>
+  </svg>
+</button>
+
+<script src="https://cdn.jsdelivr.net/npm/lenis@1.1.14/dist/lenis.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+<script src="js/index.js"></script>
+<script>
+(function () {
+  if (typeof gsap === 'undefined') return;
+
+  /* Page hero entrance */
+  var heroBg  = document.querySelector('.page-hero-bg img');
+  var heroEyb = document.querySelector('.page-hero-eyebrow');
+  var heroH1  = document.querySelector('.page-hero h1');
+  var heroCrumb = document.querySelector('.breadcrumb');
+
+  if (heroH1) {
+    var raw = heroH1.innerHTML;
+    heroH1.innerHTML = raw.replace(/(<[^>]+>)|(\S+)/g, function (m, tag, word) {
+      if (tag) return tag;
+      return '<span class="ww" style="display:inline-block;overflow:hidden;vertical-align:bottom"><span class="wi" style="display:inline-block">' + word + '</span></span>';
+    });
+    gsap.set([heroEyb, heroCrumb], { opacity: 0, y: 16 });
+    var tl = gsap.timeline({ delay: 0.1 });
+    tl.to(heroEyb, { opacity: 1, y: 0, duration: 0.55, ease: 'power3.out' })
+      .from('.page-hero .wi', { y: '110%', duration: 0.8, stagger: 0.045, ease: 'power4.out' }, 0.1)
+      .to(heroCrumb, { opacity: 1, y: 0, duration: 0.5, ease: 'power3.out' }, 0.45);
+  }
+  if (heroBg) {
+    gsap.to(heroBg, {
+      yPercent: 20, ease: 'none',
+      scrollTrigger: { trigger: '.page-hero', start: 'top top', end: 'bottom top', scrub: 1 }
+    });
+  }
+
+  /* Contact cards hover */
+  document.querySelectorAll('.ccard').forEach(function (c) {
+    c.addEventListener('mouseenter', function () { gsap.to(c, { y: -5, duration: 0.3, ease: 'power2.out' }); });
+    c.addEventListener('mouseleave', function () { gsap.to(c, { y:  0, duration: 0.55, ease: 'elastic.out(1, 0.5)' }); });
+  });
+
+  /* Form field focus glow */
+  document.querySelectorAll('.form-group input, .form-group select, .form-group textarea').forEach(function (el) {
+    el.addEventListener('focus', function () { gsap.to(el, { scale: 1.008, duration: 0.2, ease: 'power2.out' }); });
+    el.addEventListener('blur',  function () { gsap.to(el, { scale: 1,     duration: 0.3, ease: 'power2.out' }); });
+  });
+
+  /* Form submission */
+  var form    = document.getElementById('contactForm');
+  var submit  = document.getElementById('cfSubmit');
+  var toast   = document.getElementById('cfToast');
+
+  function showToast(type, msg) {
+    var icon = type === 'success'
+      ? '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="m20 6-11 11-5-5"/></svg>'
+      : '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><circle cx="12" cy="12" r="10"/><line x1="15" y1="9" x2="9" y2="15"/><line x1="9" y1="9" x2="15" y2="15"/></svg>';
+    toast.className = 'form-toast ' + type;
+    toast.innerHTML = icon + '<span>' + msg + '</span>';
+    gsap.fromTo(toast, { opacity: 0, y: 10 }, { opacity: 1, y: 0, duration: 0.4, ease: 'power3.out' });
+  }
+
+  if (form) {
+    form.addEventListener('submit', function (e) {
+      e.preventDefault();
+      var name    = form.querySelector('#cf-name').value.trim();
+      var email   = form.querySelector('#cf-email').value.trim();
+      var phone   = form.querySelector('#cf-phone').value.trim();
+      var company = form.querySelector('#cf-company').value.trim();
+      var subject = form.querySelector('#cf-subject').value;
+      var message = form.querySelector('#cf-message').value.trim();
+
+      if (!name || !email || !subject || !message) {
+        showToast('error', 'Please fill in all required fields.');
+        return;
+      }
+      var emailRe = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+      if (!emailRe.test(email)) {
+        showToast('error', 'Please enter a valid email address.');
+        return;
+      }
+
+      /* Show loading */
+      submit.classList.add('btn--loading');
+      var origHtml = submit.innerHTML;
+      submit.innerHTML = '<svg style="width:18px;height:18px;animation:spin 0.7s linear infinite" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M21 12a9 9 0 1 1-6.219-8.56"/></svg> Sending…';
+
+      /* Build WhatsApp message */
+      var line = '━━━━━━━━━━━━━━━━━━━━';
+      var wa = '🏢 *EnerTec — New Website Inquiry*\n'
+             + line + '\n\n'
+             + '👤 *Name:*      ' + name    + '\n'
+             + '📧 *Email:*     ' + email   + '\n'
+             + (phone   ? '📱 *Phone:*     ' + phone   + '\n' : '')
+             + (company ? '🏭 *Company:*   ' + company + '\n' : '')
+             + '📋 *Subject:*   ' + subject + '\n\n'
+             + '💬 *Message:*\n'
+             + message + '\n\n'
+             + line + '\n'
+             + '_Sent via EnerTec website contact form_';
+
+      var waUrl = 'https://wa.me/917003634890?text=' + encodeURIComponent(wa);
+
+      setTimeout(function () {
+        submit.classList.remove('btn--loading');
+        submit.innerHTML = origHtml;
+        form.reset();
+        showToast('success', 'Opening WhatsApp to send your message…');
+        window.open(waUrl, '_blank');
+      }, 800);
+    });
+  }
+
+  /* Spin keyframe for loading icon */
+  if (!document.getElementById('spinStyle')) {
+    var s = document.createElement('style');
+    s.id = 'spinStyle';
+    s.textContent = '@keyframes spin { to { transform: rotate(360deg); } }';
+    document.head.appendChild(s);
+  }
+
+  /* ── Scroll-triggered animations ── */
+
+  /* Hero badge entrance */
+  var heroBadge = document.querySelector('.hero-badge');
+  if (heroBadge) {
+    gsap.from(heroBadge, { opacity: 0, x: 30, duration: 0.7, delay: 0.8, ease: 'power3.out' });
+  }
+
+  /* Contact info panel items slide in from left */
+  var cipItems = document.querySelectorAll('.cip-item');
+  if (cipItems.length) {
+    gsap.from(cipItems, {
+      scrollTrigger: { trigger: '.cip-list', start: 'top 82%', once: true },
+      x: -28, opacity: 0, duration: 0.55,
+      stagger: 0.13, ease: 'power3.out'
+    });
+  }
+
+  /* Social icons pop in */
+  var socialIcons = document.querySelectorAll('.cip-social a');
+  if (socialIcons.length) {
+    gsap.from(socialIcons, {
+      scrollTrigger: { trigger: '.cip-social', start: 'top 88%', once: true },
+      scale: 0, opacity: 0, duration: 0.38,
+      stagger: 0.1, ease: 'back.out(1.8)'
+    });
+  }
+
+  /* Form heading underline trigger */
+  var formHeading = document.querySelector('.contact-form-wrap h3');
+  if (formHeading) {
+    gsap.to(formHeading, {
+      scrollTrigger: { trigger: formHeading, start: 'top 85%', once: true,
+        onEnter: function () { formHeading.classList.add('line-in'); }
+      }
+    });
+  }
+
+  /* Form groups staggered fade-up */
+  var formGroups = document.querySelectorAll('.contact-form-wrap .form-group');
+  if (formGroups.length) {
+    gsap.from(formGroups, {
+      scrollTrigger: { trigger: '.contact-form-wrap', start: 'top 78%', once: true },
+      y: 22, opacity: 0, duration: 0.45,
+      stagger: 0.075, ease: 'power3.out', delay: 0.15
+    });
+  }
+
+  /* Submit button spring hover */
+  if (submit) {
+    submit.addEventListener('mouseenter', function () {
+      gsap.to(submit, { scale: 1.05, duration: 0.22, ease: 'power2.out' });
+    });
+    submit.addEventListener('mouseleave', function () {
+      gsap.to(submit, { scale: 1, duration: 0.55, ease: 'elastic.out(1, 0.5)' });
+    });
+  }
+
+  /* Map iframe clip-path reveal */
+  var mapWrap = document.querySelector('.map-frame-wrap');
+  if (mapWrap) {
+    gsap.from(mapWrap, {
+      scrollTrigger: { trigger: mapWrap, start: 'top 82%', once: true },
+      clipPath: 'inset(100% 0% 0% 0% round 16px)',
+      duration: 0.85, ease: 'power3.out', delay: 0.1
+    });
+  }
+
+})();
+</script>
+</body>
+</html>

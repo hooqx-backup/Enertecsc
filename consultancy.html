@@ -1,0 +1,1637 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Consultancy – EnerTec Sustainable Energy Solutions</title>
+<meta name="description" content="EnerTec delivers comprehensive oil & gas consultancy, engineering expertise, safety and risk management, and HR performance solutions across the Gulf region." />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Sora:wght@400;500;600;700;800&family=Manrope:wght@400;500;600;700&display=swap" rel="stylesheet" />
+<link rel="stylesheet" href="css/index.css" />
+<style>
+/* ============================================================
+   Consultancy Page – Premium Styles
+   ============================================================ */
+
+/* ---- Hero ---- */
+.ch {
+  position: relative;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  overflow: hidden;
+  background: var(--primary-900);
+}
+.ch-bg {
+  position: absolute;
+  inset: 0;
+  background:
+    linear-gradient(150deg, rgba(4,14,39,.92) 0%, rgba(13,47,113,.78) 50%, rgba(4,14,39,.88) 100%),
+    url('assets/images/consultancy_banner.png') center center / cover no-repeat;
+}
+.ch-grid {
+  position: absolute;
+  inset: 0;
+  background-image:
+    linear-gradient(rgba(245,166,35,.05) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(245,166,35,.05) 1px, transparent 1px);
+  background-size: 64px 64px;
+  -webkit-mask-image: radial-gradient(ellipse 90% 90% at 50% 50%, #000 20%, transparent 100%);
+  mask-image: radial-gradient(ellipse 90% 90% at 50% 50%, #000 20%, transparent 100%);
+}
+.ch-orb {
+  position: absolute;
+  border-radius: 50%;
+  filter: blur(90px);
+  pointer-events: none;
+}
+.ch-orb-1 {
+  width: 700px; height: 700px;
+  top: -250px; right: -150px;
+  background: radial-gradient(circle, rgba(245,166,35,.18) 0%, transparent 70%);
+}
+.ch-orb-2 {
+  width: 500px; height: 500px;
+  bottom: -150px; left: 5%;
+  background: radial-gradient(circle, rgba(13,47,113,.7) 0%, transparent 70%);
+}
+.ch-inner {
+  position: relative;
+  z-index: 2;
+  padding-block: 160px 100px;
+  max-width: 860px;
+}
+.ch-eyebrow {
+  display: inline-flex;
+  align-items: center;
+  gap: 14px;
+  font-family: var(--font-head);
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: .22em;
+  text-transform: uppercase;
+  color: var(--accent);
+  margin-bottom: 28px;
+  opacity: 0;
+  transform: translateX(-28px);
+}
+.ch-eyebrow::before {
+  content: '';
+  width: 44px; height: 2px;
+  background: var(--accent);
+  border-radius: 2px;
+  flex-shrink: 0;
+}
+.ch-title {
+  font-family: var(--font-head);
+  font-size: clamp(28px, 4.2vw, 54px);
+  font-weight: 800;
+  line-height: 1.04;
+  letter-spacing: -0.03em;
+  color: #fff;
+  margin-bottom: 28px;
+}
+.ch-title .tw {
+  display: inline-block;
+  overflow: hidden;
+  vertical-align: bottom;
+  margin-right: 0.22em;
+}
+.ch-title .tw span {
+  display: inline-block;
+  transform: translateY(110%);
+}
+.ch-title .hl {
+  background: linear-gradient(135deg, var(--accent) 0%, #ffd066 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+.ch-desc {
+  font-size: clamp(16px, 1.4vw, 19px);
+  color: rgba(255,255,255,.68);
+  max-width: 52ch;
+  line-height: 1.75;
+  margin-bottom: 44px;
+  opacity: 0;
+  transform: translateY(22px);
+}
+.ch-actions {
+  display: flex;
+  gap: 16px;
+  flex-wrap: wrap;
+  opacity: 0;
+  transform: translateY(22px);
+}
+.ch-scroll-hint {
+  position: absolute;
+  bottom: 44px;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 2;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+  color: rgba(255,255,255,.35);
+  font-family: var(--font-head);
+  font-size: 11px;
+  letter-spacing: .18em;
+  text-transform: uppercase;
+  opacity: 0;
+}
+.ch-scroll-line {
+  width: 1px;
+  height: 56px;
+  background: linear-gradient(to bottom, rgba(245,166,35,.8) 0%, transparent 100%);
+  animation: chScrollLine 2.2s ease-in-out infinite;
+}
+@keyframes chScrollLine {
+  0%   { transform: scaleY(0); transform-origin: top; }
+  49%  { transform: scaleY(1); transform-origin: top; }
+  50%  { transform: scaleY(1); transform-origin: bottom; }
+  100% { transform: scaleY(0); transform-origin: bottom; }
+}
+
+/* floating badge on hero */
+.ch-badge {
+  position: absolute;
+  right: clamp(24px, 6vw, 80px);
+  top: 50%;
+  transform: translateY(-50%);
+  background: rgba(255,255,255,.06);
+  -webkit-backdrop-filter: blur(16px);
+  backdrop-filter: blur(16px);
+  border: 1px solid rgba(255,255,255,.14);
+  border-radius: 20px;
+  padding: 32px 28px;
+  min-width: 220px;
+  text-align: center;
+  opacity: 0;
+  transform: translateY(-50%) translateX(30px);
+  display: none;
+}
+@media (min-width: 1100px) { .ch-badge { display: block; } }
+.ch-badge-num {
+  font-family: var(--font-head);
+  font-size: 56px;
+  font-weight: 800;
+  color: var(--accent);
+  line-height: 1;
+  margin-bottom: 8px;
+}
+.ch-badge-label {
+  font-family: var(--font-head);
+  font-size: 13px;
+  font-weight: 600;
+  color: rgba(255,255,255,.6);
+  text-transform: uppercase;
+  letter-spacing: .1em;
+}
+
+/* ---- Stats Bar ---- */
+.cs {
+  background: var(--primary);
+  position: relative;
+  overflow: hidden;
+}
+.cs::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(135deg, var(--primary-900) 0%, var(--primary) 60%, #0a2355 100%);
+}
+.cs-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  position: relative;
+}
+.cs-item {
+  padding: 44px 24px;
+  text-align: center;
+  border-right: 1px solid rgba(255,255,255,.09);
+  position: relative;
+}
+.cs-item:last-child { border-right: none; }
+.cs-num {
+  font-family: var(--font-head);
+  font-size: clamp(38px, 4.5vw, 58px);
+  font-weight: 800;
+  color: #fff;
+  line-height: 1;
+  margin-bottom: 8px;
+}
+.cs-num em { color: var(--accent); font-style: normal; }
+.cs-lbl {
+  font-family: var(--font-head);
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: .12em;
+  text-transform: uppercase;
+  color: rgba(255,255,255,.5);
+}
+
+/* ---- Overview ---- */
+.co {
+  padding-block: clamp(80px, 10vw, 130px);
+}
+.co-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: clamp(48px, 7vw, 96px);
+  align-items: center;
+}
+.co-media { position: relative; }
+.co-img {
+  width: 100%;
+  aspect-ratio: 4/5;
+  object-fit: cover;
+  border-radius: 24px;
+  display: block;
+  box-shadow: var(--shadow-lg);
+}
+.co-accent-block {
+  position: absolute;
+  bottom: -24px; right: -24px;
+  width: 180px; height: 180px;
+  background: linear-gradient(135deg, var(--accent) 0%, #e1911a 100%);
+  border-radius: 20px;
+  z-index: -1;
+}
+.co-badge {
+  position: absolute;
+  top: 36px; left: -20px;
+  background: #fff;
+  border-radius: 16px;
+  padding: 18px 22px;
+  box-shadow: 0 20px 50px rgba(7,24,64,.18);
+  display: flex;
+  align-items: center;
+  gap: 14px;
+}
+.co-badge-icon {
+  width: 52px; height: 52px;
+  border-radius: 14px;
+  background: linear-gradient(135deg, var(--primary) 0%, var(--primary-900) 100%);
+  display: flex; align-items: center; justify-content: center;
+  flex-shrink: 0;
+}
+.co-badge-icon svg { width: 26px; height: 26px; stroke: #fff; }
+.co-badge-text strong {
+  display: block;
+  font-family: var(--font-head);
+  font-size: 26px; font-weight: 800;
+  color: var(--ink);
+  line-height: 1;
+}
+.co-badge-text span {
+  font-size: 12px;
+  color: var(--muted);
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: .06em;
+}
+.co-copy .lede { margin-bottom: 32px; }
+.co-features {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 14px;
+  margin-bottom: 36px;
+}
+.co-feat {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 14px 16px;
+  background: var(--bg-2);
+  border-radius: var(--radius-sm);
+  border: 1px solid var(--line);
+}
+.co-feat svg { width: 18px; height: 18px; stroke: var(--primary); flex-shrink: 0; }
+.co-feat span {
+  font-family: var(--font-head);
+  font-size: 13.5px;
+  font-weight: 600;
+  color: var(--ink);
+}
+
+/* ---- Consultancy Areas ---- */
+.ca {
+  padding-block: clamp(80px, 10vw, 130px);
+  background: var(--bg-2);
+  position: relative;
+  overflow: hidden;
+}
+.ca::after {
+  content: '';
+  position: absolute;
+  top: -200px; right: -200px;
+  width: 650px; height: 650px;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(13,47,113,.07) 0%, transparent 70%);
+  pointer-events: none;
+}
+.ca-head {
+  text-align: center;
+  max-width: 620px;
+  margin-inline: auto;
+  margin-bottom: clamp(44px, 6vw, 68px);
+}
+.ca-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 24px;
+}
+.ca-card {
+  background: var(--surface);
+  border-radius: var(--radius-lg);
+  padding: clamp(32px, 4vw, 52px);
+  border: 1px solid var(--line);
+  box-shadow: var(--shadow-sm);
+  position: relative;
+  overflow: hidden;
+  transition: transform .45s var(--ease), box-shadow .45s var(--ease);
+  cursor: default;
+}
+.ca-card::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(135deg, var(--primary) 0%, var(--primary-900) 100%);
+  opacity: 0;
+  transition: opacity .45s var(--ease);
+  border-radius: var(--radius-lg);
+}
+.ca-card:hover {
+  transform: translateY(-10px);
+  box-shadow: var(--shadow-lg);
+}
+.ca-card:hover::before { opacity: 1; }
+.ca-card > * { position: relative; z-index: 1; }
+.ca-card:hover .ca-tag,
+.ca-card:hover .ca-title,
+.ca-card:hover .ca-desc { color: #fff; }
+.ca-card:hover .ca-icon { background: rgba(255,255,255,.12); }
+.ca-card:hover .ca-icon svg { stroke: var(--accent); }
+.ca-card:hover .ca-tag { color: rgba(255,255,255,.6); }
+.ca-card:hover .ca-corner { background: rgba(255,255,255,.06); }
+.ca-tag {
+  font-family: var(--font-head);
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: .18em;
+  text-transform: uppercase;
+  color: var(--accent);
+  margin-bottom: 20px;
+  display: block;
+  transition: color .45s var(--ease);
+}
+.ca-icon {
+  width: 60px; height: 60px;
+  border-radius: 15px;
+  background: var(--bg-2);
+  display: flex; align-items: center; justify-content: center;
+  margin-bottom: 24px;
+  transition: background .45s var(--ease);
+}
+.ca-icon svg { width: 30px; height: 30px; stroke: var(--primary); transition: stroke .45s var(--ease); }
+.ca-title {
+  font-family: var(--font-head);
+  font-size: clamp(18px, 1.8vw, 24px);
+  font-weight: 700;
+  color: var(--ink);
+  margin-bottom: 14px;
+  transition: color .45s var(--ease);
+}
+.ca-desc {
+  font-size: 15px;
+  color: var(--body);
+  line-height: 1.75;
+  transition: color .45s var(--ease);
+}
+.ca-corner {
+  position: absolute;
+  bottom: -30px; right: -30px;
+  width: 120px; height: 120px;
+  border-radius: 50%;
+  background: var(--bg-2);
+  pointer-events: none;
+  transition: background .45s var(--ease);
+}
+
+/* ---- Services ---- */
+.csvc {
+  padding-block: clamp(80px, 10vw, 130px);
+}
+.csvc-inner {
+  display: grid;
+  grid-template-columns: 400px 1fr;
+  gap: clamp(60px, 7vw, 100px);
+  align-items: start;
+}
+.csvc-sticky {
+  position: sticky;
+  top: 110px;
+}
+.csvc-sticky .lede { margin-bottom: 36px; }
+.csvc-list {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+.csvc-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 18px;
+  padding: 22px 22px;
+  border-radius: var(--radius);
+  border: 1px solid var(--line);
+  background: var(--surface);
+  transition: all .35s var(--ease);
+  position: relative;
+  overflow: hidden;
+}
+.csvc-item::after {
+  content: '';
+  position: absolute;
+  left: 0; top: 0; bottom: 0;
+  width: 3px;
+  background: var(--accent);
+  border-radius: 0 3px 3px 0;
+  transform: scaleY(0);
+  transform-origin: top;
+  transition: transform .35s var(--ease);
+}
+.csvc-item:hover {
+  border-color: rgba(13,47,113,.3);
+  box-shadow: var(--shadow-md);
+  transform: translateX(8px);
+}
+.csvc-item:hover::after { transform: scaleY(1); }
+.csvc-n {
+  font-family: var(--font-head);
+  font-size: 22px;
+  font-weight: 800;
+  color: var(--accent);
+  line-height: 1;
+  flex-shrink: 0;
+  min-width: 36px;
+}
+.csvc-text h4 {
+  font-size: 16px;
+  font-weight: 700;
+  color: var(--ink);
+  margin-bottom: 4px;
+}
+.csvc-text p { font-size: 14px; color: var(--body); line-height: 1.65; }
+
+/* right side image collage */
+.csvc-visual {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: auto auto;
+  gap: 16px;
+}
+.csvc-vis-img {
+  border-radius: var(--radius);
+  overflow: hidden;
+  box-shadow: var(--shadow-md);
+}
+.csvc-vis-img img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  transition: transform .6s var(--ease);
+}
+.csvc-vis-img:hover img { transform: scale(1.05); }
+.csvc-vis-img:nth-child(1) { grid-row: 1 / 3; aspect-ratio: 3/4; }
+.csvc-vis-img:nth-child(2) { aspect-ratio: 4/3; }
+.csvc-vis-img:nth-child(3) { aspect-ratio: 4/3; }
+
+/* ---- Process ---- */
+.cp {
+  padding-block: clamp(80px, 10vw, 130px);
+  background: var(--primary-900);
+  position: relative;
+  overflow: hidden;
+}
+.cp::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background-image:
+    linear-gradient(rgba(245,166,35,.04) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(245,166,35,.04) 1px, transparent 1px);
+  background-size: 64px 64px;
+}
+.cp-glow {
+  position: absolute;
+  top: 50%; left: 50%;
+  transform: translate(-50%, -50%);
+  width: 800px; height: 400px;
+  background: radial-gradient(ellipse, rgba(13,47,113,.5) 0%, transparent 70%);
+  pointer-events: none;
+}
+.cp-head {
+  text-align: center;
+  margin-bottom: clamp(48px, 6vw, 80px);
+  position: relative; z-index: 1;
+}
+.cp-head .section-title { color: #fff; }
+.cp-head .lede { color: rgba(255,255,255,.55); margin-inline: auto; }
+.cp-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 0;
+  position: relative;
+  z-index: 1;
+}
+.cp-connector {
+  position: absolute;
+  top: 54px; left: 12%;
+  right: 12%;
+  height: 2px;
+  background: linear-gradient(90deg, transparent 0%, rgba(245,166,35,.25) 20%, rgba(245,166,35,.25) 80%, transparent 100%);
+  z-index: 0;
+}
+.cp-step {
+  padding: 44px 24px 36px;
+  text-align: center;
+  position: relative;
+  z-index: 1;
+}
+.cp-num {
+  width: 60px; height: 60px;
+  border-radius: 50%;
+  background: rgba(245,166,35,.1);
+  border: 2px solid rgba(245,166,35,.25);
+  display: flex; align-items: center; justify-content: center;
+  margin: 0 auto 24px;
+  font-family: var(--font-head);
+  font-size: 22px; font-weight: 800;
+  color: var(--accent);
+  transition: all .4s var(--ease);
+  position: relative;
+}
+.cp-step:hover .cp-num {
+  background: var(--accent);
+  color: var(--primary-900);
+  border-color: var(--accent);
+  transform: scale(1.12);
+  box-shadow: 0 0 30px rgba(245,166,35,.4);
+}
+.cp-step-icon {
+  position: absolute;
+  top: 50%; left: 50%;
+  transform: translate(-50%, -50%);
+}
+.cp-step-icon svg { width: 22px; height: 22px; stroke: currentColor; }
+.cp-title {
+  font-family: var(--font-head);
+  font-size: 17px; font-weight: 700;
+  color: #fff;
+  margin-bottom: 12px;
+}
+.cp-desc {
+  font-size: 14px;
+  color: rgba(255,255,255,.5);
+  line-height: 1.72;
+}
+
+/* ---- Team ---- */
+.cteam {
+  padding-block: clamp(90px, 11vw, 150px);
+  background: #0d1f45;
+  position: relative;
+  overflow: hidden;
+}
+.cteam::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background-image:
+    linear-gradient(rgba(255,255,255,.05) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255,255,255,.05) 1px, transparent 1px);
+  background-size: 56px 56px;
+  pointer-events: none;
+}
+.cteam-glow {
+  position: absolute;
+  top: -200px; left: 50%;
+  transform: translateX(-50%);
+  width: 900px; height: 600px;
+  background: radial-gradient(ellipse, rgba(13,47,113,.7) 0%, transparent 70%);
+  pointer-events: none;
+}
+.cteam-bg-text {
+  position: absolute;
+  bottom: -30px; left: -10px;
+  font-family: var(--font-head);
+  font-size: clamp(130px, 20vw, 300px);
+  font-weight: 800;
+  color: transparent;
+  -webkit-text-stroke: 1px rgba(255,255,255,.06);
+  white-space: nowrap;
+  pointer-events: none;
+  user-select: none;
+  line-height: 1;
+  z-index: 0;
+}
+.cteam-head {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: 32px;
+  margin-bottom: clamp(52px, 6vw, 80px);
+  position: relative; z-index: 1;
+}
+.cteam-head-left { max-width: 580px; }
+.cteam-head .section-title { color: #fff; }
+.cteam-head .lede { color: rgba(255,255,255,.5); max-width: 52ch; }
+.cteam-head-right {
+  flex-shrink: 0;
+  text-align: right;
+  padding-bottom: 4px;
+}
+.cteam-big-num {
+  font-family: var(--font-head);
+  font-size: clamp(64px, 8vw, 110px);
+  font-weight: 800;
+  color: transparent;
+  -webkit-text-stroke: 2px rgba(245,166,35,.35);
+  line-height: 1;
+}
+.cteam-big-lbl {
+  font-family: var(--font-head);
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: .18em;
+  text-transform: uppercase;
+  color: rgba(255,255,255,.3);
+  margin-top: 4px;
+}
+
+/* pyramid: 3 on top, 2 centered below */
+.cteam-grid {
+  display: grid;
+  grid-template-columns: repeat(6, 1fr);
+  gap: 20px;
+  position: relative; z-index: 1;
+}
+.ct-card:nth-child(1) { grid-column: 1 / span 2; }
+.ct-card:nth-child(2) { grid-column: 3 / span 2; }
+.ct-card:nth-child(3) { grid-column: 5 / span 2; }
+.ct-card:nth-child(4) { grid-column: 2 / span 2; }
+.ct-card:nth-child(5) { grid-column: 4 / span 2; }
+
+.ct-card {
+  border-radius: 20px;
+  overflow: hidden;
+  position: relative;
+  cursor: pointer;
+  isolation: isolate;
+  /* top-down stagger done via GSAP */
+}
+/* glowing border on hover */
+.ct-card::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  border-radius: 20px;
+  padding: 1.5px;
+  background: linear-gradient(135deg, rgba(245,166,35,.7) 0%, rgba(13,47,113,.5) 100%);
+  -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+  -webkit-mask-composite: xor;
+  mask-composite: exclude;
+  opacity: 0;
+  transition: opacity .5s var(--ease);
+  pointer-events: none;
+  z-index: 3;
+}
+.ct-card:hover::before { opacity: 1; }
+
+.ct-img-wrap {
+  position: relative;
+  aspect-ratio: 3/4;
+  overflow: hidden;
+  background: #0a1628;
+}
+.ct-img-wrap img {
+  width: 100%; height: 100%;
+  object-fit: cover;
+  object-position: top center;
+  display: block;
+  transition: transform .9s var(--ease);
+  will-change: transform;
+}
+.ct-card:hover .ct-img-wrap img { transform: scale(1.07); }
+
+.ct-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    to top,
+    rgba(7,24,64,.98)  0%,
+    rgba(7,24,64,.80)  28%,
+    rgba(7,24,64,.25)  58%,
+    rgba(7,24,64,.0)   100%
+  );
+  transition: background .5s var(--ease);
+}
+.ct-card:hover .ct-overlay {
+  background: linear-gradient(
+    to top,
+    rgba(7,24,64,1)    0%,
+    rgba(7,24,64,.92)  42%,
+    rgba(7,24,64,.5)   72%,
+    rgba(7,24,64,.1)   100%
+  );
+}
+
+/* top-right numbered circle */
+.ct-num {
+  position: absolute;
+  top: 18px; right: 18px;
+  width: 44px; height: 44px;
+  border-radius: 50%;
+  background: rgba(245,166,35,.12);
+  border: 1.5px solid rgba(245,166,35,.28);
+  display: flex; align-items: center; justify-content: center;
+  font-family: var(--font-head);
+  font-size: 14px; font-weight: 800;
+  color: var(--accent);
+  z-index: 2;
+  transition: all .4s var(--ease);
+  backdrop-filter: blur(4px);
+}
+.ct-card:hover .ct-num {
+  background: var(--accent);
+  color: var(--primary-900);
+  border-color: var(--accent);
+  box-shadow: 0 0 24px rgba(245,166,35,.5);
+}
+
+.ct-body {
+  position: absolute;
+  bottom: 0; left: 0; right: 0;
+  padding: 28px 26px 26px;
+  z-index: 2;
+}
+
+.ct-exp-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  background: rgba(245,166,35,.15);
+  border: 1px solid rgba(245,166,35,.32);
+  border-radius: 999px;
+  padding: 5px 13px;
+  font-family: var(--font-head);
+  font-size: 10px;
+  font-weight: 700;
+  color: var(--accent);
+  letter-spacing: .09em;
+  text-transform: uppercase;
+  margin-bottom: 13px;
+  backdrop-filter: blur(6px);
+}
+
+.ct-name {
+  font-family: var(--font-head);
+  font-size: clamp(17px, 1.5vw, 22px);
+  font-weight: 700;
+  color: #fff;
+  line-height: 1.2;
+  margin-bottom: 6px;
+}
+
+.ct-title-tag {
+  font-family: var(--font-head);
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--accent);
+  line-height: 1.4;
+}
+
+/* separator line that draws in */
+.ct-sep {
+  width: 36px; height: 2px;
+  background: linear-gradient(90deg, rgba(245,166,35,.7), transparent);
+  border-radius: 2px;
+  margin-block: 14px;
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform .5s var(--ease);
+}
+.ct-card:hover .ct-sep { transform: scaleX(1); }
+
+/* description revealed on hover */
+.ct-desc {
+  font-size: 13px;
+  color: rgba(255,255,255,.58);
+  line-height: 1.68;
+  max-height: 0;
+  overflow: hidden;
+  opacity: 0;
+  transition: max-height .5s var(--ease), opacity .45s var(--ease);
+}
+.ct-card:hover .ct-desc {
+  max-height: 100px;
+  opacity: 1;
+}
+
+/* ---- CTA ---- */
+.ccta {
+  padding-block: clamp(80px, 10vw, 130px);
+  background: linear-gradient(135deg, #040e27 0%, var(--primary) 50%, #040e27 100%);
+  position: relative;
+  overflow: hidden;
+  text-align: center;
+}
+.ccta::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background-image:
+    linear-gradient(rgba(255,255,255,.025) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255,255,255,.025) 1px, transparent 1px);
+  background-size: 52px 52px;
+}
+.ccta-orb {
+  position: absolute;
+  border-radius: 50%;
+  filter: blur(80px);
+  pointer-events: none;
+}
+.ccta-orb-1 {
+  width: 500px; height: 500px;
+  top: -200px; left: -100px;
+  background: radial-gradient(circle, rgba(13,47,113,.6) 0%, transparent 70%);
+}
+.ccta-orb-2 {
+  width: 400px; height: 400px;
+  bottom: -150px; right: -80px;
+  background: radial-gradient(circle, rgba(245,166,35,.15) 0%, transparent 70%);
+}
+.ccta-inner {
+  position: relative; z-index: 1;
+  max-width: 680px;
+  margin-inline: auto;
+}
+.ccta-inner .eyebrow { color: var(--accent); justify-content: center; }
+.ccta-inner .eyebrow::before,
+.ccta-inner .eyebrow::after { background: rgba(245,166,35,.5); }
+.ccta-inner h2 {
+  font-family: var(--font-head);
+  font-size: clamp(32px, 4.5vw, 58px);
+  font-weight: 800;
+  color: #fff;
+  letter-spacing: -0.025em;
+  margin-block: 22px 18px;
+  line-height: 1.1;
+}
+.ccta-inner p {
+  font-size: clamp(15px, 1.2vw, 18px);
+  color: rgba(255,255,255,.65);
+  max-width: 50ch;
+  margin-inline: auto;
+  line-height: 1.75;
+  margin-bottom: 44px;
+}
+.ccta-btns {
+  display: flex;
+  justify-content: center;
+  gap: 16px;
+  flex-wrap: wrap;
+}
+.btn--ghost {
+  background: transparent;
+  color: #fff;
+  border: 2px solid rgba(255,255,255,.25);
+}
+.btn--ghost:hover {
+  background: rgba(255,255,255,.08);
+  border-color: rgba(255,255,255,.55);
+  transform: translateY(-2px);
+}
+
+/* ---- Reveal ---- */
+.rev {
+  opacity: 0;
+  transform: translateY(44px);
+  transition: opacity .8s var(--ease), transform .8s var(--ease);
+}
+.rev.in { opacity: 1; transform: none; }
+.rev.d1 { transition-delay: .12s; }
+.rev.d2 { transition-delay: .24s; }
+.rev.d3 { transition-delay: .36s; }
+.rev.d4 { transition-delay: .48s; }
+
+/* ---- Responsive ---- */
+@media (max-width: 1024px) {
+  /* team: collapse pyramid to 2-col */
+  .cteam-grid { grid-template-columns: repeat(2, 1fr); }
+  .ct-card:nth-child(1),
+  .ct-card:nth-child(2),
+  .ct-card:nth-child(3),
+  .ct-card:nth-child(4),
+  .ct-card:nth-child(5) { grid-column: span 1; }
+  .cteam-head { flex-direction: column; align-items: flex-start; }
+  .cteam-head-right { display: none; }
+  .cp-grid { grid-template-columns: repeat(2, 1fr); gap: 24px; }
+  .cp-connector { display: none; }
+  .csvc-inner { grid-template-columns: 1fr; }
+  .csvc-sticky { position: static; }
+  .csvc-visual { display: none; }
+  .co-grid { grid-template-columns: 1fr; }
+  .co-media { max-width: 480px; margin-inline: auto; }
+  .cs-grid { grid-template-columns: repeat(2, 1fr); }
+  .cs-item { border-right: none; border-bottom: 1px solid rgba(255,255,255,.09); }
+  .cs-item:nth-child(odd) { border-right: 1px solid rgba(255,255,255,.09); }
+  .cs-item:last-child { border-bottom: none; }
+}
+@media (max-width: 768px) {
+  .cteam-grid { grid-template-columns: repeat(2, 1fr); gap: 14px; }
+  .ca-grid { grid-template-columns: 1fr; }
+  .ch-badge { display: none; }
+}
+@media (max-width: 480px) {
+  .cteam-grid { grid-template-columns: 1fr; max-width: 340px; margin-inline: auto; gap: 16px; }
+  .cs-grid { grid-template-columns: 1fr; }
+  .cs-item { border-right: none; }
+  .cp-grid { grid-template-columns: 1fr 1fr; }
+}
+</style>
+</head>
+<body>
+
+<!-- ===================== TOP BAR ===================== -->
+<div class="topbar">
+  <div class="wrap">
+    <div class="topbar-contact">
+      <span>
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.96.36 1.9.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.91.34 1.85.57 2.81.7A2 2 0 0 1 22 16.92Z"/></svg>
+        <a href="tel:+971509640206">+971 50 964 0206</a>
+      </span>
+      <span class="tb-email">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 7-10 6L2 7"/></svg>
+        <a href="mailto:info@enertecsc.com">info@enertecsc.com</a>
+      </span>
+    </div>
+    <div class="topbar-social">
+      <a href="#" aria-label="Facebook"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M22 12a10 10 0 1 0-11.56 9.88v-6.99H7.9V12h2.54V9.8c0-2.5 1.49-3.89 3.78-3.89 1.09 0 2.24.2 2.24.2v2.46h-1.26c-1.24 0-1.63.77-1.63 1.56V12h2.78l-.44 2.89h-2.34v6.99A10 10 0 0 0 22 12Z"/></svg></a>
+      <a href="#" aria-label="X"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M18.9 2H22l-7.5 8.6L23 22h-6.9l-5.4-7-6.2 7H1.4l8-9.2L1 2h7l4.9 6.5L18.9 2Zm-1.2 18h1.9L7.1 4H5.1l12.6 16Z"/></svg></a>
+      <a href="#" aria-label="LinkedIn"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M6.94 5a2 2 0 1 1-4 0 2 2 0 0 1 4 0ZM7 8.48H3V21h4V8.48Zm6.32 0H9.34V21h3.94v-6.57c0-3.66 4.77-4 4.77 0V21H22v-7.93c0-6.17-7.06-5.94-8.72-2.91l.04-1.68Z"/></svg></a>
+    </div>
+  </div>
+</div>
+
+<!-- ===================== HEADER ===================== -->
+<header class="site-header">
+  <div class="wrap">
+    <nav class="nav">
+      <a class="brand" href="index.html" aria-label="EnerTec home">
+        <img src="assets/images/enerteclogo.png" alt="EnerTec" class="brand-logo">
+      </a>
+      <ul class="nav-menu">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="about-us.html">About</a></li>
+        <li class="has-dd">
+          <a href="#">Training
+            <svg class="caret" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="m6 9 6 6 6-6"/></svg>
+          </a>
+          <ul class="dd">
+            <li class="has-dd">
+              <a href="#">Oil &amp; Gas Courses
+                <svg class="sub-caret" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="m9 18 6-6-6-6"/></svg>
+              </a>
+              <ul class="dd dd--sub">
+                <li><a href="up-stream.html">Upstream Courses</a></li>
+                <li><a href="down-stream.html">Mid &amp; Downstream</a></li>
+              </ul>
+            </li>
+            <li><a href="engineering-course.html">Engineering Courses</a></li>
+            <li><a href="management-course.html">Management Courses</a></li>
+            <li><a href="hse-course.html">HSE Courses</a></li>
+          </ul>
+        </li>
+        <li><a href="consultancy.html" class="active">Consultancy</a></li>
+        <li><a href="engineering-projects.html">Projects</a></li>
+        <li><a href="services.html">Services</a></li>
+      </ul>
+      <div class="nav-cta">
+        <a href="contact-us.html" class="btn btn--primary">Get in Touch
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+        </a>
+        <button class="nav-toggle" aria-label="Open menu"><span></span></button>
+      </div>
+    </nav>
+  </div>
+</header>
+
+<!-- ===================== MOBILE PANEL ===================== -->
+<div class="mobile-overlay"></div>
+<aside class="mobile-panel" aria-label="Mobile navigation">
+  <div class="mp-head">
+    <img src="assets/images/enerteclogo.png" alt="EnerTec" class="brand-logo">
+    <button class="mp-close" aria-label="Close menu">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 6 6 18M6 6l12 12"/></svg>
+    </button>
+  </div>
+  <ul class="mobile-nav">
+    <li><a href="index.html">Home</a></li>
+    <li><a href="about-us.html">About Us</a></li>
+    <li>
+      <button class="m-sub-toggle">Training
+        <svg class="caret" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="m6 9 6 6 6-6"/></svg>
+      </button>
+      <ul class="m-sub">
+        <li><a href="up-stream.html">Upstream Courses</a></li>
+        <li><a href="down-stream.html">Mid &amp; Downstream</a></li>
+        <li><a href="engineering-course.html">Engineering Courses</a></li>
+        <li><a href="management-course.html">Management Courses</a></li>
+        <li><a href="hse-course.html">HSE Courses</a></li>
+      </ul>
+    </li>
+    <li><a href="consultancy.html">Consultancy</a></li>
+    <li><a href="engineering-projects.html">Engineering Projects</a></li>
+    <li><a href="services.html">Services</a></li>
+  </ul>
+  <a href="contact-us.html" class="btn btn--primary">Get in Touch</a>
+</aside>
+
+<!-- ===================== HERO ===================== -->
+<section class="ch" id="top">
+  <div class="ch-bg"></div>
+  <div class="ch-grid"></div>
+  <div class="ch-orb ch-orb-1"></div>
+  <div class="ch-orb ch-orb-2"></div>
+
+  <div class="wrap" style="position:relative;z-index:2;width:100%;">
+    <div class="ch-inner">
+      <div class="ch-eyebrow" id="chEyebrow">Consultancy Services</div>
+      <h1 class="ch-title" id="chTitle">
+        <div class="tw"><span>Comprehensive</span></div>
+        <div class="tw"><span class="hl">Oil &amp; Gas</span></div>
+        <div class="tw"><span>Consultancy</span></div>
+        <div class="tw"><span>Excellence</span></div>
+      </h1>
+      <p class="ch-desc" id="chDesc">Strategic and operational consultancy across exploration, production, refining, and distribution — delivered by industry veterans with decades of Gulf region expertise.</p>
+      <div class="ch-actions" id="chActions">
+        <a href="contact-us.html" class="btn btn--primary">Start a Consultation
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+        </a>
+        <a href="#team" class="btn btn--light">Meet Our Experts</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- floating glass badge (desktop only) -->
+  <div class="ch-badge" id="chBadge">
+    <div class="ch-badge-num">24<span style="color:var(--accent);font-size:.55em">+</span></div>
+    <div class="ch-badge-label">Years of<br>Industry Experience</div>
+  </div>
+
+  <div class="ch-scroll-hint" id="chScroll">
+    <div class="ch-scroll-line"></div>
+    <span>Scroll</span>
+  </div>
+</section>
+
+<!-- ===================== STATS BAR ===================== -->
+<section class="cs">
+  <div class="wrap">
+    <div class="cs-grid">
+      <div class="cs-item rev">
+        <div class="cs-num"><span data-count="24">0</span><em>+</em></div>
+        <div class="cs-lbl">Years Experience</div>
+      </div>
+      <div class="cs-item rev d1">
+        <div class="cs-num"><span data-count="5">0</span></div>
+        <div class="cs-lbl">Expert Consultants</div>
+      </div>
+      <div class="cs-item rev d2">
+        <div class="cs-num"><span data-count="4">0</span></div>
+        <div class="cs-lbl">Core Sectors</div>
+      </div>
+      <div class="cs-item rev d3">
+        <div class="cs-num"><span data-count="100">0</span><em>+</em></div>
+        <div class="cs-lbl">Projects Delivered</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== CONSULTANCY AREAS ===================== -->
+<section class="ca" id="areas">
+  <div class="wrap">
+    <div class="ca-head">
+      <span class="eyebrow eyebrow--center rev">Core Areas</span>
+      <h2 class="section-title section-title--center rev">Our Consultancy Disciplines</h2>
+      <p class="lede lede--center rev">Four pillars of expertise — each designed to deliver measurable impact across your energy operations.</p>
+    </div>
+
+    <div class="ca-grid">
+
+      <div class="ca-card rev">
+        <span class="ca-tag">01 — Oil &amp; Gas</span>
+        <div class="ca-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2a5 5 0 0 0-5 5c0 5 5 13 5 13s5-8 5-13a5 5 0 0 0-5-5Z"/><circle cx="12" cy="7" r="2"/></svg>
+        </div>
+        <h3 class="ca-title">Comprehensive Oil and Gas Consultancy</h3>
+        <p class="ca-desc">We offer strategic and operational consultancy across all Oil and Gas sectors, including exploration, production, refining, and distribution, focusing on aligning business strategies with operational goals to enhance efficiency.</p>
+        <div class="ca-corner"></div>
+      </div>
+
+      <div class="ca-card rev d1">
+        <span class="ca-tag">02 — Engineering</span>
+        <div class="ca-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="3" width="20" height="14" rx="2"/><path d="M8 21h8M12 17v4"/><path d="M7 8h10M7 12h7"/></svg>
+        </div>
+        <h3 class="ca-title">Engineering Projects Consultancy</h3>
+        <p class="ca-desc">We provide expert engineering consultancy services for various projects, including renewable energy. Our focus is on design, project management, and technical support to optimize operations and ensure project success across multiple industries.</p>
+        <div class="ca-corner"></div>
+      </div>
+
+      <div class="ca-card rev d2">
+        <span class="ca-tag">03 — Safety &amp; Risk</span>
+        <div class="ca-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2 4 5v6c0 5 3.4 8.6 8 10 4.6-1.4 8-5 8-10V5l-8-3Z"/><path d="M9 12h6M12 9v6"/></svg>
+        </div>
+        <h3 class="ca-title">Safety, Compliance, and Risk Management Consultancy</h3>
+        <p class="ca-desc">Our team evaluates safety practices and regulatory compliance while assisting organizations in managing change. We develop strategies to assess and mitigate operational and safety risks, ensuring adherence to industry standards.</p>
+        <div class="ca-corner"></div>
+      </div>
+
+      <div class="ca-card rev d3">
+        <span class="ca-tag">04 — Human Resources</span>
+        <div class="ca-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+        </div>
+        <h3 class="ca-title">Human Resources and Performance Improvement Consultancy</h3>
+        <p class="ca-desc">We specialize in HR practices and talent management, conducting training needs analyses and developing customized programs to enhance skills and overall organizational performance.</p>
+        <div class="ca-corner"></div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ===================== SERVICES OFFERED ===================== -->
+<section class="csvc section" id="services">
+  <div class="wrap">
+    <div class="csvc-inner">
+
+      <div class="csvc-sticky">
+        <span class="eyebrow rev">What We Offer</span>
+        <h2 class="section-title rev">Service Offerings That Drive Results</h2>
+        <p class="lede rev">From technical training to energy project engineering, our service portfolio covers the full spectrum of what the modern energy sector demands.</p>
+        <div class="rev">
+          <a href="contact-us.html" class="btn btn--primary">Request a Service
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+          </a>
+        </div>
+      </div>
+
+      <div>
+        <div class="csvc-list">
+          <div class="csvc-item rev">
+            <div class="csvc-n">01</div>
+            <div class="csvc-text">
+              <h4>Technical &amp; Professional Training</h4>
+              <p>Intensive technical training programs for upstream and downstream professionals, designed to build practical competency aligned with real-world field operations.</p>
+            </div>
+          </div>
+          <div class="csvc-item rev d1">
+            <div class="csvc-n">02</div>
+            <div class="csvc-text">
+              <h4>Professional &amp; Management Development Training</h4>
+              <p>Leadership and management programs that equip energy sector professionals with strategic thinking, decision-making, and organizational leadership capabilities.</p>
+            </div>
+          </div>
+          <div class="csvc-item rev d2">
+            <div class="csvc-n">03</div>
+            <div class="csvc-text">
+              <h4>Drilling Engineering, Reservoir &amp; Production Consultancy</h4>
+              <p>Specialized consultancy covering well design, reservoir characterization, production optimization, and drilling programs for oil and gas field development.</p>
+            </div>
+          </div>
+          <div class="csvc-item rev d3">
+            <div class="csvc-n">04</div>
+            <div class="csvc-text">
+              <h4>Solar Energy Systems &amp; Components Trading</h4>
+              <p>Supply of premium solar energy systems, panels, inverters, and balance-of-system components for utility, commercial, industrial, and off-grid applications across the Gulf.</p>
+            </div>
+          </div>
+          <div class="csvc-item rev d4">
+            <div class="csvc-n">05</div>
+            <div class="csvc-text">
+              <h4>Energy Projects Engineering Consultancy</h4>
+              <p>End-to-end engineering consultancy for energy infrastructure projects — covering feasibility studies, FEED, detailed engineering, and project management.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ===================== TEAM ===================== -->
+<section class="cteam" id="team">
+  <div class="cteam-glow"></div>
+  <div class="cteam-bg-text" aria-hidden="true">TEAM</div>
+
+  <div class="wrap">
+    <div class="cteam-head">
+      <div class="cteam-head-left">
+        <span class="eyebrow rev" style="color:var(--accent);">Our People</span>
+        <h2 class="section-title rev">Meet the Expert Team</h2>
+        <p class="lede rev">Decades of collective experience across oil &amp; gas, engineering, HSE, power, and production chemistry — your strategic partners in the field.</p>
+      </div>
+      <div class="cteam-head-right rev">
+        <div class="cteam-big-num">05</div>
+        <div class="cteam-big-lbl">Senior Experts</div>
+      </div>
+    </div>
+
+    <div class="cteam-grid">
+
+      <!-- Card 1 -->
+      <div class="ct-card">
+        <div class="ct-img-wrap">
+          <img src="assets/images/teamimages/ChatGPT Image Jun 18, 2026, 11_20_30 AM.png" alt="Dr. Abdalmajed Mansour" loading="lazy">
+          <div class="ct-overlay"></div>
+        </div>
+        <div class="ct-num">01</div>
+        <div class="ct-body">
+          <div class="ct-exp-badge">24 Yrs Experience</div>
+          <div class="ct-name">Dr. Abdalmajed Mansour</div>
+          <div class="ct-title-tag">Senior Oil &amp; Gas Consultant</div>
+          <div class="ct-sep"></div>
+          <div class="ct-desc">Expert in upstream strategy, reservoir management &amp; production optimization across the Gulf region.</div>
+        </div>
+      </div>
+
+      <!-- Card 2 -->
+      <div class="ct-card">
+        <div class="ct-img-wrap">
+          <img src="assets/images/teamimages/ChatGPT Image Jun 18, 2026, 11_21_24 AM.png" alt="Khalid Sayed Ali" loading="lazy">
+          <div class="ct-overlay"></div>
+        </div>
+        <div class="ct-num">02</div>
+        <div class="ct-body">
+          <div class="ct-exp-badge">23+ Yrs Experience</div>
+          <div class="ct-name">Khalid Sayed Ali</div>
+          <div class="ct-title-tag">Mechanical Engineering Lead</div>
+          <div class="ct-sep"></div>
+          <div class="ct-desc">Engineering management specialist in rotating equipment, asset lifecycle &amp; maintenance strategy.</div>
+        </div>
+      </div>
+
+      <!-- Card 3 -->
+      <div class="ct-card">
+        <div class="ct-img-wrap">
+          <img src="assets/images/teamimages/ChatGPT Image Jun 18, 2026, 11_22_30 AM.png" alt="Mohammed Almahe" loading="lazy">
+          <div class="ct-overlay"></div>
+        </div>
+        <div class="ct-num">03</div>
+        <div class="ct-body">
+          <div class="ct-exp-badge">18+ Yrs Experience</div>
+          <div class="ct-name">Mohammed Almahe</div>
+          <div class="ct-title-tag">HSE Professional &amp; Certified Auditor</div>
+          <div class="ct-sep"></div>
+          <div class="ct-desc">Safety frameworks, compliance systems, risk management &amp; international audit leadership.</div>
+        </div>
+      </div>
+
+      <!-- Card 4 -->
+      <div class="ct-card">
+        <div class="ct-img-wrap">
+          <img src="assets/images/teamimages/ChatGPT Image Jun 18, 2026, 11_24_41 AM.png" alt="Nasreldeen Sulaiman Ahmed" loading="lazy">
+          <div class="ct-overlay"></div>
+        </div>
+        <div class="ct-num">04</div>
+        <div class="ct-body">
+          <div class="ct-exp-badge">17 Yrs Experience</div>
+          <div class="ct-name">Nasreldeen Sulaiman Ahmed</div>
+          <div class="ct-title-tag">Mechanical Engineer (Power Systems)</div>
+          <div class="ct-sep"></div>
+          <div class="ct-desc">Oil &amp; energy sector power systems, mechanical project delivery &amp; plant commissioning.</div>
+        </div>
+      </div>
+
+      <!-- Card 5 -->
+      <div class="ct-card">
+        <div class="ct-img-wrap">
+          <img src="assets/images/teamimages/ChatGPT Image Jun 18, 2026, 11_26_02 AM.png" alt="Abdullah Hussein" loading="lazy">
+          <div class="ct-overlay"></div>
+        </div>
+        <div class="ct-num">05</div>
+        <div class="ct-body">
+          <div class="ct-exp-badge">16+ Yrs Experience</div>
+          <div class="ct-name">Abdullah Hussein</div>
+          <div class="ct-title-tag">Production Chemist</div>
+          <div class="ct-sep"></div>
+          <div class="ct-desc">Oilfield chemistry, production enhancement programs &amp; chemical treatment optimization.</div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ===================== CTA ===================== -->
+<section class="ccta">
+  <div class="ccta-orb ccta-orb-1"></div>
+  <div class="ccta-orb ccta-orb-2"></div>
+  <div class="wrap">
+    <div class="ccta-inner">
+      <span class="eyebrow eyebrow--center rev">Ready to Start?</span>
+      <h2 class="rev">Let's Build Your Energy Strategy Together</h2>
+      <p class="rev">Whether you need operational consultancy, a safety framework, talent development, or engineering expertise — our team is ready to deliver. Reach out today.</p>
+      <div class="ccta-btns rev">
+        <a href="contact-us.html" class="btn btn--primary">Start a Consultation
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+        </a>
+        <a href="#team" class="btn btn--ghost">Meet the Team</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== FOOTER ===================== -->
+<footer class="footer">
+  <div class="footer-top-bar"></div>
+  <div class="wrap">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <img src="assets/images/enerteclogo.png" alt="EnerTec" class="footer-logo">
+        <p class="footer-tagline">Specialized in Supply Chain, Engineering &amp; Renewable Energy Solutions</p>
+        <div class="footer-social">
+          <a href="#" aria-label="Facebook"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M22 12a10 10 0 1 0-11.56 9.88v-6.99H7.9V12h2.54V9.8c0-2.5 1.49-3.89 3.78-3.89 1.09 0 2.24.2 2.24.2v2.46h-1.26c-1.24 0-1.63.77-1.63 1.56V12h2.78l-.44 2.89h-2.34v6.99A10 10 0 0 0 22 12Z"/></svg></a>
+          <a href="#" aria-label="X"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M18.9 2H22l-7.5 8.6L23 22h-6.9l-5.4-7-6.2 7H1.4l8-9.2L1 2h7l4.9 6.5L18.9 2Zm-1.2 18h1.9L7.1 4H5.1l12.6 16Z"/></svg></a>
+          <a href="#" aria-label="LinkedIn"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M6.94 5a2 2 0 1 1-4 0 2 2 0 0 1 4 0ZM7 8.48H3V21h4V8.48Zm6.32 0H9.34V21h3.94v-6.57c0-3.66 4.77-4 4.77 0V21H22v-7.93c0-6.17-7.06-5.94-8.72-2.91l.04-1.68Z"/></svg></a>
+        </div>
+      </div>
+      <div class="footer-col">
+        <h4 class="footer-col-title">Quick Links</h4>
+        <ul class="footer-links">
+          <li><a href="index.html">Home</a></li>
+          <li><a href="about-us.html">About Us</a></li>
+          <li><a href="consultancy.html">Consultancy</a></li>
+          <li><a href="engineering-projects.html">Engineering Projects</a></li>
+          <li><a href="services.html">Services</a></li>
+          <li><a href="contact-us.html">Contact Us</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4 class="footer-col-title">Consultancy</h4>
+        <ul class="footer-links">
+          <li><a href="consultancy.html">Oil &amp; Gas Consultancy</a></li>
+          <li><a href="consultancy.html">Engineering Projects</a></li>
+          <li><a href="consultancy.html">Safety &amp; Risk</a></li>
+          <li><a href="consultancy.html">HR &amp; Performance</a></li>
+          <li><a href="consultancy.html">Solar Energy</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4 class="footer-col-title">Get in Touch</h4>
+        <div class="footer-contact-list">
+          <div class="footer-citem">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.96.36 1.9.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.91.34 1.85.57 2.81.7A2 2 0 0 1 22 16.92Z"/></svg>
+            <div><a href="tel:+971509640206">+971 50 964 0206</a><a href="tel:+971509493014">+971 50 949 3014</a></div>
+          </div>
+          <div class="footer-citem">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 7-10 6L2 7"/></svg>
+            <div><a href="mailto:info@enertecsc.com">info@enertecsc.com</a></div>
+          </div>
+          <div class="footer-citem">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0Z"/><circle cx="12" cy="10" r="3"/></svg>
+            <div>Sharjah Airport Road (E88),<br>University City, Sharjah 66636, AE</div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>© <span data-year>2025</span> EnerTec. All rights reserved.</span>
+      <span class="footer-bottom-right">
+        <a href="privacy-policy.html" style="color:inherit;margin-right:16px;">Privacy Policy</a>
+        <a href="terms-of-use.html" style="color:inherit;">Terms of Use</a>
+      </span>
+    </div>
+  </div>
+</footer>
+
+<button class="scroll-fab" id="scrollFab" aria-label="Scroll down">
+  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+    <line x1="12" y1="5" x2="12" y2="19"/><polyline points="19 12 12 19 5 12"/>
+  </svg>
+</button>
+
+<script src="https://cdn.jsdelivr.net/npm/lenis@1.1.14/dist/lenis.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+<script src="js/index.js"></script>
+<script>
+/* ============================================================
+   Consultancy Page — Animations
+   ============================================================ */
+(function () {
+  'use strict';
+
+  /* --- Lenis + GSAP ticker --- */
+  var lenis;
+  if (window.Lenis) {
+    lenis = new Lenis({ duration: 1.2, easing: function (t) { return Math.min(1, 1.001 - Math.pow(2, -10 * t)); }, smoothWheel: true });
+    if (window.gsap) {
+      gsap.ticker.add(function (time) { lenis.raf(time * 1000); });
+      gsap.ticker.lagSmoothing(0);
+    } else {
+      (function lenisRaf(t) { lenis.raf(t); requestAnimationFrame(lenisRaf); })(0);
+    }
+  }
+
+  /* --- Hero Entrance --- */
+  if (window.gsap) {
+    var tl = gsap.timeline({ delay: 0.1 });
+
+    /* eyebrow */
+    tl.to('#chEyebrow', { opacity: 1, x: 0, duration: 0.9, ease: 'power3.out' });
+
+    /* title words stagger */
+    tl.to('.ch-title .tw span', {
+      y: '0%',
+      duration: 1,
+      stagger: 0.12,
+      ease: 'power4.out'
+    }, '-=0.5');
+
+    /* desc + actions */
+    tl.to('#chDesc', { opacity: 1, y: 0, duration: 0.8, ease: 'power3.out' }, '-=0.4');
+    tl.to('#chActions', { opacity: 1, y: 0, duration: 0.8, ease: 'power3.out' }, '-=0.5');
+    tl.to('#chScroll', { opacity: 1, duration: 0.8, ease: 'power3.out' }, '-=0.3');
+
+    /* floating badge */
+    tl.to('#chBadge', { opacity: 1, x: 0, duration: 1, ease: 'power3.out' }, '-=0.9');
+
+    /* --- Scroll-triggered reveals --- */
+    gsap.registerPlugin(ScrollTrigger);
+
+    document.querySelectorAll('.rev').forEach(function (el) {
+      ScrollTrigger.create({
+        trigger: el,
+        start: 'top 88%',
+        onEnter: function () { el.classList.add('in'); }
+      });
+    });
+
+    /* --- Stats counter --- */
+    document.querySelectorAll('[data-count]').forEach(function (el) {
+      var target = parseInt(el.getAttribute('data-count'), 10);
+      ScrollTrigger.create({
+        trigger: el,
+        start: 'top 85%',
+        once: true,
+        onEnter: function () {
+          gsap.fromTo(el, { innerText: 0 }, {
+            innerText: target,
+            duration: 2,
+            ease: 'power2.out',
+            snap: { innerText: 1 },
+            onUpdate: function () { el.innerText = Math.round(parseFloat(el.innerText)); }
+          });
+        }
+      });
+    });
+
+    /* --- Team cards stagger on viewport enter --- */
+    var teamCards = document.querySelectorAll('.ct-card');
+    if (teamCards.length) {
+      gsap.set(teamCards, { y: 80, opacity: 0, scale: 0.96 });
+      ScrollTrigger.create({
+        trigger: '.cteam-grid',
+        start: 'top 82%',
+        onEnter: function () {
+          gsap.to(teamCards, {
+            y: 0,
+            opacity: 1,
+            scale: 1,
+            duration: 1,
+            stagger: 0.13,
+            ease: 'power3.out'
+          });
+        }
+      });
+    }
+
+    /* --- Process steps stagger --- */
+    var steps = document.querySelectorAll('.cp-step');
+    if (steps.length) {
+      gsap.set(steps, { y: 50, opacity: 0 });
+      ScrollTrigger.create({
+        trigger: '.cp-grid',
+        start: 'top 80%',
+        onEnter: function () {
+          gsap.to(steps, {
+            y: 0,
+            opacity: 1,
+            duration: 0.85,
+            stagger: 0.15,
+            ease: 'power3.out'
+          });
+        }
+      });
+    }
+
+    /* --- Consultancy area cards stagger --- */
+    var areaCards = document.querySelectorAll('.ca-card');
+    if (areaCards.length) {
+      gsap.set(areaCards, { y: 50, opacity: 0 });
+      ScrollTrigger.create({
+        trigger: '.ca-grid',
+        start: 'top 80%',
+        onEnter: function () {
+          gsap.to(areaCards, {
+            y: 0,
+            opacity: 1,
+            duration: 0.85,
+            stagger: 0.14,
+            ease: 'power3.out'
+          });
+        }
+      });
+    }
+
+    /* --- Services items stagger --- */
+    var svcItems = document.querySelectorAll('.csvc-item');
+    if (svcItems.length) {
+      gsap.set(svcItems, { x: -30, opacity: 0 });
+      ScrollTrigger.create({
+        trigger: '.csvc-list',
+        start: 'top 80%',
+        onEnter: function () {
+          gsap.to(svcItems, {
+            x: 0,
+            opacity: 1,
+            duration: 0.75,
+            stagger: 0.1,
+            ease: 'power3.out'
+          });
+        }
+      });
+    }
+
+    /* --- Parallax orbs --- */
+    gsap.to('.ch-orb-1', {
+      y: -80,
+      scrollTrigger: { trigger: '.ch', start: 'top top', end: 'bottom top', scrub: 1.5 }
+    });
+    gsap.to('.ch-orb-2', {
+      y: -40,
+      scrollTrigger: { trigger: '.ch', start: 'top top', end: 'bottom top', scrub: 2 }
+    });
+
+  } else {
+    /* Fallback: IntersectionObserver reveals */
+    var io = new IntersectionObserver(function (entries) {
+      entries.forEach(function (e) { if (e.isIntersecting) { e.target.classList.add('in'); io.unobserve(e.target); } });
+    }, { threshold: 0.12 });
+    document.querySelectorAll('.rev').forEach(function (el) { io.observe(el); });
+
+    /* Eyebrow / title / desc / actions fallback */
+    var eyebrow = document.getElementById('chEyebrow');
+    var desc    = document.getElementById('chDesc');
+    var actions = document.getElementById('chActions');
+    var scroll  = document.getElementById('chScroll');
+    var words   = document.querySelectorAll('.ch-title .tw span');
+    if (eyebrow) { eyebrow.style.opacity = '1'; eyebrow.style.transform = 'none'; }
+    words.forEach(function (w) { w.style.transform = 'translateY(0)'; });
+    if (desc)    { desc.style.opacity = '1';    desc.style.transform = 'none'; }
+    if (actions) { actions.style.opacity = '1'; actions.style.transform = 'none'; }
+    if (scroll)  { scroll.style.opacity = '1'; }
+
+    /* Counter fallback */
+    document.querySelectorAll('[data-count]').forEach(function (el) {
+      el.innerText = el.getAttribute('data-count');
+    });
+  }
+
+  /* --- Sticky header --- */
+  var header = document.querySelector('.site-header');
+  if (header) {
+    window.addEventListener('scroll', function () {
+      header.classList.toggle('scrolled', window.scrollY > 12);
+    }, { passive: true });
+  }
+
+  /* --- Footer year --- */
+  var yr = document.querySelector('[data-year]');
+  if (yr) yr.textContent = new Date().getFullYear();
+
+})();
+</script>
+</body>
+</html>

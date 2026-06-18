@@ -1,0 +1,1845 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>
+      Services – EnerTec Industrial Supply &amp; Engineering Solutions
+    </title>
+    <meta
+      name="description"
+      content="EnerTec delivers comprehensive industrial supply and engineering solutions across instrumentation, piping, safety, electrical, renewables, mechanical equipment, and oilfield chemicals."
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Sora:wght@400;500;600;700;800&family=Manrope:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="css/index.css" />
+    <style>
+      /* ============================================================
+   Services Page – Premium Styles
+   ============================================================ */
+
+      /* ---- Page Hero ---- */
+      .page-hero {
+        position: relative;
+        height: clamp(380px, 52vw, 580px);
+        display: flex;
+        align-items: center;
+        overflow: hidden;
+      }
+      .page-hero-bg {
+        position: absolute;
+        inset: 0;
+      }
+      .page-hero-bg img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        object-position: center 40%;
+        display: block;
+        will-change: transform;
+      }
+      .page-hero-overlay {
+        position: absolute;
+        inset: 0;
+        background: linear-gradient(
+          118deg,
+          rgba(7, 24, 64, 0.9) 0%,
+          rgba(13, 47, 113, 0.74) 52%,
+          rgba(7, 24, 64, 0.55) 100%
+        );
+      }
+      .page-hero-inner {
+        position: relative;
+        z-index: 1;
+        padding-top: 80px;
+      }
+      .page-hero-eyebrow {
+        display: inline-flex;
+        align-items: center;
+        gap: 10px;
+        font-family: var(--font-head);
+        font-size: 12px;
+        font-weight: 700;
+        letter-spacing: 0.15em;
+        text-transform: uppercase;
+        color: var(--accent);
+        margin-bottom: 20px;
+        opacity: 0;
+        transform: translateX(-20px);
+      }
+      .page-hero-eyebrow::before {
+        content: "";
+        display: block;
+        width: 32px;
+        height: 2px;
+        background: var(--accent);
+        border-radius: 2px;
+      }
+      .page-hero h1 {
+        font-size: clamp(28px, 4.2vw, 54px);
+        color: #fff;
+        line-height: 1.11;
+        max-width: 20ch;
+        font-weight: 800;
+        opacity: 0;
+        transform: translateY(24px);
+      }
+      .page-hero h1 .hl {
+        color: var(--accent);
+      }
+      .breadcrumb {
+        display: flex;
+        align-items: center;
+        gap: 9px;
+        font-size: 13px;
+        color: rgba(255, 255, 255, 0.55);
+        margin-top: 24px;
+        font-family: var(--font-head);
+        font-weight: 500;
+        opacity: 0;
+      }
+      .breadcrumb a {
+        color: rgba(255, 255, 255, 0.55);
+        transition: color 0.25s;
+      }
+      .breadcrumb a:hover {
+        color: var(--accent);
+      }
+      .breadcrumb .bc-sep {
+        color: rgba(255, 255, 255, 0.28);
+      }
+      .breadcrumb .bc-cur {
+        color: var(--accent);
+      }
+
+      /* ---- Intro / Positioning ---- */
+      .svc-intro {
+        padding-block: clamp(64px, 8vw, 100px);
+        background: var(--bg);
+      }
+      .svc-intro-grid {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: clamp(48px, 7vw, 96px);
+        align-items: center;
+      }
+      .svc-intro-copy .lede {
+        margin-bottom: 36px;
+      }
+      .svc-diff-grid {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 12px;
+      }
+      .svc-diff-item {
+        display: flex;
+        align-items: flex-start;
+        gap: 12px;
+        padding: 16px 18px;
+        background: var(--bg-2);
+        border-radius: var(--radius-sm);
+        border: 1px solid var(--line);
+        transition:
+          border-color 0.3s,
+          box-shadow 0.3s,
+          transform 0.3s;
+      }
+      .svc-diff-item:hover {
+        border-color: rgba(13, 47, 113, 0.2);
+        box-shadow: var(--shadow-md);
+        transform: translateY(-3px);
+      }
+      .svc-diff-icon {
+        width: 36px;
+        height: 36px;
+        border-radius: 9px;
+        background: linear-gradient(
+          135deg,
+          var(--primary) 0%,
+          var(--primary-900) 100%
+        );
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-shrink: 0;
+      }
+      .svc-diff-icon svg {
+        width: 18px;
+        height: 18px;
+        stroke: #fff;
+      }
+      .svc-diff-text strong {
+        display: block;
+        font-family: var(--font-head);
+        font-size: 13.5px;
+        font-weight: 700;
+        color: var(--ink);
+        margin-bottom: 3px;
+      }
+      .svc-diff-text span {
+        font-size: 12.5px;
+        color: var(--body);
+        line-height: 1.5;
+      }
+      .svc-intro-visual {
+        position: relative;
+      }
+      .svc-intro-img {
+        width: 100%;
+        aspect-ratio: 4/3;
+        object-fit: cover;
+        border-radius: 22px;
+        box-shadow: var(--shadow-lg);
+        display: block;
+      }
+      .svc-intro-accent {
+        position: absolute;
+        bottom: -20px;
+        right: -20px;
+        width: 160px;
+        height: 160px;
+        border-radius: 18px;
+        background: linear-gradient(135deg, var(--accent) 0%, #e1911a 100%);
+        z-index: -1;
+      }
+      .svc-intro-chip {
+        position: absolute;
+        top: 28px;
+        left: -18px;
+        background: var(--primary-900);
+        border-radius: 14px;
+        padding: 16px 20px;
+        box-shadow: 0 20px 50px rgba(7, 24, 64, 0.3);
+        display: flex;
+        align-items: center;
+        gap: 12px;
+      }
+      .svc-intro-chip-icon {
+        width: 44px;
+        height: 44px;
+        border-radius: 11px;
+        background: linear-gradient(135deg, var(--accent) 0%, #e1911a 100%);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-shrink: 0;
+      }
+      .svc-intro-chip-icon svg {
+        width: 22px;
+        height: 22px;
+        stroke: #fff;
+      }
+      .svc-intro-chip-text strong {
+        display: block;
+        font-family: var(--font-head);
+        font-size: 20px;
+        font-weight: 800;
+        color: #fff;
+        line-height: 1;
+      }
+      .svc-intro-chip-text span {
+        font-size: 11px;
+        color: rgba(255, 255, 255, 0.55);
+        text-transform: uppercase;
+        letter-spacing: 0.07em;
+      }
+
+      /* ---- Services Grid Head ---- */
+      .svcs-head {
+        text-align: center;
+        max-width: 640px;
+        margin-inline: auto;
+        margin-bottom: clamp(44px, 5vw, 68px);
+      }
+
+      /* ---- Service Cards ---- */
+      .svcs {
+        padding-block: clamp(72px, 9vw, 120px);
+        background: var(--bg-2);
+        position: relative;
+      }
+      .svcs-grid {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 28px;
+      }
+
+      /* last card (7th) — full width centered */
+      .svc-card:nth-child(7) {
+        grid-column: 1 / -1;
+        max-width: 700px;
+        margin-inline: auto;
+        width: 100%;
+      }
+
+      .svc-card {
+        background: #fff;
+        border-radius: 22px;
+        overflow: hidden;
+        box-shadow: var(--shadow-sm);
+        border: 1px solid var(--line);
+        display: flex;
+        flex-direction: column;
+        transition:
+          transform 0.45s var(--ease),
+          box-shadow 0.45s var(--ease);
+        position: relative;
+      }
+      .svc-card:hover {
+        transform: translateY(-8px);
+        box-shadow: var(--shadow-lg);
+      }
+
+      /* image area */
+      .svc-card-img-wrap {
+        position: relative;
+        aspect-ratio: 16/9;
+        overflow: hidden;
+        flex-shrink: 0;
+      }
+      .svc-card-img-wrap img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        display: block;
+        transition: transform 0.7s var(--ease);
+      }
+      .svc-card:hover .svc-card-img-wrap img {
+        transform: scale(1.05);
+      }
+
+      /* number badge floating on image */
+      .svc-card-num {
+        position: absolute;
+        top: 20px;
+        left: 24px;
+        background: rgba(7, 24, 64, 0.85);
+        -webkit-backdrop-filter: blur(8px);
+        backdrop-filter: blur(8px);
+        border: 1px solid rgba(255, 255, 255, 0.15);
+        border-radius: 999px;
+        padding: 6px 16px;
+        font-family: var(--font-head);
+        font-size: 12px;
+        font-weight: 800;
+        color: var(--accent);
+        letter-spacing: 0.1em;
+        z-index: 2;
+      }
+
+      /* accent bar at bottom of image */
+      .svc-card-img-wrap::after {
+        content: "";
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        height: 4px;
+        background: linear-gradient(
+          90deg,
+          var(--primary) 0%,
+          var(--accent) 60%,
+          transparent 100%
+        );
+        opacity: 0;
+        transition: opacity 0.4s var(--ease);
+      }
+      .svc-card:hover .svc-card-img-wrap::after {
+        opacity: 1;
+      }
+
+      /* card body */
+      .svc-card-body {
+        padding: clamp(24px, 3vw, 36px);
+        display: flex;
+        flex-direction: column;
+        flex: 1;
+      }
+      .svc-card-tag {
+        display: inline-flex;
+        align-items: center;
+        gap: 6px;
+        font-family: var(--font-head);
+        font-size: 11px;
+        font-weight: 700;
+        letter-spacing: 0.14em;
+        text-transform: uppercase;
+        color: var(--primary);
+        background: rgba(13, 47, 113, 0.07);
+        border-radius: 999px;
+        padding: 5px 13px;
+        margin-bottom: 16px;
+        width: fit-content;
+      }
+      .svc-card-title {
+        font-family: var(--font-head);
+        font-size: clamp(19px, 1.8vw, 24px);
+        font-weight: 700;
+        color: var(--ink);
+        margin-bottom: 12px;
+        line-height: 1.25;
+      }
+      .svc-card-desc {
+        font-size: 15px;
+        color: var(--body);
+        line-height: 1.75;
+        margin-bottom: 22px;
+      }
+
+      /* product chips */
+      .svc-products {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 8px;
+        margin-bottom: 28px;
+        margin-top: auto;
+        padding-top: 20px;
+        border-top: 1px solid var(--line);
+      }
+      .svc-prod-chip {
+        display: inline-flex;
+        align-items: center;
+        gap: 6px;
+        background: var(--bg-2);
+        border: 1px solid var(--line);
+        border-radius: 999px;
+        padding: 5px 13px;
+        font-size: 12.5px;
+        font-weight: 600;
+        color: var(--body);
+        font-family: var(--font-head);
+        transition: all 0.25s;
+      }
+      .svc-prod-chip::before {
+        content: "";
+        width: 6px;
+        height: 6px;
+        border-radius: 50%;
+        background: var(--accent);
+        flex-shrink: 0;
+      }
+      .svc-card:hover .svc-prod-chip {
+        background: rgba(13, 47, 113, 0.06);
+        border-color: rgba(13, 47, 113, 0.18);
+        color: var(--ink);
+      }
+
+      /* CTA link */
+      .svc-card-cta {
+        display: inline-flex;
+        align-items: center;
+        gap: 8px;
+        font-family: var(--font-head);
+        font-size: 14px;
+        font-weight: 700;
+        color: var(--primary);
+        transition:
+          gap 0.3s var(--ease),
+          color 0.3s;
+      }
+      .svc-card-cta svg {
+        width: 16px;
+        height: 16px;
+        stroke: currentColor;
+        flex-shrink: 0;
+      }
+      .svc-card-cta:hover {
+        color: var(--accent);
+        gap: 14px;
+      }
+
+      /* ---- Why EnerTec ---- */
+      .svc-why {
+        padding-block: clamp(72px, 9vw, 120px);
+        background: var(--primary-900);
+        position: relative;
+        overflow: hidden;
+      }
+      .svc-why::before {
+        content: "";
+        position: absolute;
+        inset: 0;
+        background-image:
+          linear-gradient(rgba(255, 255, 255, 0.03) 1px, transparent 1px),
+          linear-gradient(90deg, rgba(255, 255, 255, 0.03) 1px, transparent 1px);
+        background-size: 60px 60px;
+        pointer-events: none;
+      }
+      .svc-why-orb {
+        position: absolute;
+        top: -150px;
+        right: -100px;
+        width: 600px;
+        height: 600px;
+        border-radius: 50%;
+        background: radial-gradient(
+          circle,
+          rgba(245, 166, 35, 0.12) 0%,
+          transparent 70%
+        );
+        pointer-events: none;
+      }
+      .svc-why-head {
+        text-align: center;
+        max-width: 620px;
+        margin-inline: auto;
+        margin-bottom: clamp(44px, 6vw, 68px);
+        position: relative;
+        z-index: 1;
+      }
+      .svc-why-head .section-title {
+        color: #fff;
+      }
+      .svc-why-head .lede {
+        color: rgba(255, 255, 255, 0.55);
+        margin-inline: auto;
+      }
+      .svc-why-grid {
+        display: grid;
+        grid-template-columns: repeat(5, 1fr);
+        gap: 20px;
+        position: relative;
+        z-index: 1;
+      }
+      .svc-why-card {
+        background: rgba(255, 255, 255, 0.04);
+        border: 1px solid rgba(255, 255, 255, 0.08);
+        border-radius: 18px;
+        padding: 28px 22px;
+        text-align: center;
+        transition:
+          background 0.4s,
+          border-color 0.4s,
+          transform 0.4s;
+        cursor: default;
+      }
+      .svc-why-card:hover {
+        background: rgba(255, 255, 255, 0.08);
+        border-color: rgba(245, 166, 35, 0.3);
+        transform: translateY(-6px);
+      }
+      .svc-why-icon {
+        width: 56px;
+        height: 56px;
+        border-radius: 14px;
+        background: rgba(245, 166, 35, 0.1);
+        border: 1px solid rgba(245, 166, 35, 0.2);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin: 0 auto 18px;
+        transition: background 0.4s;
+      }
+      .svc-why-card:hover .svc-why-icon {
+        background: rgba(245, 166, 35, 0.2);
+      }
+      .svc-why-icon svg {
+        width: 26px;
+        height: 26px;
+        stroke: var(--accent);
+      }
+      .svc-why-title {
+        font-family: var(--font-head);
+        font-size: 15px;
+        font-weight: 700;
+        color: #fff;
+        margin-bottom: 10px;
+        line-height: 1.3;
+      }
+      .svc-why-desc {
+        font-size: 13px;
+        color: rgba(255, 255, 255, 0.5);
+        line-height: 1.65;
+      }
+
+      /* ---- CTA ---- */
+      .svc-cta {
+        padding-block: clamp(80px, 10vw, 120px);
+        background: linear-gradient(
+          135deg,
+          #040e27 0%,
+          var(--primary) 50%,
+          #040e27 100%
+        );
+        position: relative;
+        overflow: hidden;
+        text-align: center;
+      }
+      .svc-cta::before {
+        content: "";
+        position: absolute;
+        inset: 0;
+        background-image:
+          linear-gradient(rgba(255, 255, 255, 0.025) 1px, transparent 1px),
+          linear-gradient(
+            90deg,
+            rgba(255, 255, 255, 0.025) 1px,
+            transparent 1px
+          );
+        background-size: 52px 52px;
+      }
+      .svc-cta-orb {
+        position: absolute;
+        border-radius: 50%;
+        filter: blur(80px);
+        pointer-events: none;
+      }
+      .svc-cta-orb-1 {
+        width: 500px;
+        height: 500px;
+        top: -200px;
+        left: -100px;
+        background: radial-gradient(
+          circle,
+          rgba(13, 47, 113, 0.6) 0%,
+          transparent 70%
+        );
+      }
+      .svc-cta-orb-2 {
+        width: 400px;
+        height: 400px;
+        bottom: -150px;
+        right: -80px;
+        background: radial-gradient(
+          circle,
+          rgba(245, 166, 35, 0.15) 0%,
+          transparent 70%
+        );
+      }
+      .svc-cta-inner {
+        position: relative;
+        z-index: 1;
+        max-width: 680px;
+        margin-inline: auto;
+      }
+      .svc-cta-inner h2 {
+        font-family: var(--font-head);
+        font-size: clamp(30px, 4vw, 52px);
+        font-weight: 800;
+        color: #fff;
+        letter-spacing: -0.025em;
+        margin-block: 20px 16px;
+        line-height: 1.1;
+      }
+      .svc-cta-inner p {
+        font-size: clamp(15px, 1.2vw, 17px);
+        color: rgba(255, 255, 255, 0.65);
+        max-width: 50ch;
+        margin-inline: auto;
+        line-height: 1.75;
+        margin-bottom: 40px;
+      }
+      .svc-cta-btns {
+        display: flex;
+        justify-content: center;
+        gap: 16px;
+        flex-wrap: wrap;
+      }
+      .btn--ghost {
+        background: transparent;
+        color: #fff;
+        border: 2px solid rgba(255, 255, 255, 0.25);
+      }
+      .btn--ghost:hover {
+        background: rgba(255, 255, 255, 0.08);
+        border-color: rgba(255, 255, 255, 0.55);
+        transform: translateY(-2px);
+      }
+
+      /* ---- Reveal ---- */
+      .rev {
+        opacity: 0;
+        transform: translateY(40px);
+        transition:
+          opacity 0.8s var(--ease),
+          transform 0.8s var(--ease);
+      }
+      .rev.in {
+        opacity: 1;
+        transform: none;
+      }
+      .rev.d1 {
+        transition-delay: 0.1s;
+      }
+      .rev.d2 {
+        transition-delay: 0.2s;
+      }
+      .rev.d3 {
+        transition-delay: 0.3s;
+      }
+      .rev.d4 {
+        transition-delay: 0.4s;
+      }
+
+      /* ---- Responsive ---- */
+      @media (max-width: 1024px) {
+        .svcs-grid {
+          grid-template-columns: 1fr;
+        }
+        .svc-card:nth-child(7) {
+          grid-column: span 1;
+          max-width: 100%;
+        }
+        .svc-why-grid {
+          grid-template-columns: repeat(3, 1fr);
+        }
+        .svc-intro-grid {
+          grid-template-columns: 1fr;
+        }
+        .svc-intro-visual {
+          max-width: 520px;
+          margin-inline: auto;
+        }
+      }
+      @media (max-width: 768px) {
+        .svc-why-grid {
+          grid-template-columns: repeat(2, 1fr);
+        }
+        .svc-diff-grid {
+          grid-template-columns: 1fr;
+        }
+      }
+      @media (max-width: 480px) {
+        .svc-why-grid {
+          grid-template-columns: 1fr;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <!-- ===================== TOP BAR ===================== -->
+    <div class="topbar">
+      <div class="wrap">
+        <div class="topbar-contact">
+          <span>
+            <svg
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2"
+            >
+              <path
+                d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.96.36 1.9.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.91.34 1.85.57 2.81.7A2 2 0 0 1 22 16.92Z"
+              />
+            </svg>
+            <a href="tel:+971509640206">+971 50 964 0206</a>
+          </span>
+          <span class="tb-email">
+            <svg
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2"
+            >
+              <rect x="2" y="4" width="20" height="16" rx="2" />
+              <path d="m22 7-10 6L2 7" />
+            </svg>
+            <a href="mailto:info@enertecsc.com">info@enertecsc.com</a>
+          </span>
+        </div>
+        <div class="topbar-social">
+          <a href="#" aria-label="Facebook"
+            ><svg viewBox="0 0 24 24" fill="currentColor">
+              <path
+                d="M22 12a10 10 0 1 0-11.56 9.88v-6.99H7.9V12h2.54V9.8c0-2.5 1.49-3.89 3.78-3.89 1.09 0 2.24.2 2.24.2v2.46h-1.26c-1.24 0-1.63.77-1.63 1.56V12h2.78l-.44 2.89h-2.34v6.99A10 10 0 0 0 22 12Z"
+              /></svg
+          ></a>
+          <a href="#" aria-label="X"
+            ><svg viewBox="0 0 24 24" fill="currentColor">
+              <path
+                d="M18.9 2H22l-7.5 8.6L23 22h-6.9l-5.4-7-6.2 7H1.4l8-9.2L1 2h7l4.9 6.5L18.9 2Zm-1.2 18h1.9L7.1 4H5.1l12.6 16Z"
+              /></svg
+          ></a>
+          <a href="#" aria-label="LinkedIn"
+            ><svg viewBox="0 0 24 24" fill="currentColor">
+              <path
+                d="M6.94 5a2 2 0 1 1-4 0 2 2 0 0 1 4 0ZM7 8.48H3V21h4V8.48Zm6.32 0H9.34V21h3.94v-6.57c0-3.66 4.77-4 4.77 0V21H22v-7.93c0-6.17-7.06-5.94-8.72-2.91l.04-1.68Z"
+              /></svg
+          ></a>
+        </div>
+      </div>
+    </div>
+
+    <!-- ===================== HEADER ===================== -->
+    <header class="site-header">
+      <div class="wrap">
+        <nav class="nav">
+          <a class="brand" href="index.html" aria-label="EnerTec home">
+            <img
+              src="assets/images/enerteclogo.png"
+              alt="EnerTec"
+              class="brand-logo"
+            />
+          </a>
+          <ul class="nav-menu">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="about-us.html">About</a></li>
+            <li class="has-dd">
+              <a href="#"
+                >Training
+                <svg
+                  class="caret"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2.2"
+                >
+                  <path d="m6 9 6 6 6-6" />
+                </svg>
+              </a>
+              <ul class="dd">
+                <li class="has-dd">
+                  <a href="#"
+                    >Oil &amp; Gas Courses
+                    <svg
+                      class="sub-caret"
+                      viewBox="0 0 24 24"
+                      fill="none"
+                      stroke="currentColor"
+                      stroke-width="2.2"
+                    >
+                      <path d="m9 18 6-6-6-6" />
+                    </svg>
+                  </a>
+                  <ul class="dd dd--sub">
+                    <li><a href="up-stream.html">Upstream Courses</a></li>
+                    <li><a href="down-stream.html">Mid &amp; Downstream</a></li>
+                  </ul>
+                </li>
+                <li>
+                  <a href="engineering-course.html">Engineering Courses</a>
+                </li>
+                <li><a href="management-course.html">Management Courses</a></li>
+                <li><a href="hse-course.html">HSE Courses</a></li>
+              </ul>
+            </li>
+            <li><a href="consultancy.html">Consultancy</a></li>
+            <li><a href="engineering-projects.html">Projects</a></li>
+            <li><a href="services.html" class="active">Services</a></li>
+          </ul>
+          <div class="nav-cta">
+            <a href="contact-us.html" class="btn btn--primary"
+              >Get in Touch
+              <svg
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+              >
+                <path d="M5 12h14M13 6l6 6-6 6" />
+              </svg>
+            </a>
+            <button class="nav-toggle" aria-label="Open menu">
+              <span></span>
+            </button>
+          </div>
+        </nav>
+      </div>
+    </header>
+
+    <!-- ===================== MOBILE PANEL ===================== -->
+    <div class="mobile-overlay"></div>
+    <aside class="mobile-panel" aria-label="Mobile navigation">
+      <div class="mp-head">
+        <img
+          src="assets/images/enerteclogo.png"
+          alt="EnerTec"
+          class="brand-logo"
+        />
+        <button class="mp-close" aria-label="Close menu">
+          <svg
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="2"
+          >
+            <path d="M18 6 6 18M6 6l12 12" />
+          </svg>
+        </button>
+      </div>
+      <ul class="mobile-nav">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="about-us.html">About Us</a></li>
+        <li>
+          <button class="m-sub-toggle">
+            Training
+            <svg
+              class="caret"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2.2"
+            >
+              <path d="m6 9 6 6 6-6" />
+            </svg>
+          </button>
+          <ul class="m-sub">
+            <li><a href="up-stream.html">Upstream Courses</a></li>
+            <li><a href="down-stream.html">Mid &amp; Downstream</a></li>
+            <li><a href="engineering-course.html">Engineering Courses</a></li>
+            <li><a href="management-course.html">Management Courses</a></li>
+            <li><a href="hse-course.html">HSE Courses</a></li>
+          </ul>
+        </li>
+        <li><a href="consultancy.html">Consultancy</a></li>
+        <li><a href="engineering-projects.html">Engineering Projects</a></li>
+        <li><a href="services.html">Services</a></li>
+      </ul>
+      <a href="contact-us.html" class="btn btn--primary">Get in Touch</a>
+    </aside>
+
+    <!-- ===================== PAGE HERO ===================== -->
+    <section class="page-hero">
+      <div class="page-hero-bg">
+        <img
+          src="assets/images/177.jpg"
+          alt="EnerTec Industrial Services"
+          id="heroBg"
+        />
+      </div>
+      <div class="page-hero-overlay"></div>
+      <div class="wrap page-hero-inner">
+        <div class="page-hero-eyebrow" id="heroEyebrow">What We Offer</div>
+        <h1 id="heroTitle">
+          Comprehensive <span class="hl">Industrial Supply</span> &amp;
+          Engineering Solutions
+        </h1>
+        <div class="breadcrumb" id="heroBc">
+          <a href="index.html">Home</a>
+          <span class="bc-sep">/</span>
+          <span class="bc-cur">Services</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===================== INTRO / POSITIONING ===================== -->
+    <section class="svc-intro">
+      <div class="wrap">
+        <div class="svc-intro-grid">
+          <div class="svc-intro-copy">
+            <span class="eyebrow rev">Our Expertise</span>
+            <h2 class="section-title rev">
+              End-to-End Industrial Supply &amp; Engineering
+            </h2>
+            <p class="lede rev">
+              EnerTec FZC specializes in delivering world-class industrial
+              supply chain solutions and engineering services across the Gulf
+              region. We combine global sourcing capability, technical
+              expertise, and deep industry knowledge to keep your operations
+              running at peak performance.
+            </p>
+            <div class="svc-diff-grid rev">
+              <div class="svc-diff-item">
+                <div class="svc-diff-icon">
+                  <svg
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="2"
+                  >
+                    <path
+                      d="M12 2 4 5v6c0 5 3.4 8.6 8 10 4.6-1.4 8-5 8-10V5l-8-3Z"
+                    />
+                    <path d="m9 12 2 2 4-4" />
+                  </svg>
+                </div>
+                <div class="svc-diff-text">
+                  <strong>Upstream to Downstream</strong>
+                  <span
+                    >Extensive experience across all oil &amp; gas operational
+                    tiers</span
+                  >
+                </div>
+              </div>
+              <div class="svc-diff-item">
+                <div class="svc-diff-icon">
+                  <svg
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="2"
+                  >
+                    <circle cx="12" cy="12" r="10" />
+                    <path
+                      d="M2 12h20M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"
+                    />
+                  </svg>
+                </div>
+                <div class="svc-diff-text">
+                  <strong>Global Supplier Network</strong>
+                  <span
+                    >Strategic partnerships across GCC and MENA regions</span
+                  >
+                </div>
+              </div>
+              <div class="svc-diff-item">
+                <div class="svc-diff-icon">
+                  <svg
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="2"
+                  >
+                    <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14" />
+                    <path d="m9 11 3 3L22 4" />
+                  </svg>
+                </div>
+                <div class="svc-diff-text">
+                  <strong>International Standards</strong>
+                  <span
+                    >Full adherence to ISO, API, ASME, and IEC
+                    specifications</span
+                  >
+                </div>
+              </div>
+              <div class="svc-diff-item">
+                <div class="svc-diff-icon">
+                  <svg
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="2"
+                  >
+                    <circle cx="12" cy="12" r="3" />
+                    <path
+                      d="M2 12s3.5-7 10-7 10 7 10 7-3.5 7-10 7-10-7-10-7Z"
+                    />
+                  </svg>
+                </div>
+                <div class="svc-diff-text">
+                  <strong>Sustainable Innovation</strong>
+                  <span>Integrating renewable and green energy solutions</span>
+                </div>
+              </div>
+              <div class="svc-diff-item" style="grid-column: span 2">
+                <div class="svc-diff-icon">
+                  <svg
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="2"
+                  >
+                    <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2" />
+                    <circle cx="9" cy="7" r="4" />
+                    <path
+                      d="M23 21v-2a4 4 0 0 0-3-3.87M16 3.13a4 4 0 0 1 0 7.75"
+                    />
+                  </svg>
+                </div>
+                <div class="svc-diff-text">
+                  <strong>Customized Client Solutions</strong>
+                  <span
+                    >Every solution is tailored to your specific operational
+                    requirements, budget, and timeline</span
+                  >
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="svc-intro-visual rev">
+            <img
+              src="assets/images/servicesimages/ChatGPT-Image-Jun-2-2026-05_00_07-PM-1024x683.webp"
+              alt="EnerTec Renewable Energy Solutions"
+              class="svc-intro-img"
+            />
+            <div class="svc-intro-accent"></div>
+            <div class="svc-intro-chip">
+              <div class="svc-intro-chip-icon">
+                <svg
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                >
+                  <path d="M3 3v18h18" />
+                  <path d="m7 14 4-4 3 3 5-6" />
+                </svg>
+              </div>
+              <div class="svc-intro-chip-text">
+                <strong>7</strong>
+                <span>Service Categories</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===================== SERVICES GRID ===================== -->
+    <section class="svcs" id="services">
+      <div class="wrap">
+        <div class="svcs-head">
+          <span class="eyebrow eyebrow--center rev">Our Services</span>
+          <h2 class="section-title section-title--center rev">
+            Comprehensive Industrial Supply &amp; Engineering Solutions
+          </h2>
+          <p class="lede lede--center rev">
+            Seven specialized service lines — each backed by global sourcing,
+            technical depth, and a commitment to operational excellence.
+          </p>
+        </div>
+
+        <div class="svcs-grid">
+          <!-- 01 Instrumentation & Control -->
+          <div class="svc-card rev">
+            <div class="svc-card-img-wrap">
+              <img
+                src="assets/images/servicesimages/ChatGPT-Image-Jun-2-2026-04_57_56-PM-1024x683.webp"
+                alt="Instrumentation & Control Solutions"
+                loading="lazy"
+              />
+              <div class="svc-card-num">01</div>
+            </div>
+            <div class="svc-card-body">
+              <span class="svc-card-tag">Instrumentation</span>
+              <h3 class="svc-card-title">
+                Instrumentation &amp; Control Solutions
+              </h3>
+              <p class="svc-card-desc">
+                Delivering advanced instrumentation and automation products that
+                enhance operational efficiency, process reliability, safety, and
+                real-time control for critical industrial applications across
+                upstream and downstream operations.
+              </p>
+              <div class="svc-products">
+                <span class="svc-prod-chip"
+                  >Pressure &amp; Temperature Instruments</span
+                >
+                <span class="svc-prod-chip">Transmitters</span>
+                <span class="svc-prod-chip">Control Valves</span>
+                <span class="svc-prod-chip">PLC / DCS / SCADA Systems</span>
+                <span class="svc-prod-chip">Gas Detection Equipment</span>
+              </div>
+              <a href="contact-us.html" class="svc-card-cta"
+                >Request a Quote
+                <svg
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2.2"
+                >
+                  <path d="M5 12h14M13 6l6 6-6 6" />
+                </svg>
+              </a>
+            </div>
+          </div>
+
+          <!-- 02 Pipes, Valves & Fittings -->
+          <div class="svc-card rev d1">
+            <div class="svc-card-img-wrap">
+              <img
+                src="assets/images/servicesimages/ChatGPT-Image-Jun-2-2026-04_58_35-PM-1024x683.webp"
+                alt="Pipes, Valves & Fittings"
+                loading="lazy"
+              />
+              <div class="svc-card-num">02</div>
+            </div>
+            <div class="svc-card-body">
+              <span class="svc-card-tag">PVF Solutions</span>
+              <h3 class="svc-card-title">Pipes, Valves &amp; Fittings</h3>
+              <p class="svc-card-desc">
+                Delivering high-quality piping and flow control solutions
+                designed to meet international standards and the demanding
+                requirements of energy and industrial projects, from exploration
+                to processing facilities.
+              </p>
+              <div class="svc-products">
+                <span class="svc-prod-chip">Pipes &amp; Flanges</span>
+                <span class="svc-prod-chip">Valves</span>
+                <span class="svc-prod-chip">Butt-Weld Fittings</span>
+                <span class="svc-prod-chip">Gaskets &amp; Stud Bolts</span>
+                <span class="svc-prod-chip">Expansion Joints</span>
+              </div>
+              <a href="contact-us.html" class="svc-card-cta"
+                >Request a Quote
+                <svg
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2.2"
+                >
+                  <path d="M5 12h14M13 6l6 6-6 6" />
+                </svg>
+              </a>
+            </div>
+          </div>
+
+          <!-- 03 Industrial Safety & Fire Protection -->
+          <div class="svc-card rev">
+            <div class="svc-card-img-wrap">
+              <img
+                src="assets/images/servicesimages/ChatGPT-Image-Jun-2-2026-04_59_08-PM-1024x683.webp"
+                alt="Industrial Safety & Fire Protection"
+                loading="lazy"
+              />
+              <div class="svc-card-num">03</div>
+            </div>
+            <div class="svc-card-body">
+              <span class="svc-card-tag">Safety</span>
+              <h3 class="svc-card-title">
+                Industrial Safety &amp; Fire Protection
+              </h3>
+              <p class="svc-card-desc">
+                Supplying certified safety and firefighting equipment designed
+                to safeguard personnel, facilities, and critical operations
+                while ensuring compliance with international safety standards
+                and regulatory requirements.
+              </p>
+              <div class="svc-products">
+                <span class="svc-prod-chip">Personal Protective Equipment</span>
+                <span class="svc-prod-chip">Respiratory Protection</span>
+                <span class="svc-prod-chip">Fire Extinguishers</span>
+                <span class="svc-prod-chip">Fall Protection Systems</span>
+              </div>
+              <a href="contact-us.html" class="svc-card-cta"
+                >Request a Quote
+                <svg
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2.2"
+                >
+                  <path d="M5 12h14M13 6l6 6-6 6" />
+                </svg>
+              </a>
+            </div>
+          </div>
+
+          <!-- 04 Electrical & Heat Tracing -->
+          <div class="svc-card rev d1">
+            <div class="svc-card-img-wrap">
+              <img
+                src="assets/images/servicesimages/ChatGPT-Image-Jun-2-2026-04_59_38-PM-1024x683.webp"
+                alt="Electrical & Heat Tracing Solutions"
+                loading="lazy"
+              />
+              <div class="svc-card-num">04</div>
+            </div>
+            <div class="svc-card-body">
+              <span class="svc-card-tag">Electrical</span>
+              <h3 class="svc-card-title">
+                Electrical &amp; Heat Tracing Solutions
+              </h3>
+              <p class="svc-card-desc">
+                Supplying high-quality electrical products and heat tracing
+                systems engineered to ensure reliable power distribution,
+                process temperature maintenance, and operational safety in the
+                most demanding industrial environments.
+              </p>
+              <div class="svc-products">
+                <span class="svc-prod-chip">Power Cables</span>
+                <span class="svc-prod-chip">Heat Tracing Cables</span>
+                <span class="svc-prod-chip">Switchgear</span>
+                <span class="svc-prod-chip">Distribution Panels</span>
+                <span class="svc-prod-chip">Earthing Materials</span>
+              </div>
+              <a href="contact-us.html" class="svc-card-cta"
+                >Request a Quote
+                <svg
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2.2"
+                >
+                  <path d="M5 12h14M13 6l6 6-6 6" />
+                </svg>
+              </a>
+            </div>
+          </div>
+
+          <!-- 05 Renewable Energy Solutions -->
+          <div class="svc-card rev">
+            <div class="svc-card-img-wrap">
+              <img
+                src="assets/images/servicesimages/ChatGPT-Image-Jun-2-2026-05_00_07-PM-1024x683.webp"
+                alt="Renewable Energy Solutions"
+                loading="lazy"
+              />
+              <div class="svc-card-num">05</div>
+            </div>
+            <div class="svc-card-body">
+              <span class="svc-card-tag">Renewables</span>
+              <h3 class="svc-card-title">Renewable Energy Solutions</h3>
+              <p class="svc-card-desc">
+                Supplying high-quality renewable energy components designed to
+                deliver reliable, efficient, and sustainable power solutions for
+                utility, commercial, industrial, and off-grid applications
+                across GCC and MENA markets.
+              </p>
+              <div class="svc-products">
+                <span class="svc-prod-chip">Solar PV Modules</span>
+                <span class="svc-prod-chip">Inverters</span>
+                <span class="svc-prod-chip">Battery Storage Systems</span>
+                <span class="svc-prod-chip">Wind Components</span>
+                <span class="svc-prod-chip">EV Charging Stations</span>
+                <span class="svc-prod-chip">Energy Management Systems</span>
+              </div>
+              <a href="contact-us.html" class="svc-card-cta"
+                >Request a Quote
+                <svg
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2.2"
+                >
+                  <path d="M5 12h14M13 6l6 6-6 6" />
+                </svg>
+              </a>
+            </div>
+          </div>
+
+          <!-- 06 Mechanical & Rotating Equipment -->
+          <div class="svc-card rev d1">
+            <div class="svc-card-img-wrap">
+              <img
+                src="assets/images/servicesimages/ChatGPT-Image-Jun-2-2026-05_16_44-PM-1024x683.webp"
+                alt="Mechanical & Rotating Equipment"
+                loading="lazy"
+              />
+              <div class="svc-card-num">06</div>
+            </div>
+            <div class="svc-card-body">
+              <span class="svc-card-tag">Mechanical</span>
+              <h3 class="svc-card-title">
+                Mechanical &amp; Rotating Equipment
+              </h3>
+              <p class="svc-card-desc">
+                Supplying world-class rotating equipment and spare parts
+                engineered to maximize operational reliability, efficiency, and
+                equipment lifecycle performance in critical industrial
+                applications and process plants.
+              </p>
+              <div class="svc-products">
+                <span class="svc-prod-chip">Pumps &amp; Compressors</span>
+                <span class="svc-prod-chip">Motors &amp; Turbines</span>
+                <span class="svc-prod-chip">Gearboxes</span>
+                <span class="svc-prod-chip">Bearings</span>
+                <span class="svc-prod-chip">OEM Spare Parts</span>
+              </div>
+              <a href="contact-us.html" class="svc-card-cta"
+                >Request a Quote
+                <svg
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2.2"
+                >
+                  <path d="M5 12h14M13 6l6 6-6 6" />
+                </svg>
+              </a>
+            </div>
+          </div>
+
+          <!-- 07 Industrial & Oilfield Chemical (full-width centered) -->
+          <div class="svc-card rev">
+            <div class="svc-card-img-wrap">
+              <img
+                src="assets/images/servicesimages/ChatGPT-Image-Jun-2-2026-05_17_10-PM-1024x683.webp"
+                alt="Industrial & Oilfield Chemical Solutions"
+                loading="lazy"
+              />
+              <div class="svc-card-num">07</div>
+            </div>
+            <div class="svc-card-body">
+              <span class="svc-card-tag">Chemicals</span>
+              <h3 class="svc-card-title">
+                Industrial &amp; Oilfield Chemical Solutions
+              </h3>
+              <p class="svc-card-desc">
+                Supplying high-performance chemical products designed to
+                optimize production, improve drilling efficiency, protect assets
+                from corrosion and scaling, and ensure effective water treatment
+                across all stages of oil &amp; gas operations.
+              </p>
+              <div class="svc-products">
+                <span class="svc-prod-chip">Production Chemicals</span>
+                <span class="svc-prod-chip">Drilling Additives</span>
+                <span class="svc-prod-chip">Water Treatment Products</span>
+                <span class="svc-prod-chip">Corrosion Inhibitors</span>
+                <span class="svc-prod-chip">Specialty Process Additives</span>
+              </div>
+              <a href="contact-us.html" class="svc-card-cta"
+                >Request a Quote
+                <svg
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2.2"
+                >
+                  <path d="M5 12h14M13 6l6 6-6 6" />
+                </svg>
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===================== WHY ENERTEC ===================== -->
+    <section class="svc-why">
+      <div class="svc-why-orb"></div>
+      <div class="wrap">
+        <div class="svc-why-head">
+          <span class="eyebrow eyebrow--center rev" style="color: var(--accent)"
+            >Why Choose Us</span
+          >
+          <h2 class="section-title section-title--center rev">
+            The EnerTec Advantage
+          </h2>
+          <p class="lede lede--center rev">
+            Five core strengths that set EnerTec apart as your trusted
+            industrial supply and engineering partner.
+          </p>
+        </div>
+        <div class="svc-why-grid">
+          <div class="svc-why-card rev">
+            <div class="svc-why-icon">
+              <svg
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+              >
+                <path d="M22 10v6M2 10l10-5 10 5-10 5z" />
+                <path d="M6 12v5c3 3 9 3 12 0v-5" />
+              </svg>
+            </div>
+            <div class="svc-why-title">Deep Industry Experience</div>
+            <p class="svc-why-desc">
+              Extensive track record across upstream, midstream, and downstream
+              operations in the Gulf region.
+            </p>
+          </div>
+          <div class="svc-why-card rev d1">
+            <div class="svc-why-icon">
+              <svg
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+              >
+                <circle cx="12" cy="12" r="10" />
+                <path
+                  d="M2 12h20M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"
+                />
+              </svg>
+            </div>
+            <div class="svc-why-title">Global Supplier Partnerships</div>
+            <p class="svc-why-desc">
+              Strategic relationships with leading manufacturers across GCC,
+              MENA, Europe, and Asia.
+            </p>
+          </div>
+          <div class="svc-why-card rev d2">
+            <div class="svc-why-icon">
+              <svg
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+              >
+                <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14" />
+                <path d="m9 11 3 3L22 4" />
+              </svg>
+            </div>
+            <div class="svc-why-title">International Standards</div>
+            <p class="svc-why-desc">
+              All products sourced and supplied in full compliance with ISO,
+              API, ASME, IEC, and ATEX certifications.
+            </p>
+          </div>
+          <div class="svc-why-card rev d3">
+            <div class="svc-why-icon">
+              <svg
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+              >
+                <path
+                  d="M12 2v4M12 18v4M4.93 4.93l2.83 2.83M16.24 16.24l2.83 2.83M2 12h4M18 12h4M4.93 19.07l2.83-2.83M16.24 7.76l2.83-2.83"
+                />
+                <circle cx="12" cy="12" r="3" />
+              </svg>
+            </div>
+            <div class="svc-why-title">Sustainable Practices</div>
+            <p class="svc-why-desc">
+              Committed to integrating renewable energy and environmentally
+              responsible solutions into every project.
+            </p>
+          </div>
+          <div class="svc-why-card rev d4">
+            <div class="svc-why-icon">
+              <svg
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+              >
+                <path d="m14.7 6.3 3 3M5 12.5 12.5 5l6.5 6.5L11.5 19H5z" />
+              </svg>
+            </div>
+            <div class="svc-why-title">Tailored Solutions</div>
+            <p class="svc-why-desc">
+              Every engagement is customized to your specific operational needs,
+              technical requirements, and project timeline.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===================== CTA ===================== -->
+    <section class="svc-cta">
+      <div class="svc-cta-orb svc-cta-orb-1"></div>
+      <div class="svc-cta-orb svc-cta-orb-2"></div>
+      <div class="wrap">
+        <div class="svc-cta-inner">
+          <span class="eyebrow eyebrow--center rev" style="color: var(--accent)"
+            >Get Started</span
+          >
+          <h2 class="rev">Ready to Optimize Your Operations?</h2>
+          <p class="rev">
+            Whether you need a single product category or a full supply chain
+            solution, our team is ready to source, supply, and support. Contact
+            us today for a tailored quote.
+          </p>
+          <div class="svc-cta-btns rev">
+            <a href="contact-us.html" class="btn btn--primary"
+              >Request a Quote
+              <svg
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+              >
+                <path d="M5 12h14M13 6l6 6-6 6" />
+              </svg>
+            </a>
+            <a href="about-us.html" class="btn btn--ghost">About EnerTec</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===================== FOOTER ===================== -->
+    <footer class="footer">
+      <div class="footer-top-bar"></div>
+      <div class="wrap">
+        <div class="footer-grid">
+          <div class="footer-brand">
+            <img
+              src="assets/images/enerteclogo.png"
+              alt="EnerTec"
+              class="footer-logo"
+            />
+            <p class="footer-tagline">
+              Specialized in Supply Chain, Engineering &amp; Renewable Energy
+              Solutions
+            </p>
+            <div class="footer-social">
+              <a href="#" aria-label="Facebook"
+                ><svg viewBox="0 0 24 24" fill="currentColor">
+                  <path
+                    d="M22 12a10 10 0 1 0-11.56 9.88v-6.99H7.9V12h2.54V9.8c0-2.5 1.49-3.89 3.78-3.89 1.09 0 2.24.2 2.24.2v2.46h-1.26c-1.24 0-1.63.77-1.63 1.56V12h2.78l-.44 2.89h-2.34v6.99A10 10 0 0 0 22 12Z"
+                  /></svg
+              ></a>
+              <a href="#" aria-label="X"
+                ><svg viewBox="0 0 24 24" fill="currentColor">
+                  <path
+                    d="M18.9 2H22l-7.5 8.6L23 22h-6.9l-5.4-7-6.2 7H1.4l8-9.2L1 2h7l4.9 6.5L18.9 2Zm-1.2 18h1.9L7.1 4H5.1l12.6 16Z"
+                  /></svg
+              ></a>
+              <a href="#" aria-label="LinkedIn"
+                ><svg viewBox="0 0 24 24" fill="currentColor">
+                  <path
+                    d="M6.94 5a2 2 0 1 1-4 0 2 2 0 0 1 4 0ZM7 8.48H3V21h4V8.48Zm6.32 0H9.34V21h3.94v-6.57c0-3.66 4.77-4 4.77 0V21H22v-7.93c0-6.17-7.06-5.94-8.72-2.91l.04-1.68Z"
+                  /></svg
+              ></a>
+            </div>
+          </div>
+          <div class="footer-col">
+            <h4 class="footer-col-title">Quick Links</h4>
+            <ul class="footer-links">
+              <li><a href="index.html">Home</a></li>
+              <li><a href="about-us.html">About Us</a></li>
+              <li><a href="consultancy.html">Consultancy</a></li>
+              <li>
+                <a href="engineering-projects.html">Engineering Projects</a>
+              </li>
+              <li><a href="services.html">Services</a></li>
+              <li><a href="contact-us.html">Contact Us</a></li>
+            </ul>
+          </div>
+          <div class="footer-col">
+            <h4 class="footer-col-title">Our Services</h4>
+            <ul class="footer-links">
+              <li>
+                <a href="services.html#services"
+                  >Instrumentation &amp; Control</a
+                >
+              </li>
+              <li>
+                <a href="services.html#services"
+                  >Pipes, Valves &amp; Fittings</a
+                >
+              </li>
+              <li><a href="services.html#services">Industrial Safety</a></li>
+              <li>
+                <a href="services.html#services"
+                  >Electrical &amp; Heat Tracing</a
+                >
+              </li>
+              <li><a href="services.html#services">Renewable Energy</a></li>
+              <li><a href="services.html#services">Mechanical Equipment</a></li>
+              <li><a href="services.html#services">Oilfield Chemicals</a></li>
+            </ul>
+          </div>
+          <div class="footer-col">
+            <h4 class="footer-col-title">Get in Touch</h4>
+            <div class="footer-contact-list">
+              <div class="footer-citem">
+                <svg
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                >
+                  <path
+                    d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.96.36 1.9.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.91.34 1.85.57 2.81.7A2 2 0 0 1 22 16.92Z"
+                  />
+                </svg>
+                <div>
+                  <a href="tel:+971509640206">+971 50 964 0206</a
+                  ><a href="tel:+971509493014">+971 50 949 3014</a>
+                </div>
+              </div>
+              <div class="footer-citem">
+                <svg
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                >
+                  <rect x="2" y="4" width="20" height="16" rx="2" />
+                  <path d="m22 7-10 6L2 7" />
+                </svg>
+                <div>
+                  <a href="mailto:info@enertecsc.com">info@enertecsc.com</a>
+                </div>
+              </div>
+              <div class="footer-citem">
+                <svg
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                >
+                  <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0Z" />
+                  <circle cx="12" cy="10" r="3" />
+                </svg>
+                <div>
+                  Sharjah Airport Road (E88),<br />University City, Sharjah
+                  66636, AE
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="footer-bottom">
+          <span
+            >© <span data-year>2025</span> EnerTec. All rights reserved.</span
+          >
+          <span class="footer-bottom-right">
+            <a
+              href="privacy-policy.html"
+              style="color: inherit; margin-right: 16px"
+              >Privacy Policy</a
+            >
+            <a href="terms-of-use.html" style="color: inherit">Terms of Use</a>
+          </span>
+        </div>
+      </div>
+    </footer>
+
+    <button class="scroll-fab" id="scrollFab" aria-label="Scroll down">
+      <svg
+        viewBox="0 0 24 24"
+        fill="none"
+        stroke="currentColor"
+        stroke-width="2.5"
+        stroke-linecap="round"
+        stroke-linejoin="round"
+      >
+        <line x1="12" y1="5" x2="12" y2="19" />
+        <polyline points="19 12 12 19 5 12" />
+      </svg>
+    </button>
+
+    <script src="https://cdn.jsdelivr.net/npm/lenis@1.1.14/dist/lenis.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+    <script src="js/index.js"></script>
+    <script>
+      (function () {
+        "use strict";
+
+        /* Lenis */
+        var lenis;
+        if (window.Lenis) {
+          lenis = new Lenis({
+            duration: 1.2,
+            easing: function (t) {
+              return Math.min(1, 1.001 - Math.pow(2, -10 * t));
+            },
+            smoothWheel: true,
+          });
+          if (window.gsap) {
+            gsap.ticker.add(function (t) {
+              lenis.raf(t * 1000);
+            });
+            gsap.ticker.lagSmoothing(0);
+          } else {
+            (function raf(t) {
+              lenis.raf(t);
+              requestAnimationFrame(raf);
+            })(0);
+          }
+        }
+
+        /* Hero entrance */
+        if (window.gsap) {
+          var tl = gsap.timeline({ delay: 0.15 });
+          var heroBg = document.getElementById("heroBg");
+          if (heroBg) gsap.set(heroBg, { scale: 1.08 });
+          tl.to("#heroEyebrow", {
+            opacity: 1,
+            x: 0,
+            duration: 0.9,
+            ease: "power3.out",
+          });
+          tl.to(
+            "#heroTitle",
+            { opacity: 1, y: 0, duration: 0.9, ease: "power3.out" },
+            "-=0.5",
+          );
+          tl.to(
+            "#heroBc",
+            { opacity: 1, duration: 0.7, ease: "power3.out" },
+            "-=0.4",
+          );
+          if (heroBg)
+            tl.to(heroBg, { scale: 1, duration: 2, ease: "power2.out" }, 0);
+
+          /* ScrollTrigger reveals */
+          gsap.registerPlugin(ScrollTrigger);
+
+          document.querySelectorAll(".rev").forEach(function (el) {
+            ScrollTrigger.create({
+              trigger: el,
+              start: "top 88%",
+              onEnter: function () {
+                el.classList.add("in");
+              },
+            });
+          });
+
+          /* Service cards stagger */
+          var cards = document.querySelectorAll(".svc-card");
+          if (cards.length) {
+            gsap.set(cards, { y: 60, opacity: 0 });
+            ScrollTrigger.create({
+              trigger: ".svcs-grid",
+              start: "top 82%",
+              onEnter: function () {
+                gsap.to(cards, {
+                  y: 0,
+                  opacity: 1,
+                  duration: 0.9,
+                  stagger: 0.1,
+                  ease: "power3.out",
+                });
+              },
+            });
+          }
+
+          /* Why cards stagger */
+          var whyCards = document.querySelectorAll(".svc-why-card");
+          if (whyCards.length) {
+            gsap.set(whyCards, { y: 50, opacity: 0 });
+            ScrollTrigger.create({
+              trigger: ".svc-why-grid",
+              start: "top 82%",
+              onEnter: function () {
+                gsap.to(whyCards, {
+                  y: 0,
+                  opacity: 1,
+                  duration: 0.8,
+                  stagger: 0.1,
+                  ease: "power3.out",
+                });
+              },
+            });
+          }
+
+          /* Parallax hero bg */
+          if (heroBg) {
+            gsap.to(heroBg, {
+              y: 80,
+              scrollTrigger: {
+                trigger: ".page-hero",
+                start: "top top",
+                end: "bottom top",
+                scrub: 1.5,
+              },
+            });
+          }
+        } else {
+          /* Fallback */
+          ["heroEyebrow", "heroTitle", "heroBc"].forEach(function (id) {
+            var el = document.getElementById(id);
+            if (el) {
+              el.style.opacity = "1";
+              el.style.transform = "none";
+            }
+          });
+          var io = new IntersectionObserver(
+            function (entries) {
+              entries.forEach(function (e) {
+                if (e.isIntersecting) {
+                  e.target.classList.add("in");
+                  io.unobserve(e.target);
+                }
+              });
+            },
+            { threshold: 0.1 },
+          );
+          document.querySelectorAll(".rev").forEach(function (el) {
+            io.observe(el);
+          });
+        }
+
+        /* Sticky header */
+        var header = document.querySelector(".site-header");
+        if (header) {
+          window.addEventListener(
+            "scroll",
+            function () {
+              header.classList.toggle("scrolled", window.scrollY > 12);
+            },
+            { passive: true },
+          );
+        }
+
+        /* Footer year */
+        var yr = document.querySelector("[data-year]");
+        if (yr) yr.textContent = new Date().getFullYear();
+      })();
+    </script>
+  </body>
+</html>

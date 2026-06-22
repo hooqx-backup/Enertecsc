@@ -1,0 +1,879 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<link rel="icon" type="image/png" sizes="64x64" href="favicon.png" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Enertec</title>
+<meta name="description" content="Explore EnerTec's professional HSE courses covering process safety, HAZOP, emergency response, environmental compliance and more â€” delivered in-person and online across Dubai, Kuala Lumpur, and Cairo." />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Sora:wght@400;500;600;700;800&family=Manrope:wght@400;500;600;700&display=swap" rel="stylesheet" />
+<link rel="stylesheet" href="css/index.css" />
+<style>
+/* ============================================================
+   HSE COURSE PAGE
+   ============================================================ */
+
+/* â”€â”€â”€ Page Hero â”€â”€â”€ */
+.page-hero {
+  position: relative;
+  height: clamp(380px, 52vw, 560px);
+  display: flex;
+  align-items: center;
+  overflow: hidden;
+}
+.page-hero-bg { position: absolute; inset: 0; }
+.page-hero-bg img {
+  width: 100%; height: 100%;
+  object-fit: cover; object-position: center 40%;
+  display: block;
+}
+.page-hero-overlay {
+  position: absolute; inset: 0;
+  background: linear-gradient(118deg, rgba(7,24,64,.92) 0%, rgba(13,47,113,.78) 50%, rgba(7,24,64,.60) 100%);
+}
+.page-hero-inner { position: relative; z-index: 1; padding-top: 80px; }
+.breadcrumb {
+  display: flex; align-items: center; gap: 8px;
+  font-size: 13px; font-family: var(--font-head); font-weight: 600;
+  color: rgba(255,255,255,.5); margin-bottom: 22px;
+}
+.breadcrumb a { color: rgba(255,255,255,.5); transition: color .2s; }
+.breadcrumb a:hover { color: var(--accent); }
+.breadcrumb svg { width: 12px; height: 12px; }
+.breadcrumb span { color: var(--accent); }
+.page-hero-eyebrow {
+  display: inline-flex; align-items: center; gap: 10px;
+  font-family: var(--font-head); font-size: 12px; font-weight: 700;
+  letter-spacing: .15em; text-transform: uppercase; color: var(--accent); margin-bottom: 18px;
+}
+.page-hero-eyebrow::before {
+  content: ''; display: block; width: 28px; height: 2px;
+  background: var(--accent); border-radius: 2px;
+}
+.page-hero h1 {
+  font-size: clamp(28px, 4vw, 52px); color: #fff;
+  line-height: 1.11; max-width: 20ch; font-weight: 800;
+}
+.page-hero h1 span { color: var(--accent); }
+.page-hero p {
+  color: #c4d6f0; font-size: clamp(15px, 1.2vw, 17px);
+  max-width: 52ch; margin-top: 16px; line-height: 1.65;
+}
+.page-hero-actions { display: flex; flex-wrap: wrap; gap: 14px; margin-top: 28px; }
+
+/* â”€â”€â”€ Stats Strip â”€â”€â”€ */
+.stats-strip { background: var(--primary); padding-block: 24px; }
+.stats-strip .wrap { display: grid; grid-template-columns: repeat(4, 1fr); gap: 0; }
+.stat-item {
+  display: flex; flex-direction: column; align-items: center; gap: 4px;
+  text-align: center; padding: 14px 20px;
+  border-right: 1px solid rgba(255,255,255,.12);
+}
+.stat-item:last-child { border-right: none; }
+.stat-num {
+  font-family: var(--font-head); font-size: clamp(24px, 2.8vw, 34px);
+  font-weight: 800; color: var(--accent); line-height: 1;
+}
+.stat-label {
+  font-size: 12.5px; font-weight: 600; color: rgba(255,255,255,.65);
+  font-family: var(--font-head); letter-spacing: .03em;
+}
+
+/* â”€â”€â”€ Courses Section â”€â”€â”€ */
+.courses-section { padding-block: clamp(56px, 7vw, 96px); }
+.section-head { text-align: center; margin-bottom: 56px; }
+.section-head .eyebrow { display: inline-flex; }
+
+/* â”€â”€â”€ Category Block â”€â”€â”€ */
+.course-category { margin-bottom: 60px; }
+.course-category:last-of-type { margin-bottom: 0; }
+
+.cat-header { display: flex; align-items: center; gap: 16px; margin-bottom: 24px; }
+.cat-header-icon {
+  width: 44px; height: 44px; border-radius: 12px; flex-shrink: 0;
+  background: var(--primary); display: grid; place-items: center; color: #fff;
+}
+.cat-header-icon svg { width: 20px; height: 20px; }
+.cat-header-text h3 { font-size: 18px; font-weight: 700; color: var(--ink); margin: 0; line-height: 1.2; }
+.cat-header-text p { font-size: 13.5px; color: var(--muted); margin: 0; font-family: var(--font-head); font-weight: 600; }
+.cat-header-line { flex: 1; height: 1px; background: var(--line); }
+
+/* â”€â”€â”€ Table â”€â”€â”€ */
+.course-table-wrap {
+  border-radius: var(--radius-lg);
+  border: 1px solid var(--line);
+  overflow: hidden;
+  box-shadow: var(--shadow-sm);
+}
+.course-table {
+  width: 100%; border-collapse: collapse;
+  font-family: var(--font-body); font-size: 14.5px; color: var(--body);
+}
+.course-table thead tr { background: var(--primary); }
+.course-table thead th {
+  padding: 14px 18px; font-family: var(--font-head); font-size: 12px; font-weight: 700;
+  letter-spacing: .1em; text-transform: uppercase;
+  color: rgba(255,255,255,.8); text-align: left; white-space: nowrap; border: none;
+}
+.course-table thead th.center { text-align: center; }
+.course-table tbody tr { border-bottom: 1px solid var(--line); transition: background .18s; }
+.course-table tbody tr:last-child { border-bottom: none; }
+.course-table tbody tr:hover { background: var(--bg-2); }
+.course-table tbody tr:nth-child(even) { background: #f9fbff; }
+.course-table tbody tr:nth-child(even):hover { background: var(--bg-2); }
+.course-table td { padding: 15px 18px; vertical-align: middle; border: none; }
+
+td.td-no {
+  font-family: var(--font-head); font-weight: 700; font-size: 13px;
+  color: var(--muted); width: 46px; text-align: center;
+}
+td.td-code { width: 100px; }
+.code-badge {
+  display: inline-block; font-family: var(--font-head); font-size: 11.5px;
+  font-weight: 800; letter-spacing: .06em; color: var(--primary);
+  background: var(--bg-2); border: 1.5px solid rgba(13,47,113,.14);
+  padding: 4px 10px; border-radius: 6px; white-space: nowrap;
+}
+td.td-mode { width: 130px; }
+.mode-wrap { display: flex; flex-direction: column; gap: 5px; }
+.mode-tag {
+  display: inline-flex; align-items: center; gap: 5px;
+  font-family: var(--font-head); font-size: 11.5px; font-weight: 600;
+  padding: 3px 9px; border-radius: 5px; white-space: nowrap; width: fit-content;
+}
+.mode-tag svg { width: 11px; height: 11px; flex-shrink: 0; }
+.mode-tag--inperson { color: #15623a; background: #e6f5ec; }
+.mode-tag--online   { color: #1a4bba; background: #e8eeff; }
+td.td-name {
+  font-family: var(--font-head); font-weight: 600; font-size: 14.5px;
+  color: var(--ink); line-height: 1.35;
+}
+td.td-details { width: 110px; text-align: center; }
+.pdf-link {
+  display: inline-flex; align-items: center; gap: 6px;
+  font-family: var(--font-head); font-size: 12.5px; font-weight: 700;
+  color: var(--primary); background: var(--bg-2);
+  border: 1.5px solid rgba(13,47,113,.14);
+  padding: 6px 12px; border-radius: 7px;
+  transition: all .2s var(--ease); white-space: nowrap;
+}
+.pdf-link svg { width: 13px; height: 13px; }
+.pdf-link:hover { background: var(--primary); color: #fff; border-color: var(--primary); }
+td.td-location { width: 170px; }
+.location-list { display: flex; flex-direction: column; gap: 4px; }
+.loc-item {
+  display: inline-flex; align-items: center; gap: 5px;
+  font-size: 12.5px; font-family: var(--font-head); font-weight: 600; color: var(--body);
+}
+.loc-item svg { width: 11px; height: 11px; color: var(--accent); flex-shrink: 0; }
+td.td-enroll { width: 120px; text-align: center; }
+.enroll-btn {
+  display: inline-flex; align-items: center; justify-content: center; gap: 6px;
+  font-family: var(--font-head); font-size: 12.5px; font-weight: 700;
+  background: var(--accent); color: #fff;
+  padding: 8px 16px; border-radius: 999px;
+  transition: all .22s var(--ease); white-space: nowrap;
+  box-shadow: 0 4px 12px rgba(245,166,35,.3);
+}
+.enroll-btn svg { width: 12px; height: 12px; transition: transform .22s var(--ease); }
+.enroll-btn:hover { background: var(--accent-600); box-shadow: 0 6px 18px rgba(245,166,35,.42); }
+.enroll-btn:hover svg { transform: translateX(3px); }
+
+/* â”€â”€â”€ Mobile scroll hint â”€â”€â”€ */
+.table-scroll-hint {
+  display: none; font-size: 12px; font-family: var(--font-head); font-weight: 600;
+  color: var(--muted); text-align: right; margin-bottom: 8px;
+}
+.table-scroll-hint svg { width: 13px; height: 13px; vertical-align: middle; }
+
+/* â”€â”€â”€ CTA Banner â”€â”€â”€ */
+.cta-banner {
+  background: var(--primary); border-radius: var(--radius-lg);
+  padding: clamp(40px, 5vw, 64px) clamp(28px, 5vw, 64px);
+  display: grid; grid-template-columns: 1fr auto;
+  align-items: center; gap: 40px; position: relative; overflow: hidden;
+  margin-top: 60px;
+}
+.cta-banner::before {
+  content: ''; position: absolute; top: -80px; right: -80px;
+  width: 320px; height: 320px;
+  background: radial-gradient(circle, rgba(245,166,35,.16) 0%, transparent 70%);
+  pointer-events: none;
+}
+.cta-copy { position: relative; z-index: 1; }
+.cta-eyebrow {
+  font-family: var(--font-head); font-size: 11.5px; font-weight: 700;
+  letter-spacing: .14em; text-transform: uppercase; color: var(--accent);
+  display: flex; align-items: center; gap: 10px; margin-bottom: 14px;
+}
+.cta-eyebrow::before {
+  content: ''; display: block; width: 22px; height: 2px;
+  background: var(--accent); border-radius: 2px;
+}
+.cta-banner h2 { font-size: clamp(20px, 2.8vw, 32px); color: #fff; max-width: 28ch; margin-bottom: 10px; }
+.cta-banner p { color: rgba(255,255,255,.68); font-size: 15px; max-width: 46ch; }
+.cta-actions {
+  display: flex; flex-direction: column; gap: 10px;
+  align-items: center; position: relative; z-index: 1; flex-shrink: 0;
+}
+.cta-actions .btn { white-space: nowrap; min-width: 170px; justify-content: center; }
+.btn--outline-white {
+  background: transparent; color: #fff; border: 1.5px solid rgba(255,255,255,.3);
+}
+.btn--outline-white:hover { background: #fff; color: var(--primary); border-color: #fff; }
+
+/* â”€â”€â”€ Responsive â”€â”€â”€ */
+@media (max-width: 1024px) {
+  .stats-strip .wrap { grid-template-columns: repeat(2, 1fr); }
+  .stat-item:nth-child(2) { border-right: none; }
+  .stat-item:nth-child(3) { border-top: 1px solid rgba(255,255,255,.12); }
+  .stat-item:nth-child(4) { border-top: 1px solid rgba(255,255,255,.12); }
+  .table-scroll-hint { display: block; }
+  .course-table-wrap { overflow-x: auto; -webkit-overflow-scrolling: touch; }
+  .course-table { min-width: 700px; }
+  .cta-banner { grid-template-columns: 1fr; }
+  .cta-actions { flex-direction: row; flex-wrap: wrap; justify-content: flex-start; }
+}
+@media (max-width: 600px) {
+  .stats-strip .wrap { grid-template-columns: 1fr 1fr; }
+  .stat-item { border-right: none !important; border-bottom: 1px solid rgba(255,255,255,.12); }
+  .stat-item:last-child { border-bottom: none; }
+  td.td-location { display: none; }
+}
+</style>
+</head>
+<body>
+
+<!-- ===================== TOP BAR ===================== -->
+<div class="topbar">
+  <div class="wrap">
+    <div class="topbar-contact">
+      <span>
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.96.36 1.9.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.91.34 1.85.57 2.81.7A2 2 0 0 1 22 16.92Z"/></svg>
+        <a href="tel:+971509640206">+971 50 964 0206</a>
+      </span>
+      <span class="tb-email">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 7-10 6L2 7"/></svg>
+        <a href="mailto:info@enertecsc.com">info@enertecsc.com</a>
+      </span>
+    </div>
+    <div class="topbar-social">
+      <a href="#" aria-label="Facebook"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M22 12a10 10 0 1 0-11.56 9.88v-6.99H7.9V12h2.54V9.8c0-2.5 1.49-3.89 3.78-3.89 1.09 0 2.24.2 2.24.2v2.46h-1.26c-1.24 0-1.63.77-1.63 1.56V12h2.78l-.44 2.89h-2.34v6.99A10 10 0 0 0 22 12Z"/></svg></a>
+      <a href="#" aria-label="X"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M18.9 2H22l-7.5 8.6L23 22h-6.9l-5.4-7-6.2 7H1.4l8-9.2L1 2h7l4.9 6.5L18.9 2Zm-1.2 18h1.9L7.1 4H5.1l12.6 16Z"/></svg></a>
+      <a href="#" aria-label="LinkedIn"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M6.94 5a2 2 0 1 1-4 0 2 2 0 0 1 4 0ZM7 8.48H3V21h4V8.48Zm6.32 0H9.34V21h3.94v-6.57c0-3.66 4.77-4 4.77 0V21H22v-7.93c0-6.17-7.06-5.94-8.72-2.91l.04-1.68Z"/></svg></a>
+    </div>
+  </div>
+</div>
+
+<!-- ===================== HEADER ===================== -->
+<header class="site-header">
+  <div class="wrap">
+    <nav class="nav">
+      <a class="brand" href="index.html" aria-label="EnerTec home">
+        <img src="assets/images/enerteclogo.png" alt="EnerTec" class="brand-logo">
+      </a>
+      <ul class="nav-menu">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="about-us.html">About</a></li>
+        <li class="has-dd">
+          <a href="#">Training
+            <svg class="caret" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="m6 9 6 6 6-6"/></svg>
+          </a>
+          <ul class="dd">
+            <li class="has-dd">
+              <a href="#">Oil &amp; Gas Courses
+                <svg class="sub-caret" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="m9 18 6-6-6-6"/></svg>
+              </a>
+              <ul class="dd dd--sub">
+                <li><a href="up-stream.html">Upstream Courses</a></li>
+                <li><a href="down-stream.html">Mid &amp; Downstream</a></li>
+              </ul>
+            </li>
+            <li><a href="engineering-course.html">Engineering Courses</a></li>
+            <li><a href="management-course.html">Management Courses</a></li>
+            <li><a href="hse-course.html">HSE Courses</a></li>
+          </ul>
+        </li>
+        <li><a href="consultancy.html">Consultancy</a></li>
+        <li><a href="engineering-projects.html">Projects</a></li>
+        <li><a href="services.html">Services</a></li>
+      </ul>
+      <div class="nav-cta">
+        <a href="contact-us.html" class="btn btn--primary">Get in Touch
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+        </a>
+        <button class="nav-toggle" aria-label="Open menu"><span></span></button>
+      </div>
+    </nav>
+  </div>
+</header>
+
+<!-- ===================== MOBILE PANEL ===================== -->
+<div class="mobile-overlay"></div>
+<aside class="mobile-panel" aria-label="Mobile navigation">
+  <div class="mp-head">
+    <img src="assets/images/enerteclogo.png" alt="EnerTec" class="brand-logo">
+    <button class="mp-close" aria-label="Close menu">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 6 6 18M6 6l12 12"/></svg>
+    </button>
+  </div>
+  <ul class="mobile-nav">
+    <li><a href="index.html">Home</a></li>
+    <li><a href="about-us.html">About Us</a></li>
+    <li>
+      <button class="m-sub-toggle">Training
+        <svg class="caret" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="m6 9 6 6 6-6"/></svg>
+      </button>
+      <ul class="m-sub">
+        <li><a href="up-stream.html">Upstream Courses</a></li>
+        <li><a href="down-stream.html">Mid &amp; Downstream</a></li>
+        <li><a href="engineering-course.html">Engineering Courses</a></li>
+        <li><a href="management-course.html">Management Courses</a></li>
+        <li><a href="hse-course.html">HSE Courses</a></li>
+      </ul>
+    </li>
+    <li><a href="consultancy.html">Consultancy</a></li>
+    <li><a href="engineering-projects.html">Engineering Projects</a></li>
+    <li><a href="services.html">Services</a></li>
+  </ul>
+  <a href="contact-us.html" class="btn btn--primary">Get in Touch</a>
+</aside>
+
+<!-- ===================== PAGE HERO ===================== -->
+<section class="page-hero">
+  <div class="page-hero-bg">
+    <img src="assets/images/servicesimages/ChatGPT-Image-Jun-2-2026-04_59_08-PM-1024x683.webp" alt="HSE Courses">
+  </div>
+  <div class="page-hero-overlay"></div>
+  <div class="wrap page-hero-inner">
+    <nav class="breadcrumb" aria-label="Breadcrumb">
+      <a href="index.html">Home</a>
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="m9 18 6-6-6-6"/></svg>
+      <a href="#">Training</a>
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="m9 18 6-6-6-6"/></svg>
+      <span>HSE Courses</span>
+    </nav>
+    <p class="page-hero-eyebrow">Professional Training</p>
+    <h1>Health, Safety &amp; <span>Environment</span> Courses for Industry Professionals</h1>
+    <p>Comprehensive HSE programmes covering process safety, HAZOP, emergency response, environmental compliance and more â€” built for refinery and oil &amp; gas professionals.</p>
+    <div class="page-hero-actions">
+      <a href="#courses" class="btn btn--primary">View Courses
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+      </a>
+      <a href="contact-us.html" class="btn btn--light">Enquire Now</a>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== STATS STRIP ===================== -->
+<div class="stats-strip">
+  <div class="wrap">
+    <div class="stat-item">
+      <div class="stat-num">14</div>
+      <div class="stat-label">HSE Courses</div>
+    </div>
+    <div class="stat-item">
+      <div class="stat-num">2</div>
+      <div class="stat-label">Delivery Modes</div>
+    </div>
+    <div class="stat-item">
+      <div class="stat-num">3</div>
+      <div class="stat-label">Global Locations</div>
+    </div>
+    <div class="stat-item">
+      <div class="stat-num">20+</div>
+      <div class="stat-label">Years of Experience</div>
+    </div>
+  </div>
+</div>
+
+<!-- ===================== COURSES TABLE ===================== -->
+<section class="courses-section" id="courses">
+  <div class="wrap">
+
+    <div class="section-head">
+      <span class="eyebrow eyebrow--center">Our Programmes</span>
+      <h2 class="section-title section-title--center" style="max-width:28ch;">HSE Training Courses</h2>
+      <p class="lede lede--center">All courses are available in-person and online, with PDF course materials and individual enrollment options.</p>
+    </div>
+
+    <!-- â”€â”€ Process Safety & Risk â”€â”€ -->
+    <div class="course-category">
+      <div class="cat-header">
+        <div class="cat-header-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2 4 5v6c0 5 3.4 8.6 8 10 4.6-1.4 8-5 8-10V5l-8-3Z"/><path d="m9 12 2 2 4-4"/></svg>
+        </div>
+        <div class="cat-header-text">
+          <h3>Process Safety &amp; Risk Management</h3>
+          <p>HSE-001 â€” HSE-007 &nbsp;Â·&nbsp; 7 Programmes</p>
+        </div>
+        <div class="cat-header-line"></div>
+      </div>
+
+      <p class="table-scroll-hint">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+        Scroll to see full table
+      </p>
+
+      <div class="course-table-wrap">
+        <table class="course-table">
+          <thead>
+            <tr>
+              <th class="center">No</th>
+              <th>Code</th>
+              <th>Course Mode</th>
+              <th>Course Name</th>
+              <th class="center">Course Details</th>
+              <th>Location</th>
+              <th class="center">Enroll</th>
+            </tr>
+          </thead>
+          <tbody>
+
+            <tr>
+              <td class="td-no">1</td>
+              <td class="td-code"><span class="code-badge">HSE-001</span></td>
+              <td class="td-mode">
+                <div class="mode-wrap">
+                  <span class="mode-tag mode-tag--inperson"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/></svg>In-Person</span>
+                  <span class="mode-tag mode-tag--online"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="3" width="20" height="14" rx="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/></svg>Online</span>
+                </div>
+              </td>
+              <td class="td-name">Process Safety Management and Risk Assessment</td>
+              <td class="td-details"><a href="#" class="pdf-link"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg>PDF</a></td>
+              <td class="td-location">
+                <div class="location-list">
+                  <span class="loc-item"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0Z"/><circle cx="12" cy="10" r="3"/></svg>Dubai</span>
+                  <span class="loc-item"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0Z"/><circle cx="12" cy="10" r="3"/></svg>Kuala Lumpur</span>
+                  <span class="loc-item"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0Z"/><circle cx="12" cy="10" r="3"/></svg>Cairo</span>
+                </div>
+              </td>
+              <td class="td-enroll"><a href="contact-us.html" class="enroll-btn">Enroll Now<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a></td>
+            </tr>
+
+            <tr>
+              <td class="td-no">2</td>
+              <td class="td-code"><span class="code-badge">HSE-002</span></td>
+              <td class="td-mode">
+                <div class="mode-wrap">
+                  <span class="mode-tag mode-tag--inperson"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/></svg>In-Person</span>
+                  <span class="mode-tag mode-tag--online"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="3" width="20" height="14" rx="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/></svg>Online</span>
+                </div>
+              </td>
+              <td class="td-name">Health, Safety, and Environmental (HSE) Regulations</td>
+              <td class="td-details"><a href="#" class="pdf-link"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg>PDF</a></td>
+              <td class="td-location">
+                <div class="location-list">
+                  <span class="loc-item"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0Z"/><circle cx="12" cy="10" r="3"/></svg>Dubai</span>
+                  <span class="loc-item"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0Z"/><circle cx="12" cy="10" r="3"/></svg>Kuala Lumpur</span>
+                  <span class="loc-item"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0Z"/><circle cx="12" cy="10" r="3"/></svg>Cairo</span>
+                </div>
+              </td>
+              <td class="td-enroll"><a href="contact-us.html" class="enroll-btn">Enroll Now<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a></td>
+            </tr>
+
+            <tr>
+              <td class="td-no">3</td>
+              <td class="td-code"><span class="code-badge">HSE-003</span></td>
+              <td class="td-mode">
+                <div class="mode-wrap">
+                  <span class="mode-tag mode-tag--inperson"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/></svg>In-Person</span>
+                  <span class="mode-tag mode-tag--online"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="3" width="20" height="14" rx="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/></svg>Online</span>
+                </div>
+              </td>
+              <td class="td-name">Safety Management in Oil Refineries</td>
+              <td class="td-details"><a href="#" class="pdf-link"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg>PDF</a></td>
+              <td class="td-location">
+                <div class="location-list">
+                  <span class="loc-item"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0Z"/><circle cx="12" cy="10" r="3"/></svg>Dubai</span>
+                  <span class="loc-item"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0Z"/><circle cx="12" cy="10" r="3"/></svg>Kuala Lumpur</span>
+                  <span class="loc-item"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0Z"/><circle cx="12" cy="10" r="3"/></svg>Cairo</span>
+                </div>
+              </td>
+              <td class="td-enroll"><a href="contact-us.html" class="enroll-btn">Enroll Now<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a></td>
+            </tr>
+
+            <tr>
+              <td class="td-no">4</td>
+              <td class="td-code"><span class="code-badge">HSE-004</span></td>
+              <td class="td-mode">
+                <div class="mode-wrap">
+                  <span class="mode-tag mode-tag--inperson"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/></svg>In-Person</span>
+                  <span class="mode-tag mode-tag--online"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="3" width="20" height="14" rx="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/></svg>Online</span>
+                </div>
+              </td>
+              <td class="td-name">HSE Management Systems for Refineries</td>
+              <td class="td-details"><a href="#" class="pdf-link"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg>PDF</a></td>
+              <td class="td-location">
+                <div class="location-list">
+                  <span class="loc-item"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0Z"/><circle cx="12" cy="10" r="3"/></svg>Dubai</span>
+                  <span class="loc-item"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0Z"/><circle cx="12" cy="10" r="3"/></svg>Kuala Lumpur</span>
+                  <span class="loc-item"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0Z"/><circle cx="12" cy="10" r="3"/></svg>Cairo</span>
+                </div>
+              </td>
+              <td class="td-enroll"><a href="contact-us.html" class="enroll-btn">Enroll Now<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a></td>
+            </tr>
+
+            <tr>
+              <td class="td-no">5</td>
+              <td class="td-code"><span class="code-badge">HSE-005</span></td>
+              <td class="td-mode">
+                <div class="mode-wrap">
+                  <span class="mode-tag mode-tag--inperson"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/></svg>In-Person</span>
+                  <span class="mode-tag mode-tag--online"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="3" width="20" height="14" rx="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/></svg>Online</span>
+                </div>
+              </td>
+              <td class="td-name">Process Safety Management (PSM) in Refineries</td>
+              <td class="td-details"><a href="#" class="pdf-link"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg>PDF</a></td>
+              <td class="td-location">
+                <div class="location-list">
+                  <span class="loc-item"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0Z"/><circle cx="12" cy="10" r="3"/></svg>Dubai</span>
+                  <span class="loc-item"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0Z"/><circle cx="12" cy="10" r="3"/></svg>Kuala Lumpur</span>
+                  <span class="loc-item"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0Z"/><circle cx="12" cy="10" r="3"/></svg>Cairo</span>
+                </div>
+              </td>
+              <td class="td-enroll"><a href="contact-us.html" class="enroll-btn">Enroll Now<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a></td>
+            </tr>
+
+            <tr>
+              <td class="td-no">6</td>
+              <td class="td-code"><span class="code-badge">HSE-006</span></td>
+              <td class="td-mode">
+                <div class="mode-wrap">
+                  <span class="mode-tag mode-tag--inperson"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/></svg>In-Person</span>
+                  <span class="mode-tag mode-tag--online"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="3" width="20" height="14" rx="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/></svg>Online</span>
+                </div>
+              </td>
+              <td class="td-name">Hazard and Operability Study (HAZOP)</td>
+              <td class="td-details"><a href="#" class="pdf-link"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg>PDF</a></td>
+              <td class="td-location">
+                <div class="location-list">
+                  <span class="loc-item"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0Z"/><circle cx="12" cy="10" r="3"/></svg>Dubai</span>
+                  <span class="loc-item"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0Z"/><circle cx="12" cy="10" r="3"/></svg>Kuala Lumpur</span>
+                  <span class="loc-item"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0Z"/><circle cx="12" cy="10" r="3"/></svg>Cairo</span>
+                </div>
+              </td>
+              <td class="td-enroll"><a href="contact-us.html" class="enroll-btn">Enroll Now<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a></td>
+            </tr>
+
+            <tr>
+              <td class="td-no">7</td>
+              <td class="td-code"><span class="code-badge">HSE-007</span></td>
+              <td class="td-mode">
+                <div class="mode-wrap">
+                  <span class="mode-tag mode-tag--inperson"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/></svg>In-Person</span>
+                  <span class="mode-tag mode-tag--online"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="3" width="20" height="14" rx="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/></svg>Online</span>
+                </div>
+              </td>
+              <td class="td-name">Incident Investigation and Reporting</td>
+              <td class="td-details"><a href="#" class="pdf-link"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg>PDF</a></td>
+              <td class="td-location">
+                <div class="location-list">
+                  <span class="loc-item"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0Z"/><circle cx="12" cy="10" r="3"/></svg>Dubai</span>
+                  <span class="loc-item"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0Z"/><circle cx="12" cy="10" r="3"/></svg>Kuala Lumpur</span>
+                  <span class="loc-item"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0Z"/><circle cx="12" cy="10" r="3"/></svg>Cairo</span>
+                </div>
+              </td>
+              <td class="td-enroll"><a href="contact-us.html" class="enroll-btn">Enroll Now<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a></td>
+            </tr>
+
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+    <!-- â”€â”€ Emergency Response & Compliance â”€â”€ -->
+    <div class="course-category">
+      <div class="cat-header">
+        <div class="cat-header-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg>
+        </div>
+        <div class="cat-header-text">
+          <h3>Emergency Response &amp; Environmental Compliance</h3>
+          <p>HSE-008 â€” HSE-014 &nbsp;Â·&nbsp; 7 Programmes</p>
+        </div>
+        <div class="cat-header-line"></div>
+      </div>
+
+      <p class="table-scroll-hint">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+        Scroll to see full table
+      </p>
+
+      <div class="course-table-wrap">
+        <table class="course-table">
+          <thead>
+            <tr>
+              <th class="center">No</th>
+              <th>Code</th>
+              <th>Course Mode</th>
+              <th>Course Name</th>
+              <th class="center">Course Details</th>
+              <th>Location</th>
+              <th class="center">Enroll</th>
+            </tr>
+          </thead>
+          <tbody>
+
+            <tr>
+              <td class="td-no">8</td>
+              <td class="td-code"><span class="code-badge">HSE-008</span></td>
+              <td class="td-mode">
+                <div class="mode-wrap">
+                  <span class="mode-tag mode-tag--inperson"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/></svg>In-Person</span>
+                  <span class="mode-tag mode-tag--online"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="3" width="20" height="14" rx="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/></svg>Online</span>
+                </div>
+              </td>
+              <td class="td-name">Emergency Response Planning for Refineries</td>
+              <td class="td-details"><a href="#" class="pdf-link"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg>PDF</a></td>
+              <td class="td-location">
+                <div class="location-list">
+                  <span class="loc-item"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0Z"/><circle cx="12" cy="10" r="3"/></svg>Dubai</span>
+                  <span class="loc-item"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0Z"/><circle cx="12" cy="10" r="3"/></svg>Kuala Lumpur</span>
+                  <span class="loc-item"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0Z"/><circle cx="12" cy="10" r="3"/></svg>Cairo</span>
+                </div>
+              </td>
+              <td class="td-enroll"><a href="contact-us.html" class="enroll-btn">Enroll Now<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a></td>
+            </tr>
+
+            <tr>
+              <td class="td-no">9</td>
+              <td class="td-code"><span class="code-badge">HSE-009</span></td>
+              <td class="td-mode">
+                <div class="mode-wrap">
+                  <span class="mode-tag mode-tag--inperson"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/></svg>In-Person</span>
+                  <span class="mode-tag mode-tag--online"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="3" width="20" height="14" rx="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/></svg>Online</span>
+                </div>
+              </td>
+              <td class="td-name">Fire Protection and Control Systems in Refineries</td>
+              <td class="td-details"><a href="#" class="pdf-link"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg>PDF</a></td>
+              <td class="td-location">
+                <div class="location-list">
+                  <span class="loc-item"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0Z"/><circle cx="12" cy="10" r="3"/></svg>Dubai</span>
+                  <span class="loc-item"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0Z"/><circle cx="12" cy="10" r="3"/></svg>Kuala Lumpur</span>
+                  <span class="loc-item"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0Z"/><circle cx="12" cy="10" r="3"/></svg>Cairo</span>
+                </div>
+              </td>
+              <td class="td-enroll"><a href="contact-us.html" class="enroll-btn">Enroll Now<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a></td>
+            </tr>
+
+            <tr>
+              <td class="td-no">10</td>
+              <td class="td-code"><span class="code-badge">HSE-010</span></td>
+              <td class="td-mode">
+                <div class="mode-wrap">
+                  <span class="mode-tag mode-tag--inperson"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/></svg>In-Person</span>
+                  <span class="mode-tag mode-tag--online"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="3" width="20" height="14" rx="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/></svg>Online</span>
+                </div>
+              </td>
+              <td class="td-name">Occupational Health and Safety in Refinery Operations</td>
+              <td class="td-details"><a href="#" class="pdf-link"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg>PDF</a></td>
+              <td class="td-location">
+                <div class="location-list">
+                  <span class="loc-item"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0Z"/><circle cx="12" cy="10" r="3"/></svg>Dubai</span>
+                  <span class="loc-item"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0Z"/><circle cx="12" cy="10" r="3"/></svg>Kuala Lumpur</span>
+                  <span class="loc-item"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0Z"/><circle cx="12" cy="10" r="3"/></svg>Cairo</span>
+                </div>
+              </td>
+              <td class="td-enroll"><a href="contact-us.html" class="enroll-btn">Enroll Now<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a></td>
+            </tr>
+
+            <tr>
+              <td class="td-no">11</td>
+              <td class="td-code"><span class="code-badge">HSE-011</span></td>
+              <td class="td-mode">
+                <div class="mode-wrap">
+                  <span class="mode-tag mode-tag--inperson"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/></svg>In-Person</span>
+                  <span class="mode-tag mode-tag--online"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="3" width="20" height="14" rx="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/></svg>Online</span>
+                </div>
+              </td>
+              <td class="td-name">Risk Assessment and Management in Refining</td>
+              <td class="td-details"><a href="#" class="pdf-link"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg>PDF</a></td>
+              <td class="td-location">
+                <div class="location-list">
+                  <span class="loc-item"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0Z"/><circle cx="12" cy="10" r="3"/></svg>Dubai</span>
+                  <span class="loc-item"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0Z"/><circle cx="12" cy="10" r="3"/></svg>Kuala Lumpur</span>
+                  <span class="loc-item"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0Z"/><circle cx="12" cy="10" r="3"/></svg>Cairo</span>
+                </div>
+              </td>
+              <td class="td-enroll"><a href="contact-us.html" class="enroll-btn">Enroll Now<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a></td>
+            </tr>
+
+            <tr>
+              <td class="td-no">12</td>
+              <td class="td-code"><span class="code-badge">HSE-012</span></td>
+              <td class="td-mode">
+                <div class="mode-wrap">
+                  <span class="mode-tag mode-tag--inperson"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/></svg>In-Person</span>
+                  <span class="mode-tag mode-tag--online"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="3" width="20" height="14" rx="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/></svg>Online</span>
+                </div>
+              </td>
+              <td class="td-name">Regulatory Compliance and Environmental Standards</td>
+              <td class="td-details"><a href="#" class="pdf-link"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg>PDF</a></td>
+              <td class="td-location">
+                <div class="location-list">
+                  <span class="loc-item"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0Z"/><circle cx="12" cy="10" r="3"/></svg>Dubai</span>
+                  <span class="loc-item"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0Z"/><circle cx="12" cy="10" r="3"/></svg>Kuala Lumpur</span>
+                  <span class="loc-item"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0Z"/><circle cx="12" cy="10" r="3"/></svg>Cairo</span>
+                </div>
+              </td>
+              <td class="td-enroll"><a href="contact-us.html" class="enroll-btn">Enroll Now<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a></td>
+            </tr>
+
+            <tr>
+              <td class="td-no">13</td>
+              <td class="td-code"><span class="code-badge">HSE-013</span></td>
+              <td class="td-mode">
+                <div class="mode-wrap">
+                  <span class="mode-tag mode-tag--inperson"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/></svg>In-Person</span>
+                  <span class="mode-tag mode-tag--online"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="3" width="20" height="14" rx="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/></svg>Online</span>
+                </div>
+              </td>
+              <td class="td-name">Workplace Safety Practices in Refinery Maintenance</td>
+              <td class="td-details"><a href="#" class="pdf-link"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg>PDF</a></td>
+              <td class="td-location">
+                <div class="location-list">
+                  <span class="loc-item"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0Z"/><circle cx="12" cy="10" r="3"/></svg>Dubai</span>
+                  <span class="loc-item"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0Z"/><circle cx="12" cy="10" r="3"/></svg>Kuala Lumpur</span>
+                  <span class="loc-item"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0Z"/><circle cx="12" cy="10" r="3"/></svg>Cairo</span>
+                </div>
+              </td>
+              <td class="td-enroll"><a href="contact-us.html" class="enroll-btn">Enroll Now<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a></td>
+            </tr>
+
+            <tr>
+              <td class="td-no">14</td>
+              <td class="td-code"><span class="code-badge">HSE-014</span></td>
+              <td class="td-mode">
+                <div class="mode-wrap">
+                  <span class="mode-tag mode-tag--inperson"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/></svg>In-Person</span>
+                  <span class="mode-tag mode-tag--online"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="3" width="20" height="14" rx="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/></svg>Online</span>
+                </div>
+              </td>
+              <td class="td-name">Environmental Management in Refineries</td>
+              <td class="td-details"><a href="#" class="pdf-link"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg>PDF</a></td>
+              <td class="td-location">
+                <div class="location-list">
+                  <span class="loc-item"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0Z"/><circle cx="12" cy="10" r="3"/></svg>Dubai</span>
+                  <span class="loc-item"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0Z"/><circle cx="12" cy="10" r="3"/></svg>Kuala Lumpur</span>
+                  <span class="loc-item"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0Z"/><circle cx="12" cy="10" r="3"/></svg>Cairo</span>
+                </div>
+              </td>
+              <td class="td-enroll"><a href="contact-us.html" class="enroll-btn">Enroll Now<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a></td>
+            </tr>
+
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+    <!-- â”€â”€ CTA Banner â”€â”€ -->
+    <div class="cta-banner">
+      <div class="cta-copy">
+        <p class="cta-eyebrow">Stay Compliant. Stay Safe.</p>
+        <h2>Need a Custom HSE Training Programme?</h2>
+        <p>We design tailored group and corporate HSE programmes delivered in-house at your facility across the GCC &amp; MENA region.</p>
+      </div>
+      <div class="cta-actions">
+        <a href="contact-us.html" class="btn btn--primary">Get in Touch
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+        </a>
+        <a href="mailto:info@enertecsc.com" class="btn btn--outline-white">Email Us</a>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- ===================== FOOTER ===================== -->
+<footer class="footer">
+  <div class="footer-top-bar"></div>
+  <div class="wrap">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <img src="assets/images/enerteclogo.png" alt="EnerTec" class="footer-logo">
+        <p class="footer-tagline">Specialized in Supply Chain, Engineering &amp; Renewable Energy Solutions</p>
+        <div class="footer-social">
+          <a href="#" aria-label="Facebook"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M22 12a10 10 0 1 0-11.56 9.88v-6.99H7.9V12h2.54V9.8c0-2.5 1.49-3.89 3.78-3.89 1.09 0 2.24.2 2.24.2v2.46h-1.26c-1.24 0-1.63.77-1.63 1.56V12h2.78l-.44 2.89h-2.34v6.99A10 10 0 0 0 22 12Z"/></svg></a>
+          <a href="#" aria-label="X"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M18.9 2H22l-7.5 8.6L23 22h-6.9l-5.4-7-6.2 7H1.4l8-9.2L1 2h7l4.9 6.5L18.9 2Zm-1.2 18h1.9L7.1 4H5.1l12.6 16Z"/></svg></a>
+          <a href="#" aria-label="LinkedIn"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M6.94 5a2 2 0 1 1-4 0 2 2 0 0 1 4 0ZM7 8.48H3V21h4V8.48Zm6.32 0H9.34V21h3.94v-6.57c0-3.66 4.77-4 4.77 0V21H22v-7.93c0-6.17-7.06-5.94-8.72-2.91l.04-1.68Z"/></svg></a>
+        </div>
+      </div>
+      <div class="footer-col">
+        <h4 class="footer-col-title">Quick Links</h4>
+        <ul class="footer-links">
+          <li><a href="index.html">Home</a></li>
+          <li><a href="about-us.html">About Us</a></li>
+          <li><a href="consultancy.html">Consultancy</a></li>
+          <li><a href="engineering-projects.html">Engineering Projects</a></li>
+          <li><a href="services.html">Services</a></li>
+          <li><a href="contact-us.html">Contact Us</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4 class="footer-col-title">Training</h4>
+        <ul class="footer-links">
+          <li><a href="up-stream.html">Upstream Courses</a></li>
+          <li><a href="down-stream.html">Mid &amp; Downstream</a></li>
+          <li><a href="engineering-course.html">Engineering Courses</a></li>
+          <li><a href="management-course.html">Management Courses</a></li>
+          <li><a href="hse-course.html">HSE Courses</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4 class="footer-col-title">Get in Touch</h4>
+        <div class="footer-contact-list">
+          <div class="footer-citem">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.96.36 1.9.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.91.34 1.85.57 2.81.7A2 2 0 0 1 22 16.92Z"/></svg>
+            <div><a href="tel:+971509640206">+971 50 964 0206</a><a href="tel:+971509493014">+971 50 949 3014</a></div>
+          </div>
+          <div class="footer-citem">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 7-10 6L2 7"/></svg>
+            <div><a href="mailto:info@enertecsc.com">info@enertecsc.com</a></div>
+          </div>
+          <div class="footer-citem">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0Z"/><circle cx="12" cy="10" r="3"/></svg>
+            <div>Sharjah Airport Road (E88),<br>University City, Sharjah 66636, AE</div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>&copy; <span data-year>2026</span> EnerTec. All rights reserved.</span>
+      <span class="footer-bottom-right">
+        <a href="privacy-policy.html" style="color:inherit;margin-right:16px;">Privacy Policy</a>
+        <a href="terms-of-use.html" style="color:inherit;">Terms of Use</a>
+      </span>
+    </div>
+  </div>
+</footer>
+
+<button class="scroll-fab" id="scrollFab" aria-label="Scroll down">
+  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+    <line x1="12" y1="5" x2="12" y2="19"/><polyline points="19 12 12 19 5 12"/>
+  </svg>
+</button>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+<script src="js/index.js"></script>
+<script>
+(function () {
+  const fab = document.getElementById('scrollFab');
+  if (!fab) return;
+  window.addEventListener('scroll', () => {
+    const atBottom = (window.innerHeight + window.scrollY) >= document.body.offsetHeight - 60;
+    fab.style.transform = atBottom ? 'rotate(180deg)' : '';
+  });
+  fab.addEventListener('click', () => {
+    const atBottom = (window.innerHeight + window.scrollY) >= document.body.offsetHeight - 60;
+    if (atBottom) window.scrollTo({ top: 0, behavior: 'smooth' });
+    else window.scrollBy({ top: window.innerHeight * 0.8, behavior: 'smooth' });
+  });
+})();
+</script>
+</body>
+</html>
+

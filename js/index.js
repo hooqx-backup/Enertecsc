@@ -4,18 +4,6 @@
 (function () {
   'use strict';
 
-  /* ---------- Lenis smooth scroll ---------- */
-  var lenis;
-  if (window.Lenis) {
-    lenis = new Lenis({
-      duration: 1.2,
-      easing: function (t) { return Math.min(1, 1.001 - Math.pow(2, -10 * t)); },
-      smoothWheel: true,
-    });
-    function lenisRaf(time) { lenis.raf(time); requestAnimationFrame(lenisRaf); }
-    requestAnimationFrame(lenisRaf);
-  }
-
   /* ---------- Hero Carousel ---------- */
   var hSlides = document.querySelectorAll('.hero-slide');
   var hTexts  = document.querySelectorAll('.hero-text');
@@ -88,7 +76,7 @@
     a.addEventListener('click', closeMenu);
   });
 
-  /* ---------- Smooth-scroll for in-page anchors (Lenis-aware) ---------- */
+  /* ---------- Smooth-scroll for in-page anchors ---------- */
   document.querySelectorAll('a[href^="#"]').forEach(function (a) {
     var id = a.getAttribute('href');
     if (id === '#' || id.length < 2) return;
@@ -97,12 +85,8 @@
       if (!target) return;
       e.preventDefault();
       closeMenu();
-      if (lenis) {
-        lenis.scrollTo(target, { offset: -72 });
-      } else {
-        var y = target.getBoundingClientRect().top + window.scrollY - 72;
-        window.scrollTo({ top: y, behavior: 'smooth' });
-      }
+      var y = target.getBoundingClientRect().top + window.scrollY - 72;
+      window.scrollTo({ top: y, behavior: 'smooth' });
     });
   });
 
@@ -111,13 +95,6 @@
   ========================================================== */
   if (window.gsap && window.ScrollTrigger) {
     gsap.registerPlugin(ScrollTrigger);
-
-    /* Connect Lenis to ScrollTrigger so scrub stays in sync */
-    if (lenis) {
-      lenis.on('scroll', ScrollTrigger.update);
-      gsap.ticker.add(function (time) { lenis.raf(time * 1000); });
-      gsap.ticker.lagSmoothing(0);
-    }
 
     /* ---- Hero entrance timeline ---- */
     var heroTl = gsap.timeline({ delay: 0.1 });
@@ -652,14 +629,10 @@
 
     fab.addEventListener('click', function () {
       if (fab.classList.contains('up')) {
-        /* ↑ back to top */
-        if (lenis) lenis.scrollTo(0, { duration: 1.4 });
-        else window.scrollTo({ top: 0, behavior: 'smooth' });
+        window.scrollTo({ top: 0, behavior: 'smooth' });
       } else {
-        /* ↓ scroll to footer */
         var target = footer || document.body;
-        if (lenis) lenis.scrollTo(target, { duration: 1.4, offset: -40 });
-        else target.scrollIntoView({ behavior: 'smooth' });
+        target.scrollIntoView({ behavior: 'smooth' });
       }
     });
   }

@@ -1,9 +1,10 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="en">
 <head>
 <meta charset="UTF-8" />
+<link rel="icon" type="image/png" sizes="64x64" href="favicon.png" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
-<title>Contact Us | EnerTec Supply Chain, Engineering &amp; Energy Solutions</title>
+<title>Enertec</title>
 <meta name="description" content="Get in touch with EnerTec FZC. Reach our team for supply chain, engineering consultancy, and renewable energy inquiries in Sharjah, UAE." />
 <link rel="preconnect" href="https://fonts.googleapis.com" />
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -11,10 +12,10 @@
 <link rel="stylesheet" href="css/index.css" />
 <style>
 /* ============================================================
-   CONTACT PAGE — styles
+   CONTACT PAGE â€” styles
    ============================================================ */
 
-/* ─── Page Hero (same as about) ─── */
+/* â”€â”€â”€ Page Hero (same as about) â”€â”€â”€ */
 .page-hero {
   position: relative;
   height: clamp(340px, 48vw, 520px);
@@ -57,7 +58,7 @@
 .breadcrumb .bc-sep { color: rgba(255,255,255,.28); }
 .breadcrumb .bc-cur { color: var(--accent); }
 
-/* ─── Info Cards Row ─── */
+/* â”€â”€â”€ Info Cards Row â”€â”€â”€ */
 .contact-cards {
   background: var(--surface);
   padding-block: clamp(40px, 5vw, 56px);
@@ -107,7 +108,7 @@
 .ccard-val a { color: var(--ink); transition: color .2s; }
 .ccard-val a:hover { color: var(--primary); }
 
-/* ─── Main Contact Split ─── */
+/* â”€â”€â”€ Main Contact Split â”€â”€â”€ */
 .contact-main { padding-block: clamp(56px, 7vw, 88px); }
 .contact-split {
   display: grid;
@@ -262,7 +263,7 @@
 .form-toast svg { flex: none; width: 18px; height: 18px; }
 .btn--loading { pointer-events: none; opacity: .7; }
 
-/* ─── Map Section ─── */
+/* â”€â”€â”€ Map Section â”€â”€â”€ */
 .map-section { background: var(--bg-2); padding-block: clamp(48px, 6vw, 72px); }
 .map-head { text-align: center; margin-bottom: clamp(28px, 3.5vw, 44px); }
 .map-frame-wrap {
@@ -274,7 +275,7 @@
 }
 .map-frame-wrap iframe { width: 100%; height: 100%; display: block; border: none; }
 
-/* ─── Animations ─── */
+/* â”€â”€â”€ Animations â”€â”€â”€ */
 @keyframes float-y {
   0%, 100% { transform: translateY(0); }
   50%       { transform: translateY(-14px); }
@@ -347,7 +348,7 @@
 .hero-badge-text span { display: block; font-size: 11px; font-weight: 500; color: rgba(255,255,255,.65); }
 @media (max-width: 600px) { .hero-badge { display: none; } }
 
-/* ─── Responsive ─── */
+/* â”€â”€â”€ Responsive â”€â”€â”€ */
 @media (max-width: 1024px) {
   .contact-cards-grid { grid-template-columns: repeat(2, 1fr); }
 }
@@ -475,7 +476,7 @@
   </div>
   <div class="hero-badge">
     <div class="hero-badge-dot"></div>
-    <div class="hero-badge-text">We're Available<span>Sun – Thu · 9 AM – 6 PM</span></div>
+    <div class=”hero-badge-text”>We're Available<span>Sun &ndash; Thu &middot; 9 AM &ndash; 6 PM</span></div>
   </div>
 </section>
 
@@ -523,7 +524,7 @@
         </div>
         <div class="ccard-body">
           <div class="ccard-label">Business Hours</div>
-          <div class="ccard-val">Sun – Thu: 9:00 AM – 6:00 PM<br>Fri – Sat: Closed</div>
+          <div class=”ccard-val”>Sun &ndash; Thu: 9:00 AM &ndash; 6:00 PM<br>Fri &ndash; Sat: Closed</div>
         </div>
       </div>
 
@@ -633,7 +634,7 @@
 
           <div class="form-group">
             <label for="cf-message">Message <span class="req">*</span></label>
-            <textarea id="cf-message" name="message" placeholder="Tell us how we can help you…" required></textarea>
+            <textarea id="cf-message" name="message" placeholder="Tell us how we can help youâ€¦" required></textarea>
           </div>
 
           <div class="form-submit">
@@ -729,7 +730,7 @@
 
     </div>
     <div class="footer-bottom">
-      <span>&copy; <span data-year>2025</span> EnerTec. All rights reserved.</span>
+      <span>&copy; <span data-year>2026</span> EnerTec. All rights reserved.</span>
       <span class="footer-bottom-right">
         <a href="privacy-policy.html" style="color:inherit;margin-right:16px;">Privacy Policy</a>
         <a href="terms-of-use.html" style="color:inherit;">Terms of Use</a>
@@ -745,7 +746,6 @@
   </svg>
 </button>
 
-<script src="https://cdn.jsdelivr.net/npm/lenis@1.1.14/dist/lenis.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
 <script src="js/index.js"></script>
@@ -827,18 +827,18 @@
       /* Show loading */
       submit.classList.add('btn--loading');
       var origHtml = submit.innerHTML;
-      submit.innerHTML = '<svg style="width:18px;height:18px;animation:spin 0.7s linear infinite" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M21 12a9 9 0 1 1-6.219-8.56"/></svg> Sending…';
+      submit.innerHTML = '<svg style="width:18px;height:18px;animation:spin 0.7s linear infinite" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M21 12a9 9 0 1 1-6.219-8.56"/></svg> Sendingâ€¦';
 
       /* Build WhatsApp message */
-      var line = '━━━━━━━━━━━━━━━━━━━━';
-      var wa = '🏢 *EnerTec — New Website Inquiry*\n'
+      var line = 'â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”';
+      var wa = 'ðŸ¢ *EnerTec â€” New Website Inquiry*\n'
              + line + '\n\n'
-             + '👤 *Name:*      ' + name    + '\n'
-             + '📧 *Email:*     ' + email   + '\n'
-             + (phone   ? '📱 *Phone:*     ' + phone   + '\n' : '')
-             + (company ? '🏭 *Company:*   ' + company + '\n' : '')
-             + '📋 *Subject:*   ' + subject + '\n\n'
-             + '💬 *Message:*\n'
+             + 'ðŸ‘¤ *Name:*      ' + name    + '\n'
+             + 'ðŸ“§ *Email:*     ' + email   + '\n'
+             + (phone   ? 'ðŸ“± *Phone:*     ' + phone   + '\n' : '')
+             + (company ? 'ðŸ­ *Company:*   ' + company + '\n' : '')
+             + 'ðŸ“‹ *Subject:*   ' + subject + '\n\n'
+             + 'ðŸ’¬ *Message:*\n'
              + message + '\n\n'
              + line + '\n'
              + '_Sent via EnerTec website contact form_';
@@ -849,7 +849,7 @@
         submit.classList.remove('btn--loading');
         submit.innerHTML = origHtml;
         form.reset();
-        showToast('success', 'Opening WhatsApp to send your message…');
+        showToast('success', 'Opening WhatsApp to send your messageâ€¦');
         window.open(waUrl, '_blank');
       }, 800);
     });
@@ -863,7 +863,7 @@
     document.head.appendChild(s);
   }
 
-  /* ── Scroll-triggered animations ── */
+  /* â”€â”€ Scroll-triggered animations â”€â”€ */
 
   /* Hero badge entrance */
   var heroBadge = document.querySelector('.hero-badge');
@@ -935,3 +935,4 @@
 </script>
 </body>
 </html>
+

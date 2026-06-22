@@ -1,9 +1,10 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="en">
 <head>
 <meta charset="UTF-8" />
+<link rel="icon" type="image/png" sizes="64x64" href="favicon.png" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
-<title>Consultancy – EnerTec Sustainable Energy Solutions</title>
+<title>Enertec</title>
 <meta name="description" content="EnerTec delivers comprehensive oil & gas consultancy, engineering expertise, safety and risk management, and HR performance solutions across the Gulf region." />
 <link rel="preconnect" href="https://fonts.googleapis.com" />
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -11,7 +12,7 @@
 <link rel="stylesheet" href="css/index.css" />
 <style>
 /* ============================================================
-   Consultancy Page – Premium Styles
+   Consultancy Page &mdash; Premium Styles
    ============================================================ */
 
 /* ---- Hero ---- */
@@ -319,106 +320,246 @@
 /* ---- Consultancy Areas ---- */
 .ca {
   padding-block: clamp(80px, 10vw, 130px);
-  background: var(--bg-2);
+  background: #ffffff;
   position: relative;
   overflow: hidden;
+}
+.ca::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background-image:
+    linear-gradient(rgba(13, 47, 113, 0.04) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(13, 47, 113, 0.04) 1px, transparent 1px);
+  background-size: 44px 44px;
+  pointer-events: none;
 }
 .ca::after {
   content: '';
   position: absolute;
-  top: -200px; right: -200px;
-  width: 650px; height: 650px;
-  border-radius: 50%;
-  background: radial-gradient(circle, rgba(13,47,113,.07) 0%, transparent 70%);
+  bottom: 0; left: 0; right: 0;
+  height: 3px;
+  background: linear-gradient(90deg, transparent, var(--accent) 30%, var(--primary) 70%, transparent);
   pointer-events: none;
 }
+
+/* Cinematic lighting orb */
+.ca-glow {
+  position: absolute;
+  width: 800px; height: 800px;
+  background: radial-gradient(circle, rgba(245, 166, 35, 0.08) 0%, transparent 60%);
+  top: 50%; left: 50%;
+  transform: translate(-50%, -50%);
+  pointer-events: none;
+  filter: blur(80px);
+  z-index: 0;
+}
+
 .ca-head {
   text-align: center;
   max-width: 620px;
   margin-inline: auto;
-  margin-bottom: clamp(44px, 6vw, 68px);
+  margin-bottom: clamp(48px, 6vw, 76px);
+  position: relative;
+  z-index: 1;
 }
+.ca-head .section-title { color: var(--primary); }
+.ca-head .lede { color: var(--ink-muted); }
+
 .ca-grid {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
-  gap: 24px;
-}
-.ca-card {
-  background: var(--surface);
-  border-radius: var(--radius-lg);
-  padding: clamp(32px, 4vw, 52px);
-  border: 1px solid var(--line);
-  box-shadow: var(--shadow-sm);
+  gap: 28px;
   position: relative;
-  overflow: hidden;
-  transition: transform .45s var(--ease), box-shadow .45s var(--ease);
-  cursor: default;
+  z-index: 1;
 }
-.ca-card::before {
-  content: '';
-  position: absolute;
-  inset: 0;
-  background: linear-gradient(135deg, var(--primary) 0%, var(--primary-900) 100%);
-  opacity: 0;
-  transition: opacity .45s var(--ease);
-  border-radius: var(--radius-lg);
+
+/* --- Card shell (Glassmorphism) --- */
+.ca-card {
+  border-radius: 22px;
+  overflow: hidden;
+  background: #040e27;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.18);
+  display: flex;
+  flex-direction: column;
+  scroll-margin-top: 90px;
+  position: relative;
+  transition: transform .45s var(--ease), box-shadow .45s var(--ease), border-color .45s var(--ease);
 }
 .ca-card:hover {
   transform: translateY(-10px);
-  box-shadow: var(--shadow-lg);
+  box-shadow: 0 24px 64px rgba(245, 166, 35, 0.18);
+  border-color: rgba(245, 166, 35, 0.35);
 }
-.ca-card:hover::before { opacity: 1; }
-.ca-card > * { position: relative; z-index: 1; }
-.ca-card:hover .ca-tag,
-.ca-card:hover .ca-title,
-.ca-card:hover .ca-desc { color: #fff; }
-.ca-card:hover .ca-icon { background: rgba(255,255,255,.12); }
-.ca-card:hover .ca-icon svg { stroke: var(--accent); }
-.ca-card:hover .ca-tag { color: rgba(255,255,255,.6); }
-.ca-card:hover .ca-corner { background: rgba(255,255,255,.06); }
-.ca-tag {
+
+/* --- Card top --- */
+.ca-top {
+  padding: 30px 32px 26px;
+  position: relative;
+  overflow: hidden;
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  min-height: 160px;
+}
+.ca-top-img {
+  position: absolute;
+  inset: 0;
+  background-size: cover;
+  background-position: center;
+  transition: transform .75s var(--ease);
+  z-index: 0;
+}
+.ca-card:hover .ca-top-img { transform: scale(1.1); }
+.ca-top::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(135deg, rgba(4,14,39,.95) 0%, rgba(13,47,113,.75) 55%, rgba(4,14,39,.9) 100%);
+  z-index: 1;
+  pointer-events: none;
+}
+.ca-top::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background-image:
+    linear-gradient(rgba(255,255,255,.05) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255,255,255,.05) 1px, transparent 1px);
+  background-size: 26px 26px;
+  z-index: 2;
+  pointer-events: none;
+}
+.ca-top-ghost {
+  position: absolute;
+  right: -4px; bottom: -18px;
+  font-family: var(--font-head);
+  font-size: 130px;
+  font-weight: 900;
+  line-height: 1;
+  color: transparent;
+  -webkit-text-stroke: 1.5px rgba(255,255,255,.05);
+  user-select: none;
+  pointer-events: none;
+  z-index: 3;
+}
+.ca-top-corner {
+  position: absolute;
+  bottom: 0; right: 0;
+  width: 80px; height: 80px;
+  background: linear-gradient(135deg, transparent 50%, rgba(245,166,35,.15) 50%);
+  pointer-events: none;
+  z-index: 3;
+}
+.ca-icon-box {
+  width: 60px; height: 60px;
+  border-radius: 15px;
+  background: rgba(245,166,35,.1);
+  border: 1px solid rgba(245,166,35,.2);
+  display: flex; align-items: center; justify-content: center;
+  flex-shrink: 0;
+  position: relative; z-index: 4;
+  backdrop-filter: blur(8px);
+  transition: all .4s var(--ease);
+}
+.ca-icon-box svg {
+  width: 26px; height: 26px;
+  stroke: var(--accent);
+  fill: none;
+  transition: stroke .4s var(--ease), transform .4s var(--ease);
+}
+.ca-card:hover .ca-icon-box {
+  background: var(--accent);
+  border-color: var(--accent);
+  transform: rotate(-10deg) scale(1.1);
+  box-shadow: 0 8px 30px rgba(245,166,35,.3);
+}
+.ca-card:hover .ca-icon-box svg { stroke: #040e27; transform: rotate(10deg); }
+
+.ca-num-tag {
   font-family: var(--font-head);
   font-size: 11px;
+  font-weight: 800;
+  letter-spacing: .2em;
+  text-transform: uppercase;
+  color: rgba(255,255,255,.3);
+  position: relative; z-index: 4;
+  transition: color .4s var(--ease);
+}
+.ca-card:hover .ca-num-tag { color: var(--accent); }
+
+/* --- Card body --- */
+.ca-body {
+  padding: 26px 32px 30px;
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  position: relative;
+}
+.ca-body::before {
+  content: '';
+  position: absolute;
+  left: 0; top: 18px; bottom: 18px;
+  width: 3px;
+  border-radius: 0 3px 3px 0;
+  background: linear-gradient(to bottom, var(--accent), transparent);
+  transform: scaleY(0);
+  transform-origin: top;
+  transition: transform .45s var(--ease);
+}
+.ca-card:hover .ca-body::before { transform: scaleY(1); }
+
+.ca-tag {
+  font-family: var(--font-head);
+  font-size: 10.5px;
   font-weight: 700;
   letter-spacing: .18em;
   text-transform: uppercase;
   color: var(--accent);
-  margin-bottom: 20px;
-  display: block;
-  transition: color .45s var(--ease);
+  margin-bottom: 12px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
 }
-.ca-icon {
-  width: 60px; height: 60px;
-  border-radius: 15px;
-  background: var(--bg-2);
-  display: flex; align-items: center; justify-content: center;
-  margin-bottom: 24px;
-  transition: background .45s var(--ease);
+.ca-tag::before {
+  content: '';
+  width: 18px; height: 2px;
+  background: var(--accent);
+  border-radius: 2px;
+  flex-shrink: 0;
 }
-.ca-icon svg { width: 30px; height: 30px; stroke: var(--primary); transition: stroke .45s var(--ease); }
 .ca-title {
   font-family: var(--font-head);
-  font-size: clamp(18px, 1.8vw, 24px);
+  font-size: clamp(17px, 1.5vw, 20px);
   font-weight: 700;
-  color: var(--ink);
-  margin-bottom: 14px;
-  transition: color .45s var(--ease);
+  color: #ffffff;
+  line-height: 1.3;
+  margin-bottom: 12px;
 }
 .ca-desc {
-  font-size: 15px;
-  color: var(--body);
-  line-height: 1.75;
-  transition: color .45s var(--ease);
+  font-size: 14.5px;
+  color: rgba(255, 255, 255, 0.65);
+  line-height: 1.78;
+  flex: 1;
+  margin-bottom: 20px;
 }
-.ca-corner {
-  position: absolute;
-  bottom: -30px; right: -30px;
-  width: 120px; height: 120px;
-  border-radius: 50%;
-  background: var(--bg-2);
-  pointer-events: none;
-  transition: background .45s var(--ease);
+.ca-cta {
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  font-family: var(--font-head);
+  font-size: 12.5px;
+  font-weight: 700;
+  letter-spacing: .04em;
+  color: #ffffff;
+  opacity: 0;
+  transform: translateY(8px);
+  transition: opacity .35s var(--ease), transform .35s var(--ease), color .25s var(--ease);
 }
+.ca-card:hover .ca-cta { opacity: 1; transform: none; color: var(--accent); }
+.ca-cta svg { width: 15px; height: 15px; transition: transform .3s var(--ease); }
+.ca-cta:hover svg { transform: translateX(5px); }
 
 /* ---- Services ---- */
 .csvc {
@@ -426,7 +567,7 @@
 }
 .csvc-inner {
   display: grid;
-  grid-template-columns: 400px 1fr;
+  grid-template-columns: 360px 1fr;
   gap: clamp(60px, 7vw, 100px);
   align-items: start;
 }
@@ -435,80 +576,62 @@
   top: 110px;
 }
 .csvc-sticky .lede { margin-bottom: 36px; }
-.csvc-list {
-  display: flex;
-  flex-direction: column;
-  gap: 14px;
-}
-.csvc-item {
-  display: flex;
-  align-items: flex-start;
-  gap: 18px;
-  padding: 22px 22px;
-  border-radius: var(--radius);
-  border: 1px solid var(--line);
-  background: var(--surface);
-  transition: all .35s var(--ease);
-  position: relative;
-  overflow: hidden;
-}
-.csvc-item::after {
-  content: '';
-  position: absolute;
-  left: 0; top: 0; bottom: 0;
-  width: 3px;
-  background: var(--accent);
-  border-radius: 0 3px 3px 0;
-  transform: scaleY(0);
-  transform-origin: top;
-  transition: transform .35s var(--ease);
-}
-.csvc-item:hover {
-  border-color: rgba(13,47,113,.3);
-  box-shadow: var(--shadow-md);
-  transform: translateX(8px);
-}
-.csvc-item:hover::after { transform: scaleY(1); }
-.csvc-n {
-  font-family: var(--font-head);
-  font-size: 22px;
-  font-weight: 800;
-  color: var(--accent);
-  line-height: 1;
-  flex-shrink: 0;
-  min-width: 36px;
-}
-.csvc-text h4 {
-  font-size: 16px;
-  font-weight: 700;
-  color: var(--ink);
-  margin-bottom: 4px;
-}
-.csvc-text p { font-size: 14px; color: var(--body); line-height: 1.65; }
-
-/* right side image collage */
-.csvc-visual {
+.csvc-grid {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  grid-template-rows: auto auto;
-  gap: 16px;
+  gap: 20px;
 }
-.csvc-vis-img {
+.csvc-card {
   border-radius: var(--radius);
   overflow: hidden;
+  background: var(--surface);
+  border: 1px solid var(--line);
+  transition: transform .35s var(--ease), box-shadow .35s var(--ease);
+}
+.csvc-card:last-child {
+  grid-column: 1 / -1;
+}
+.csvc-card:hover {
+  transform: translateY(-5px);
   box-shadow: var(--shadow-md);
 }
-.csvc-vis-img img {
-  width: 100%;
-  height: 100%;
+.csvc-card-img {
+  position: relative;
+  overflow: hidden;
+  aspect-ratio: 16/9;
+}
+.csvc-card:last-child .csvc-card-img {
+  aspect-ratio: 21/9;
+}
+.csvc-card-img img {
+  width: 100%; height: 100%;
   object-fit: cover;
-  display: block;
   transition: transform .6s var(--ease);
 }
-.csvc-vis-img:hover img { transform: scale(1.05); }
-.csvc-vis-img:nth-child(1) { grid-row: 1 / 3; aspect-ratio: 3/4; }
-.csvc-vis-img:nth-child(2) { aspect-ratio: 4/3; }
-.csvc-vis-img:nth-child(3) { aspect-ratio: 4/3; }
+.csvc-card:hover .csvc-card-img img { transform: scale(1.06); }
+.csvc-card-num {
+  position: absolute;
+  top: 14px; left: 16px;
+  font-family: var(--font-head);
+  font-size: 12px;
+  font-weight: 800;
+  color: #fff;
+  background: var(--accent);
+  padding: 4px 11px;
+  border-radius: 20px;
+  letter-spacing: .05em;
+}
+.csvc-card-body {
+  padding: 18px 20px 22px;
+}
+.csvc-card-body h4 {
+  font-size: 15px;
+  font-weight: 700;
+  color: var(--ink);
+  margin-bottom: 6px;
+  line-height: 1.3;
+}
+.csvc-card-body p { font-size: 13.5px; color: var(--body); line-height: 1.65; }
 
 /* ---- Process ---- */
 .cp {
@@ -944,7 +1067,8 @@
   .cp-connector { display: none; }
   .csvc-inner { grid-template-columns: 1fr; }
   .csvc-sticky { position: static; }
-  .csvc-visual { display: none; }
+  .csvc-grid { grid-template-columns: 1fr; }
+  .csvc-card:last-child { grid-column: auto; }
   .co-grid { grid-template-columns: 1fr; }
   .co-media { max-width: 480px; margin-inline: auto; }
   .cs-grid { grid-template-columns: repeat(2, 1fr); }
@@ -955,7 +1079,13 @@
 @media (max-width: 768px) {
   .cteam-grid { grid-template-columns: repeat(2, 1fr); gap: 14px; }
   .ca-grid { grid-template-columns: 1fr; }
+  .ca-top { padding: 24px 24px 20px; }
+  .ca-icon-box { width: 50px; height: 50px; }
+  .ca-icon-box svg { width: 22px; height: 22px; }
+  .ca-body { padding: 20px 24px 24px; }
   .ch-badge { display: none; }
+  .csvc-grid { grid-template-columns: 1fr; }
+  .csvc-card:last-child { grid-column: auto; }
 }
 @media (max-width: 480px) {
   .cteam-grid { grid-template-columns: 1fr; max-width: 340px; margin-inline: auto; gap: 16px; }
@@ -963,11 +1093,16 @@
   .cs-item { border-right: none; }
   .cp-grid { grid-template-columns: 1fr 1fr; }
 }
+
+/* ---- Card background images ---- */
+#consult-oil-gas      .ca-top-img { background-image: url("assets/images/services-section -consultancy-page/professional-men-discussing-ideas.png"); }
+#consult-engineering  .ca-top-img { background-image: url("assets/images/services-section -consultancy-page/engineers-technicians-inspecting-maintaining-solar-panels-renewable-energy-projects.png"); }
+#consult-safety       .ca-top-img { background-image: url("assets/images/services-section -consultancy-page/full-shot-smiley-engineers-with-laptop.png"); }
+#consult-hr           .ca-top-img { background-image: url("assets/images/services-section -consultancy-page/business-people-teamwork.png"); }
 </style>
 </head>
 <body>
 
-<!-- ===================== TOP BAR ===================== -->
 <div class="topbar">
   <div class="wrap">
     <div class="topbar-contact">
@@ -988,7 +1123,6 @@
   </div>
 </div>
 
-<!-- ===================== HEADER ===================== -->
 <header class="site-header">
   <div class="wrap">
     <nav class="nav">
@@ -1031,7 +1165,6 @@
   </div>
 </header>
 
-<!-- ===================== MOBILE PANEL ===================== -->
 <div class="mobile-overlay"></div>
 <aside class="mobile-panel" aria-label="Mobile navigation">
   <div class="mp-head">
@@ -1062,7 +1195,6 @@
   <a href="contact-us.html" class="btn btn--primary">Get in Touch</a>
 </aside>
 
-<!-- ===================== HERO ===================== -->
 <section class="ch" id="top">
   <div class="ch-bg"></div>
   <div class="ch-grid"></div>
@@ -1073,12 +1205,11 @@
     <div class="ch-inner">
       <div class="ch-eyebrow" id="chEyebrow">Consultancy Services</div>
       <h1 class="ch-title" id="chTitle">
-        <div class="tw"><span>Comprehensive</span></div>
-        <div class="tw"><span class="hl">Oil &amp; Gas</span></div>
+       
         <div class="tw"><span>Consultancy</span></div>
         <div class="tw"><span>Excellence</span></div>
       </h1>
-      <p class="ch-desc" id="chDesc">Strategic and operational consultancy across exploration, production, refining, and distribution — delivered by industry veterans with decades of Gulf region expertise.</p>
+      <p class="ch-desc" id="chDesc">Strategic and operational consultancy across exploration, production, refining, and distribution â€” delivered by industry veterans with decades of Gulf region expertise.</p>
       <div class="ch-actions" id="chActions">
         <a href="contact-us.html" class="btn btn--primary">Start a Consultation
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
@@ -1088,7 +1219,6 @@
     </div>
   </div>
 
-  <!-- floating glass badge (desktop only) -->
   <div class="ch-badge" id="chBadge">
     <div class="ch-badge-num">24<span style="color:var(--accent);font-size:.55em">+</span></div>
     <div class="ch-badge-label">Years of<br>Industry Experience</div>
@@ -1100,7 +1230,6 @@
   </div>
 </section>
 
-<!-- ===================== STATS BAR ===================== -->
 <section class="cs">
   <div class="wrap">
     <div class="cs-grid">
@@ -1124,122 +1253,219 @@
   </div>
 </section>
 
-<!-- ===================== CONSULTANCY AREAS ===================== -->
 <section class="ca" id="areas">
+  <div class="ca-glow"></div>
   <div class="wrap">
     <div class="ca-head">
       <span class="eyebrow eyebrow--center rev">Core Areas</span>
       <h2 class="section-title section-title--center rev">Our Consultancy Disciplines</h2>
-      <p class="lede lede--center rev">Four pillars of expertise — each designed to deliver measurable impact across your energy operations.</p>
+      <p class="lede lede--center rev">Four pillars of expertise &mdash; each designed to deliver measurable impact across your energy operations.</p>
     </div>
 
     <div class="ca-grid">
 
-      <div class="ca-card rev">
-        <span class="ca-tag">01 — Oil &amp; Gas</span>
-        <div class="ca-icon">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2a5 5 0 0 0-5 5c0 5 5 13 5 13s5-8 5-13a5 5 0 0 0-5-5Z"/><circle cx="12" cy="7" r="2"/></svg>
+      <div class="ca-card" id="consult-oil-gas">
+        <div class="ca-top">
+          <div class="ca-top-img"></div>
+          <div class="ca-top-ghost">01</div>
+          <div class="ca-top-corner"></div>
+          <div class="ca-icon-box">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2a5 5 0 0 0-5 5c0 5 5 13 5 13s5-8 5-13a5 5 0 0 0-5-5Z"/><circle cx="12" cy="7" r="2"/></svg>
+          </div>
+          <span class="ca-num-tag">01</span>
         </div>
-        <h3 class="ca-title">Comprehensive Oil and Gas Consultancy</h3>
-        <p class="ca-desc">We offer strategic and operational consultancy across all Oil and Gas sectors, including exploration, production, refining, and distribution, focusing on aligning business strategies with operational goals to enhance efficiency.</p>
-        <div class="ca-corner"></div>
+        <div class="ca-body">
+          <span class="ca-tag">Oil &amp; Gas</span>
+          <h3 class="ca-title">Comprehensive Oil and Gas Consultancy</h3>
+          <p class="ca-desc">We offer strategic and operational consultancy across all Oil and Gas sectors, including exploration, production, refining, and distribution, focusing on aligning business strategies with operational goals to enhance efficiency.</p>
+          <a href="contact-us.html" class="ca-cta">Consult Us <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+        </div>
       </div>
 
-      <div class="ca-card rev d1">
-        <span class="ca-tag">02 — Engineering</span>
-        <div class="ca-icon">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="3" width="20" height="14" rx="2"/><path d="M8 21h8M12 17v4"/><path d="M7 8h10M7 12h7"/></svg>
+      <div class="ca-card" id="consult-engineering">
+        <div class="ca-top">
+          <div class="ca-top-img"></div>
+          <div class="ca-top-ghost">02</div>
+          <div class="ca-top-corner"></div>
+          <div class="ca-icon-box">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="3" width="20" height="14" rx="2"/><path d="M8 21h8M12 17v4"/><path d="M7 8h10M7 12h7"/></svg>
+          </div>
+          <span class="ca-num-tag">02</span>
         </div>
-        <h3 class="ca-title">Engineering Projects Consultancy</h3>
-        <p class="ca-desc">We provide expert engineering consultancy services for various projects, including renewable energy. Our focus is on design, project management, and technical support to optimize operations and ensure project success across multiple industries.</p>
-        <div class="ca-corner"></div>
+        <div class="ca-body">
+          <span class="ca-tag">Engineering</span>
+          <h3 class="ca-title">Engineering Projects Consultancy</h3>
+          <p class="ca-desc">We provide expert engineering consultancy services for various projects, including renewable energy. Our focus is on design, project management, and technical support to optimize operations and ensure project success across multiple industries.</p>
+          <a href="contact-us.html" class="ca-cta">Consult Us <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+        </div>
       </div>
 
-      <div class="ca-card rev d2">
-        <span class="ca-tag">03 — Safety &amp; Risk</span>
-        <div class="ca-icon">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2 4 5v6c0 5 3.4 8.6 8 10 4.6-1.4 8-5 8-10V5l-8-3Z"/><path d="M9 12h6M12 9v6"/></svg>
+      <div class="ca-card" id="consult-safety">
+        <div class="ca-top">
+          <div class="ca-top-img"></div>
+          <div class="ca-top-ghost">03</div>
+          <div class="ca-top-corner"></div>
+          <div class="ca-icon-box">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2 4 5v6c0 5 3.4 8.6 8 10 4.6-1.4 8-5 8-10V5l-8-3Z"/><path d="M9 12h6M12 9v6"/></svg>
+          </div>
+          <span class="ca-num-tag">03</span>
         </div>
-        <h3 class="ca-title">Safety, Compliance, and Risk Management Consultancy</h3>
-        <p class="ca-desc">Our team evaluates safety practices and regulatory compliance while assisting organizations in managing change. We develop strategies to assess and mitigate operational and safety risks, ensuring adherence to industry standards.</p>
-        <div class="ca-corner"></div>
+        <div class="ca-body">
+          <span class="ca-tag">Safety &amp; Risk</span>
+          <h3 class="ca-title">Safety, Compliance &amp; Risk Management Consultancy</h3>
+          <p class="ca-desc">Our team evaluates safety practices and regulatory compliance while assisting organizations in managing change. We develop strategies to assess and mitigate operational and safety risks, ensuring adherence to industry standards.</p>
+          <a href="contact-us.html" class="ca-cta">Consult Us <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+        </div>
       </div>
 
-      <div class="ca-card rev d3">
-        <span class="ca-tag">04 — Human Resources</span>
-        <div class="ca-icon">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+      <div class="ca-card" id="consult-hr">
+        <div class="ca-top">
+          <div class="ca-top-img"></div>
+          <div class="ca-top-ghost">04</div>
+          <div class="ca-top-corner"></div>
+          <div class="ca-icon-box">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+          </div>
+          <span class="ca-num-tag">04</span>
         </div>
-        <h3 class="ca-title">Human Resources and Performance Improvement Consultancy</h3>
-        <p class="ca-desc">We specialize in HR practices and talent management, conducting training needs analyses and developing customized programs to enhance skills and overall organizational performance.</p>
-        <div class="ca-corner"></div>
+        <div class="ca-body">
+          <span class="ca-tag">Human Resources</span>
+          <h3 class="ca-title">Human Resources &amp; Performance Improvement Consultancy</h3>
+          <p class="ca-desc">We specialize in HR practices and talent management, conducting training needs analyses and developing customized programs to enhance skills and overall organizational performance.</p>
+          <a href="contact-us.html" class="ca-cta">Consult Us <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+        </div>
       </div>
 
     </div>
   </div>
 </section>
 
-<!-- ===================== SERVICES OFFERED ===================== -->
-<section class="csvc section" id="services">
+<section class="services section" id="services" data-screen-label="Services">
   <div class="wrap">
-    <div class="csvc-inner">
+    <div class="services-head reveal">
+      <span class="eyebrow eyebrow--center">Our Services</span>
+      <h2 class="section-title section-title--center" style="max-width:28ch">Comprehensive Supply Chain &amp; Engineering Solutions</h2>
+    </div>
 
-      <div class="csvc-sticky">
-        <span class="eyebrow rev">What We Offer</span>
-        <h2 class="section-title rev">Service Offerings That Drive Results</h2>
-        <p class="lede rev">From technical training to energy project engineering, our service portfolio covers the full spectrum of what the modern energy sector demands.</p>
-        <div class="rev">
-          <a href="contact-us.html" class="btn btn--primary">Request a Service
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
-          </a>
-        </div>
-      </div>
+    <div class="services-grid">
 
-      <div>
-        <div class="csvc-list">
-          <div class="csvc-item rev">
-            <div class="csvc-n">01</div>
-            <div class="csvc-text">
-              <h4>Technical &amp; Professional Training</h4>
-              <p>Intensive technical training programs for upstream and downstream professionals, designed to build practical competency aligned with real-world field operations.</p>
-            </div>
-          </div>
-          <div class="csvc-item rev d1">
-            <div class="csvc-n">02</div>
-            <div class="csvc-text">
-              <h4>Professional &amp; Management Development Training</h4>
-              <p>Leadership and management programs that equip energy sector professionals with strategic thinking, decision-making, and organizational leadership capabilities.</p>
-            </div>
-          </div>
-          <div class="csvc-item rev d2">
-            <div class="csvc-n">03</div>
-            <div class="csvc-text">
-              <h4>Drilling Engineering, Reservoir &amp; Production Consultancy</h4>
-              <p>Specialized consultancy covering well design, reservoir characterization, production optimization, and drilling programs for oil and gas field development.</p>
-            </div>
-          </div>
-          <div class="csvc-item rev d3">
-            <div class="csvc-n">04</div>
-            <div class="csvc-text">
-              <h4>Solar Energy Systems &amp; Components Trading</h4>
-              <p>Supply of premium solar energy systems, panels, inverters, and balance-of-system components for utility, commercial, industrial, and off-grid applications across the Gulf.</p>
-            </div>
-          </div>
-          <div class="csvc-item rev d4">
-            <div class="csvc-n">05</div>
-            <div class="csvc-text">
-              <h4>Energy Projects Engineering Consultancy</h4>
-              <p>End-to-end engineering consultancy for energy infrastructure projects — covering feasibility studies, FEED, detailed engineering, and project management.</p>
-            </div>
+      <article class="svc reveal">
+        <div class="svc-img-wrap">
+          <img src="assets/images/servicesimages/ChatGPT-Image-Jun-2-2026-04_57_56-PM-1024x683.webp" alt="Instrumentation & Control">
+          <span class="svc-num">01</span>
+          <div class="svc-ic">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="4" y1="21" x2="4" y2="14"/><line x1="4" y1="10" x2="4" y2="3"/><line x1="12" y1="21" x2="12" y2="12"/><line x1="12" y1="8" x2="12" y2="3"/><line x1="20" y1="21" x2="20" y2="16"/><line x1="20" y1="12" x2="20" y2="3"/><line x1="1" y1="14" x2="7" y2="14"/><line x1="9" y1="8" x2="15" y2="8"/><line x1="17" y1="16" x2="23" y2="16"/></svg>
           </div>
         </div>
-      </div>
+        <div class="svc-body">
+          <span class="svc-tag">Instrumentation</span>
+          <h3>Instrumentation &amp; Control Solutions</h3>
+          <p class="svc-desc">Delivering advanced instrumentation and automation products that enhance operational efficiency, process reliability, safety, and real-time control for critical industrial applications.</p>
+          <a class="btn btn--primary" href="services.html#svc-instrumentation">Know More</a>
+        </div>
+      </article>
+
+      <article class="svc reveal d1">
+        <div class="svc-img-wrap">
+          <img src="assets/images/servicesimages/ChatGPT-Image-Jun-2-2026-04_58_35-PM-1024x683.webp" alt="Pipes, Valves & Fittings">
+          <span class="svc-num">02</span>
+          <div class="svc-ic">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"/></svg>
+          </div>
+        </div>
+        <div class="svc-body">
+          <span class="svc-tag">PVF Solutions</span>
+          <h3>Pipes, Valves &amp; Fittings</h3>
+          <p class="svc-desc">Delivering high-quality piping and flow control solutions designed to meet international standards and the demanding requirements of energy and industrial projects.</p>
+          <a class="btn btn--primary" href="services.html#svc-pvf">Know More</a>
+        </div>
+      </article>
+
+      <article class="svc reveal d2">
+        <div class="svc-img-wrap">
+          <img src="assets/images/servicesimages/ChatGPT-Image-Jun-2-2026-04_59_08-PM-1024x683.webp" alt="Industrial Safety & Fire Protection">
+          <span class="svc-num">03</span>
+          <div class="svc-ic">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><polyline points="9 12 11 14 15 10"/></svg>
+          </div>
+        </div>
+        <div class="svc-body">
+          <span class="svc-tag">Safety</span>
+          <h3>Industrial Safety &amp; Fire Protection</h3>
+          <p class="svc-desc">Supplying certified safety and firefighting equipment designed to safeguard personnel, facilities, and critical operations while ensuring compliance with international safety standards.</p>
+          <a class="btn btn--primary" href="services.html#svc-safety">Know More</a>
+        </div>
+      </article>
+
+      <article class="svc reveal">
+        <div class="svc-img-wrap">
+          <img src="assets/images/servicesimages/ChatGPT-Image-Jun-2-2026-04_59_38-PM-1024x683.webp" alt="Electrical & Heat Tracing Solutions">
+          <span class="svc-num">04</span>
+          <div class="svc-ic">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg>
+          </div>
+        </div>
+        <div class="svc-body">
+          <span class="svc-tag">Electrical</span>
+          <h3>Electrical &amp; Heat Tracing Solutions</h3>
+          <p class="svc-desc">Supplying high-quality electrical products and heat tracing systems engineered to ensure reliable power distribution, process temperature maintenance, and operational safety.</p>
+          <a class="btn btn--primary" href="services.html#svc-electrical">Know More</a>
+        </div>
+      </article>
+
+      <article class="svc reveal d1">
+        <div class="svc-img-wrap">
+          <img src="assets/images/servicesimages/ChatGPT-Image-Jun-2-2026-05_00_07-PM-1024x683.webp" alt="Renewable Energy Solutions">
+          <span class="svc-num">05</span>
+          <div class="svc-ic">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/></svg>
+          </div>
+        </div>
+        <div class="svc-body">
+          <span class="svc-tag">Renewables</span>
+          <h3>Renewable Energy Solutions</h3>
+          <p class="svc-desc">Supplying high-quality renewable energy components designed to deliver reliable, efficient, and sustainable power solutions for utility, commercial, industrial, and off-grid applications.</p>
+          <a class="btn btn--primary" href="services.html#svc-renewables">Know More</a>
+        </div>
+      </article>
+
+      <article class="svc reveal d2">
+        <div class="svc-img-wrap">
+          <img src="assets/images/servicesimages/ChatGPT-Image-Jun-2-2026-05_16_44-PM-1024x683.webp" alt="Mechanical & Rotating Equipment">
+          <span class="svc-num">06</span>
+          <div class="svc-ic">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1-2.83 2.83l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-4 0v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83-2.83l.06-.06A1.65 1.65 0 0 0 4.68 15a1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1 0-4h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 2.83-2.83l.06.06A1.65 1.65 0 0 0 9 4.68a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 4 0v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 2.83l-.06.06A1.65 1.65 0 0 0 19.4 9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 0 4h-.09a1.65 1.65 0 0 0-1.51 1z"/></svg>
+          </div>
+        </div>
+        <div class="svc-body">
+          <span class="svc-tag">Mechanical</span>
+          <h3>Mechanical &amp; Rotating Equipment</h3>
+          <p class="svc-desc">Supplying world-class rotating equipment and spare parts engineered to maximize operational reliability, efficiency, and equipment lifecycle performance in critical industrial applications.</p>
+          <a class="btn btn--primary" href="services.html#svc-mechanical">Know More</a>
+        </div>
+      </article>
+
+      <article class="svc reveal">
+        <div class="svc-img-wrap">
+          <img src="assets/images/servicesimages/ChatGPT-Image-Jun-2-2026-05_17_10-PM-1024x683.webp" alt="Industrial & Oilfield Chemical Solutions">
+          <span class="svc-num">07</span>
+          <div class="svc-ic">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M10 2v7.31L5.72 14a4 4 0 0 0 6.56 4.73 4 4 0 0 0 0-4.73L8 9.31V2"/><path d="M8.5 2h7"/><path d="M7 16h10"/></svg>
+          </div>
+        </div>
+        <div class="svc-body">
+          <span class="svc-tag">Chemicals</span>
+          <h3>Industrial &amp; Oilfield Chemical Solutions</h3>
+          <p class="svc-desc">Supplying high-performance chemical products designed to optimize production, improve drilling efficiency, protect assets from corrosion and scaling, and ensure effective water treatment.</p>
+          <a class="btn btn--primary" href="services.html#svc-chemicals">Know More</a>
+        </div>
+      </article>
 
     </div>
   </div>
 </section>
 
-<!-- ===================== TEAM ===================== -->
+
 <section class="cteam" id="team">
   <div class="cteam-glow"></div>
   <div class="cteam-bg-text" aria-hidden="true">TEAM</div>
@@ -1249,7 +1475,7 @@
       <div class="cteam-head-left">
         <span class="eyebrow rev" style="color:var(--accent);">Our People</span>
         <h2 class="section-title rev">Meet the Expert Team</h2>
-        <p class="lede rev">Decades of collective experience across oil &amp; gas, engineering, HSE, power, and production chemistry — your strategic partners in the field.</p>
+        <p class="lede rev">Decades of collective experience across oil &amp; gas, engineering, HSE, power, and production chemistry â€” your strategic partners in the field.</p>
       </div>
       <div class="cteam-head-right rev">
         <div class="cteam-big-num">05</div>
@@ -1259,7 +1485,6 @@
 
     <div class="cteam-grid">
 
-      <!-- Card 1 -->
       <div class="ct-card">
         <div class="ct-img-wrap">
           <img src="assets/images/teamimages/ChatGPT Image Jun 18, 2026, 11_20_30 AM.png" alt="Dr. Abdalmajed Mansour" loading="lazy">
@@ -1275,7 +1500,6 @@
         </div>
       </div>
 
-      <!-- Card 2 -->
       <div class="ct-card">
         <div class="ct-img-wrap">
           <img src="assets/images/teamimages/ChatGPT Image Jun 18, 2026, 11_21_24 AM.png" alt="Khalid Sayed Ali" loading="lazy">
@@ -1291,7 +1515,6 @@
         </div>
       </div>
 
-      <!-- Card 3 -->
       <div class="ct-card">
         <div class="ct-img-wrap">
           <img src="assets/images/teamimages/ChatGPT Image Jun 18, 2026, 11_22_30 AM.png" alt="Mohammed Almahe" loading="lazy">
@@ -1307,7 +1530,6 @@
         </div>
       </div>
 
-      <!-- Card 4 -->
       <div class="ct-card">
         <div class="ct-img-wrap">
           <img src="assets/images/teamimages/ChatGPT Image Jun 18, 2026, 11_24_41 AM.png" alt="Nasreldeen Sulaiman Ahmed" loading="lazy">
@@ -1323,7 +1545,6 @@
         </div>
       </div>
 
-      <!-- Card 5 -->
       <div class="ct-card">
         <div class="ct-img-wrap">
           <img src="assets/images/teamimages/ChatGPT Image Jun 18, 2026, 11_26_02 AM.png" alt="Abdullah Hussein" loading="lazy">
@@ -1343,7 +1564,6 @@
   </div>
 </section>
 
-<!-- ===================== CTA ===================== -->
 <section class="ccta">
   <div class="ccta-orb ccta-orb-1"></div>
   <div class="ccta-orb ccta-orb-2"></div>
@@ -1351,7 +1571,7 @@
     <div class="ccta-inner">
       <span class="eyebrow eyebrow--center rev">Ready to Start?</span>
       <h2 class="rev">Let's Build Your Energy Strategy Together</h2>
-      <p class="rev">Whether you need operational consultancy, a safety framework, talent development, or engineering expertise — our team is ready to deliver. Reach out today.</p>
+      <p class="rev">Whether you need operational consultancy, a safety framework, talent development, or engineering expertise â€” our team is ready to deliver. Reach out today.</p>
       <div class="ccta-btns rev">
         <a href="contact-us.html" class="btn btn--primary">Start a Consultation
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
@@ -1362,7 +1582,6 @@
   </div>
 </section>
 
-<!-- ===================== FOOTER ===================== -->
 <footer class="footer">
   <div class="footer-top-bar"></div>
   <div class="wrap">
@@ -1390,10 +1609,10 @@
       <div class="footer-col">
         <h4 class="footer-col-title">Consultancy</h4>
         <ul class="footer-links">
-          <li><a href="consultancy.html">Oil &amp; Gas Consultancy</a></li>
-          <li><a href="consultancy.html">Engineering Projects</a></li>
-          <li><a href="consultancy.html">Safety &amp; Risk</a></li>
-          <li><a href="consultancy.html">HR &amp; Performance</a></li>
+          <li><a href="consultancy.html#consult-oil-gas">Oil &amp; Gas Consultancy</a></li>
+          <li><a href="consultancy.html#consult-engineering">Engineering Projects</a></li>
+          <li><a href="consultancy.html#consult-safety">Safety &amp; Risk</a></li>
+          <li><a href="consultancy.html#consult-hr">HR &amp; Performance</a></li>
           <li><a href="consultancy.html">Solar Energy</a></li>
         </ul>
       </div>
@@ -1416,7 +1635,7 @@
       </div>
     </div>
     <div class="footer-bottom">
-      <span>© <span data-year>2025</span> EnerTec. All rights reserved.</span>
+      <span>&copy; <span data-year>2026</span> EnerTec. All rights reserved.</span>
       <span class="footer-bottom-right">
         <a href="privacy-policy.html" style="color:inherit;margin-right:16px;">Privacy Policy</a>
         <a href="terms-of-use.html" style="color:inherit;">Terms of Use</a>
@@ -1431,28 +1650,32 @@
   </svg>
 </button>
 
-<script src="https://cdn.jsdelivr.net/npm/lenis@1.1.14/dist/lenis.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
 <script src="js/index.js"></script>
 <script>
 /* ============================================================
-   Consultancy Page — Animations
+   Consultancy Page â€” Animations
    ============================================================ */
 (function () {
   'use strict';
 
-  /* --- Lenis + GSAP ticker --- */
-  var lenis;
-  if (window.Lenis) {
-    lenis = new Lenis({ duration: 1.2, easing: function (t) { return Math.min(1, 1.001 - Math.pow(2, -10 * t)); }, smoothWheel: true });
-    if (window.gsap) {
-      gsap.ticker.add(function (time) { lenis.raf(time * 1000); });
-      gsap.ticker.lagSmoothing(0);
-    } else {
-      (function lenisRaf(t) { lenis.raf(t); requestAnimationFrame(lenisRaf); })(0);
-    }
-  }
+  /* ---- Hash deep-link: scroll to specific consultancy card ---- */
+  (function () {
+    var hash = window.location.hash;
+    if (!hash || hash === '#areas') return;
+    var target = document.querySelector(hash);
+    if (!target) return;
+    if (history.scrollRestoration) history.scrollRestoration = 'manual';
+    window.scrollTo(0, 0);
+    requestAnimationFrame(function () {
+      requestAnimationFrame(function () {
+        var OFFSET = 90;
+        var y = target.getBoundingClientRect().top + window.scrollY - OFFSET;
+        window.scrollTo({ top: y, behavior: 'smooth' });
+      });
+    });
+  })();
 
   /* --- Hero Entrance --- */
   if (window.gsap) {
@@ -1549,10 +1772,11 @@
     /* --- Consultancy area cards stagger --- */
     var areaCards = document.querySelectorAll('.ca-card');
     if (areaCards.length) {
-      gsap.set(areaCards, { y: 50, opacity: 0 });
+      gsap.set(areaCards, { y: 40, opacity: 0 });
       ScrollTrigger.create({
         trigger: '.ca-grid',
-        start: 'top 80%',
+        start: 'top bottom',
+        once: true,
         onEnter: function () {
           gsap.to(areaCards, {
             y: 0,
@@ -1565,18 +1789,18 @@
       });
     }
 
-    /* --- Services items stagger --- */
-    var svcItems = document.querySelectorAll('.csvc-item');
-    if (svcItems.length) {
-      gsap.set(svcItems, { x: -30, opacity: 0 });
+    /* --- Services cards stagger --- */
+    var svcCards = document.querySelectorAll('.csvc-card');
+    if (svcCards.length) {
+      gsap.set(svcCards, { y: 30, opacity: 0 });
       ScrollTrigger.create({
-        trigger: '.csvc-list',
+        trigger: '.csvc-grid',
         start: 'top 80%',
         onEnter: function () {
-          gsap.to(svcItems, {
-            x: 0,
+          gsap.to(svcCards, {
+            y: 0,
             opacity: 1,
-            duration: 0.75,
+            duration: 0.7,
             stagger: 0.1,
             ease: 'power3.out'
           });

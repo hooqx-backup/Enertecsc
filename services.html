@@ -1,10 +1,11 @@
-<!doctype html>
+﻿<!doctype html>
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
+    <link rel="icon" type="image/png" sizes="64x64" href="favicon.png" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>
-      Services – EnerTec Industrial Supply &amp; Engineering Solutions
+      Enertec
     </title>
     <meta
       name="description"
@@ -19,7 +20,7 @@
     <link rel="stylesheet" href="css/index.css" />
     <style>
       /* ============================================================
-   Services Page – Premium Styles
+   Services Page â€“ Premium Styles
    ============================================================ */
 
       /* ---- Page Hero ---- */
@@ -268,7 +269,7 @@
         gap: 28px;
       }
 
-      /* last card (7th) — full width centered */
+      /* last card (7th) â€” full width centered */
       .svc-card:nth-child(7) {
         grid-column: 1 / -1;
         max-width: 700px;
@@ -288,6 +289,7 @@
           transform 0.45s var(--ease),
           box-shadow 0.45s var(--ease);
         position: relative;
+        scroll-margin-top: 90px;
       }
       .svc-card:hover {
         transform: translateY(-8px);
@@ -915,7 +917,75 @@
         </div>
       </div>
     </section>
-
+  <!-- ===================== WHY ENERTEC ===================== -->
+    <section class="svc-why">
+      <div class="svc-why-orb"></div>
+      <div class="wrap">
+        <div class="svc-why-head">
+          <span class="eyebrow eyebrow--center rev" style="color: var(--accent)"
+            >Why Choose Us</span
+          >
+          <h2 class="section-title section-title--center rev">
+            The EnerTec Advantage
+          </h2>
+          <p class="lede lede--center rev">
+            Five core strengths that set EnerTec apart as your trusted
+            industrial supply and engineering partner.
+          </p>
+        </div>
+        <div class="svc-why-grid">
+          <div class="svc-why-card rev">
+            <div class="svc-why-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M22 10v6M2 10l10-5 10 5-10 5z"/>
+                <path d="M6 12v5c3 3 9 3 12 0v-5"/>
+              </svg>
+            </div>
+            <div class="svc-why-title">Proven Expertise in Energy Sector Supply Chains</div>
+            <p class="svc-why-desc">Years of hands-on experience across upstream, midstream, and downstream operations.</p>
+          </div>
+          <div class="svc-why-card rev d1">
+            <div class="svc-why-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <circle cx="12" cy="12" r="10"/>
+                <path d="M2 12h20M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/>
+              </svg>
+            </div>
+            <div class="svc-why-title">Strong Global Supplier Network</div>
+            <p class="svc-why-desc">Partnerships with leading manufacturers and suppliers across GCC, MENA, and international markets.</p>
+          </div>
+          <div class="svc-why-card rev d2">
+            <div class="svc-why-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/>
+                <path d="m9 11 3 3L22 4"/>
+              </svg>
+            </div>
+            <div class="svc-why-title">Commitment to Quality and Compliance</div>
+            <p class="svc-why-desc">All products and services meet international standards and regulatory requirements.</p>
+          </div>
+          <div class="svc-why-card rev d3">
+            <div class="svc-why-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M12 2v4M12 18v4M4.93 4.93l2.83 2.83M16.24 16.24l2.83 2.83M2 12h4M18 12h4M4.93 19.07l2.83-2.83M16.24 7.76l2.83-2.83"/>
+                <circle cx="12" cy="12" r="3"/>
+              </svg>
+            </div>
+            <div class="svc-why-title">Focus on Sustainability and Innovation</div>
+            <p class="svc-why-desc">Driving sustainable practices and innovative solutions across every project we deliver.</p>
+          </div>
+          <div class="svc-why-card rev d4">
+            <div class="svc-why-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="m14.7 6.3 3 3M5 12.5 12.5 5l6.5 6.5L11.5 19H5z"/>
+              </svg>
+            </div>
+            <div class="svc-why-title">Tailored Solutions for Every Client</div>
+            <p class="svc-why-desc">Custom-built procurement, logistics, and technical solutions designed around your specific needs.</p>
+          </div>
+        </div>
+      </div>
+    </section>
     <!-- ===================== INTRO / POSITIONING ===================== -->
     <section class="svc-intro">
       <div class="wrap">
@@ -1079,14 +1149,14 @@
             Comprehensive Industrial Supply &amp; Engineering Solutions
           </h2>
           <p class="lede lede--center rev">
-            Seven specialized service lines — each backed by global sourcing,
+            Seven specialized service lines â€” each backed by global sourcing,
             technical depth, and a commitment to operational excellence.
           </p>
         </div>
 
         <div class="svcs-grid">
           <!-- 01 Instrumentation & Control -->
-          <div class="svc-card rev">
+          <div class="svc-card rev" id="svc-instrumentation">
             <div class="svc-card-img-wrap">
               <img
                 src="assets/images/servicesimages/ChatGPT-Image-Jun-2-2026-04_57_56-PM-1024x683.webp"
@@ -1130,7 +1200,7 @@
           </div>
 
           <!-- 02 Pipes, Valves & Fittings -->
-          <div class="svc-card rev d1">
+          <div class="svc-card rev d1" id="svc-pvf">
             <div class="svc-card-img-wrap">
               <img
                 src="assets/images/servicesimages/ChatGPT-Image-Jun-2-2026-04_58_35-PM-1024x683.webp"
@@ -1170,7 +1240,7 @@
           </div>
 
           <!-- 03 Industrial Safety & Fire Protection -->
-          <div class="svc-card rev">
+          <div class="svc-card rev" id="svc-safety">
             <div class="svc-card-img-wrap">
               <img
                 src="assets/images/servicesimages/ChatGPT-Image-Jun-2-2026-04_59_08-PM-1024x683.webp"
@@ -1211,7 +1281,7 @@
           </div>
 
           <!-- 04 Electrical & Heat Tracing -->
-          <div class="svc-card rev d1">
+          <div class="svc-card rev d1" id="svc-electrical">
             <div class="svc-card-img-wrap">
               <img
                 src="assets/images/servicesimages/ChatGPT-Image-Jun-2-2026-04_59_38-PM-1024x683.webp"
@@ -1253,7 +1323,7 @@
           </div>
 
           <!-- 05 Renewable Energy Solutions -->
-          <div class="svc-card rev">
+          <div class="svc-card rev" id="svc-renewables">
             <div class="svc-card-img-wrap">
               <img
                 src="assets/images/servicesimages/ChatGPT-Image-Jun-2-2026-05_00_07-PM-1024x683.webp"
@@ -1294,7 +1364,7 @@
           </div>
 
           <!-- 06 Mechanical & Rotating Equipment -->
-          <div class="svc-card rev d1">
+          <div class="svc-card rev d1" id="svc-mechanical">
             <div class="svc-card-img-wrap">
               <img
                 src="assets/images/servicesimages/ChatGPT-Image-Jun-2-2026-05_16_44-PM-1024x683.webp"
@@ -1336,7 +1406,7 @@
           </div>
 
           <!-- 07 Industrial & Oilfield Chemical (full-width centered) -->
-          <div class="svc-card rev">
+          <div class="svc-card rev" id="svc-chemicals">
             <div class="svc-card-img-wrap">
               <img
                 src="assets/images/servicesimages/ChatGPT-Image-Jun-2-2026-05_17_10-PM-1024x683.webp"
@@ -1380,119 +1450,7 @@
       </div>
     </section>
 
-    <!-- ===================== WHY ENERTEC ===================== -->
-    <section class="svc-why">
-      <div class="svc-why-orb"></div>
-      <div class="wrap">
-        <div class="svc-why-head">
-          <span class="eyebrow eyebrow--center rev" style="color: var(--accent)"
-            >Why Choose Us</span
-          >
-          <h2 class="section-title section-title--center rev">
-            The EnerTec Advantage
-          </h2>
-          <p class="lede lede--center rev">
-            Five core strengths that set EnerTec apart as your trusted
-            industrial supply and engineering partner.
-          </p>
-        </div>
-        <div class="svc-why-grid">
-          <div class="svc-why-card rev">
-            <div class="svc-why-icon">
-              <svg
-                viewBox="0 0 24 24"
-                fill="none"
-                stroke="currentColor"
-                stroke-width="2"
-              >
-                <path d="M22 10v6M2 10l10-5 10 5-10 5z" />
-                <path d="M6 12v5c3 3 9 3 12 0v-5" />
-              </svg>
-            </div>
-            <div class="svc-why-title">Deep Industry Experience</div>
-            <p class="svc-why-desc">
-              Extensive track record across upstream, midstream, and downstream
-              operations in the Gulf region.
-            </p>
-          </div>
-          <div class="svc-why-card rev d1">
-            <div class="svc-why-icon">
-              <svg
-                viewBox="0 0 24 24"
-                fill="none"
-                stroke="currentColor"
-                stroke-width="2"
-              >
-                <circle cx="12" cy="12" r="10" />
-                <path
-                  d="M2 12h20M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"
-                />
-              </svg>
-            </div>
-            <div class="svc-why-title">Global Supplier Partnerships</div>
-            <p class="svc-why-desc">
-              Strategic relationships with leading manufacturers across GCC,
-              MENA, Europe, and Asia.
-            </p>
-          </div>
-          <div class="svc-why-card rev d2">
-            <div class="svc-why-icon">
-              <svg
-                viewBox="0 0 24 24"
-                fill="none"
-                stroke="currentColor"
-                stroke-width="2"
-              >
-                <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14" />
-                <path d="m9 11 3 3L22 4" />
-              </svg>
-            </div>
-            <div class="svc-why-title">International Standards</div>
-            <p class="svc-why-desc">
-              All products sourced and supplied in full compliance with ISO,
-              API, ASME, IEC, and ATEX certifications.
-            </p>
-          </div>
-          <div class="svc-why-card rev d3">
-            <div class="svc-why-icon">
-              <svg
-                viewBox="0 0 24 24"
-                fill="none"
-                stroke="currentColor"
-                stroke-width="2"
-              >
-                <path
-                  d="M12 2v4M12 18v4M4.93 4.93l2.83 2.83M16.24 16.24l2.83 2.83M2 12h4M18 12h4M4.93 19.07l2.83-2.83M16.24 7.76l2.83-2.83"
-                />
-                <circle cx="12" cy="12" r="3" />
-              </svg>
-            </div>
-            <div class="svc-why-title">Sustainable Practices</div>
-            <p class="svc-why-desc">
-              Committed to integrating renewable energy and environmentally
-              responsible solutions into every project.
-            </p>
-          </div>
-          <div class="svc-why-card rev d4">
-            <div class="svc-why-icon">
-              <svg
-                viewBox="0 0 24 24"
-                fill="none"
-                stroke="currentColor"
-                stroke-width="2"
-              >
-                <path d="m14.7 6.3 3 3M5 12.5 12.5 5l6.5 6.5L11.5 19H5z" />
-              </svg>
-            </div>
-            <div class="svc-why-title">Tailored Solutions</div>
-            <p class="svc-why-desc">
-              Every engagement is customized to your specific operational needs,
-              technical requirements, and project timeline.
-            </p>
-          </div>
-        </div>
-      </div>
-    </section>
+  
 
     <!-- ===================== CTA ===================== -->
     <section class="svc-cta">
@@ -1580,24 +1538,24 @@
             <h4 class="footer-col-title">Our Services</h4>
             <ul class="footer-links">
               <li>
-                <a href="services.html#services"
+                <a href="services.html#svc-instrumentation"
                   >Instrumentation &amp; Control</a
                 >
               </li>
               <li>
-                <a href="services.html#services"
+                <a href="services.html#svc-pvf"
                   >Pipes, Valves &amp; Fittings</a
                 >
               </li>
-              <li><a href="services.html#services">Industrial Safety</a></li>
+              <li><a href="services.html#svc-safety">Industrial Safety</a></li>
               <li>
-                <a href="services.html#services"
+                <a href="services.html#svc-electrical"
                   >Electrical &amp; Heat Tracing</a
                 >
               </li>
-              <li><a href="services.html#services">Renewable Energy</a></li>
-              <li><a href="services.html#services">Mechanical Equipment</a></li>
-              <li><a href="services.html#services">Oilfield Chemicals</a></li>
+              <li><a href="services.html#svc-renewables">Renewable Energy</a></li>
+              <li><a href="services.html#svc-mechanical">Mechanical Equipment</a></li>
+              <li><a href="services.html#svc-chemicals">Oilfield Chemicals</a></li>
             </ul>
           </div>
           <div class="footer-col">
@@ -1653,7 +1611,7 @@
         </div>
         <div class="footer-bottom">
           <span
-            >© <span data-year>2025</span> EnerTec. All rights reserved.</span
+            >&copy; <span data-year>2026</span> EnerTec. All rights reserved.</span
           >
           <span class="footer-bottom-right">
             <a
@@ -1681,36 +1639,12 @@
       </svg>
     </button>
 
-    <script src="https://cdn.jsdelivr.net/npm/lenis@1.1.14/dist/lenis.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
     <script src="js/index.js"></script>
     <script>
       (function () {
         "use strict";
-
-        /* Lenis */
-        var lenis;
-        if (window.Lenis) {
-          lenis = new Lenis({
-            duration: 1.2,
-            easing: function (t) {
-              return Math.min(1, 1.001 - Math.pow(2, -10 * t));
-            },
-            smoothWheel: true,
-          });
-          if (window.gsap) {
-            gsap.ticker.add(function (t) {
-              lenis.raf(t * 1000);
-            });
-            gsap.ticker.lagSmoothing(0);
-          } else {
-            (function raf(t) {
-              lenis.raf(t);
-              requestAnimationFrame(raf);
-            })(0);
-          }
-        }
 
         /* Hero entrance */
         if (window.gsap) {
@@ -1767,6 +1701,27 @@
               },
             });
           }
+
+          /* ---- Hash deep-link: scroll to specific service card ---- */
+          (function () {
+            var hash = window.location.hash;
+            if (!hash || hash === "#services") return;
+            var target = document.querySelector(hash);
+            if (!target) return;
+
+            /* Prevent the browser's native instant jump so we can control the scroll */
+            if (history.scrollRestoration) history.scrollRestoration = "manual";
+            window.scrollTo(0, 0);
+
+            /* Wait two frames so GSAP/ScrollTrigger finishes setup, then smooth-scroll */
+            requestAnimationFrame(function () {
+              requestAnimationFrame(function () {
+                var OFFSET = 90;
+                var y = target.getBoundingClientRect().top + window.scrollY - OFFSET;
+                window.scrollTo({ top: y, behavior: "smooth" });
+              });
+            });
+          })();
 
           /* Why cards stagger */
           var whyCards = document.querySelectorAll(".svc-why-card");
@@ -1843,3 +1798,4 @@
     </script>
   </body>
 </html>
+
